@@ -1,6 +1,6 @@
 ﻿#include "stdafx.h"
 #include "zeta0.h"
-#include <iostream>
+#include <math.h>
 
 const double zeta0::calculatePi(const int &n)
 {
@@ -14,3 +14,11 @@ const double zeta0::calculatePi(const int &n)
 
 	return sqrt(s * 6);
 }
+
+const bool zeta0::zUnitTest()
+{
+	double answerShouldBe = 3.082207001484488225125096190727122112617812011722287272;
+
+	return answerShouldBe == calculatePi(3);
+}
+
