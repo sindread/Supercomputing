@@ -6,4 +6,6 @@ public:
 	const double calculatePi(const int &n);
 	
 	const bool zUnitTest();
+
+	double* zVerificationTest();
 };
