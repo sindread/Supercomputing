@@ -1,18 +1,35 @@
-  # the compiler: gcc for C program, define as g++ for C++
-  CC = gcc
+appname := calulate_pi
 
-  # compiler flags:
-  #  -g    adds debugging information to the executable file
-  #  -Wall turns on most, but not all, compiler warnings
-  CFLAGS  = -g -Wall
+CXX := g++
+CXXFLAGS := -Wall -g
 
-  # the build target executable:
-  TARGET = main
+srcfiles := $(shell find . -maxdepth 1 -name "*.cpp")
+objects  := $(patsubst %.cpp, %.o, $(srcfiles))
 
-  all: $(TARGET)
+all: $(appname)
 
-  $(TARGET): $(TARGET).c
-  	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).c
+$(appname): $(objects)
+    $(CXX) $(CXXFLAGS) $(LDFLAGS) -o $(appname) $(objects) $(LDLIBS)
 
-  clean:
-  	$(RM) $(TARGET)
+depend: .depend
+
+.depend: $(srcfiles)
+    rm -f ./.depend
+    $(CXX) $(CXXFLAGS) -MM $^>>./.depend;
+
+run: 
+    ./main
+
+vtest:
+    ./main -v
+
+utest:
+    ./main -u
+
+clean:
+    rm -f $(objects)
+
+dist-clean: clean
+   rm -f *~ .depend
+
+include .depend

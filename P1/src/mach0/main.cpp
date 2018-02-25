@@ -2,6 +2,7 @@
 #include <cmath>
 #include <iostream>
 #include <sstream>
+#include <limits>
 
 #define M_PI acos(-1.0)
 
@@ -35,7 +36,7 @@ string verification_test(const unsigned int maxk)
 int main(int argc, char* argv[])
 {
 	auto n = 3;
-	cout.precision(std::numeric_limits<double>::digits10 + 2);
+	cout.precision(numeric_limits<double>::digits10 + 2);
 
 	if (argc == 0)
 	{
@@ -46,7 +47,7 @@ int main(int argc, char* argv[])
 	{
 		if (argv[0] == "-u")
 		{
-			cout << fixed << "Zeta0 unit test result, with n = 3: " << std::boolalpha << unit_test() << endl;
+			cout << fixed << "Zeta0 unit test result, with n = 3: " << boolalpha << unit_test() << endl;
 		}
 		else if (argv[0] == "-v")
 		{
