@@ -1,13 +1,13 @@
-APPNAME = calculatePI
+APPNAME = calculatePI.out
+TARGETS = main.o mach0.o
 
 CC = g++
+RM=rm -f
 CFLAGS = -Wall -g
 LDFLAGS = -O1
 
-TARGET = main.o zeta0.o
-
-all: $(TARGET)
-	$(CC) $(CFLAGS) -o $(APPNAME) $(TARGET) $(LDFLAGS)
+all: $(TARGETS)
+	$(CC) $(CFLAGS) -o $(APPNAME) $(TARGETS) $(LDFLAGS)
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $<
@@ -23,4 +23,4 @@ vtest: all
 
 .PHONY: clean
 clean:
-	rm -rf $(APPNAME) $(TARGET)
+	$(RM) $(APPNAME) $(TARGETS)
