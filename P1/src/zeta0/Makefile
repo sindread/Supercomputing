@@ -1,35 +1,26 @@
-appname := calulate_pi
+APPNAME = calculatePI.out
+TARGETS = main.o zeta0.o
 
-CXX := g++
-CXXFLAGS := -Wall -g
+CC = g++
+RM=rm -f
+CFLAGS = -Wall -g
+LDFLAGS = -O1
 
-srcfiles := $(shell find . -maxdepth 1 -name "*.cpp")
-objects  := $(patsubst %.cpp, %.o, $(srcfiles))
+all: $(TARGETS)
+	$(CC) $(CFLAGS) -o $(APPNAME) $(TARGETS) $(LDFLAGS)
 
-all: $(appname)
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $<
 
-$(appname): $(objects)
-    $(CXX) $(CXXFLAGS) $(LDFLAGS) -o $(appname) $(objects) $(LDLIBS)
+run: all
+	./$(APPNAME)
 
-depend: .depend
+utest: all 
+	./$(APPNAME) -u
 
-.depend: $(srcfiles)
-    rm -f ./.depend
-    $(CXX) $(CXXFLAGS) -MM $^>>./.depend;
+vtest: all
+	./$(APPNAME) -v
 
-run: 
-    ./main
-
-vtest:
-    ./main -v
-
-utest:
-    ./main -u
-
+.PHONY: clean
 clean:
-    rm -f $(objects)
-
-dist-clean: clean
-   rm -f *~ .depend
-
-include .depend
+	$(RM) $(APPNAME) $(TARGETS)

@@ -2,6 +2,7 @@
 #include <cmath>
 #include <iostream>
 #include <sstream>
+#include <limits>
 
 #define M_PI acos(-1.0)
 
@@ -19,7 +20,7 @@ bool unit_test()
 	return *answer_should_be == calculate_pi(3);
 }
 
-string verification_test(const unsigned int maxk)
+string verification_test(const int maxk)
 {
 	ostringstream oss;
 	auto n = 0;
@@ -35,29 +36,27 @@ string verification_test(const unsigned int maxk)
 int main(int argc, char* argv[])
 {
 	auto n = 3;
-	cout.precision(std::numeric_limits<double>::digits10 + 2);
+	auto argument_number = 1;
 
-	if (argc == 0)
+	cout.precision(numeric_limits<double>::digits10 + 2);
+
+	if (argc == argument_number)
 	{
 		cout << fixed << "Calculate pi for zeta0 function: " << calculate_pi(n) << endl;
 	}
 
 	else
 	{
-		if (argv[0] == "-u")
+		string arg = argv[argument_number];
+		if (arg == "-u")
 		{
-			cout << fixed << "Zeta0 unit test result, with n = 3: " << std::boolalpha << unit_test() << endl;
+			cout << fixed << "zeta0 unit test result, with n = 3: " << boolalpha << unit_test() << endl;
 		}
-		else if (argv[0] == "-v")
+		else if (arg== "-v")
 		{
-			cout << fixed << "Running verification tests: " << endl;
+			cout << fixed << "Running zeta0 verification tests: " << endl;
 			cout << verification_test(24);
 		}
 	}
-	
-	cout << fixed << "Running verification tests: " << endl;
-	cout << verification_test(24);
-
-	cin.get();
 	return 0;
 }

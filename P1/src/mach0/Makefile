@@ -1,18 +1,26 @@
-  # the compiler: gcc for C program, define as g++ for C++
-  CC = gcc
+APPNAME = calculatePI
 
-  # compiler flags:
-  #  -g    adds debugging information to the executable file
-  #  -Wall turns on most, but not all, compiler warnings
-  CFLAGS  = -g -Wall
+CC = g++
+CFLAGS = -Wall -g
+LDFLAGS = -O1
 
-  # the build target executable:
-  TARGET = main
+TARGET = main.o zeta0.o
 
-  all: $(TARGET)
+all: $(TARGET)
+	$(CC) $(CFLAGS) -o $(APPNAME) $(TARGET) $(LDFLAGS)
 
-  $(TARGET): $(TARGET).c
-  	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).c
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $<
 
-  clean:
-  	$(RM) $(TARGET)
+run: all
+	./$(APPNAME)
+
+utest: all 
+	./$(APPNAME) -u
+
+vtest: all
+	./$(APPNAME) -v
+
+.PHONY: clean
+clean:
+	rm -rf $(APPNAME) $(TARGET)

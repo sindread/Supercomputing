@@ -27,7 +27,7 @@ string verification_test(const unsigned int maxk)
 	for (auto k = 1; k <= maxk; k++)
 	{
 		n = pow(2, k);
-		oss << "n = 2^" << k << " = " << n << " M_PI - pi_n = " << abs(M_PI - calculate_pi(n)) << endl;
+		oss << "n = " << n << " M_PI - pi_n = " << abs(M_PI - calculate_pi(n)) << endl;
 	}
 
 	return oss.str();
@@ -36,22 +36,25 @@ string verification_test(const unsigned int maxk)
 int main(int argc, char* argv[])
 {
 	auto n = 3;
+	auto argument_number = 1;
+
 	cout.precision(numeric_limits<double>::digits10 + 2);
 
-	if (argc == 0)
+	if (argc == argument_number)
 	{
-		cout << fixed << "Calculate pi for zeta0 function: " << calculate_pi(n) << endl;
+		cout << fixed << "Calculate pi for mach0 function: " << calculate_pi(n) << endl;
 	}
 
 	else
 	{
-		if (argv[0] == "-u")
+		string arg = argv[argument_number];
+		if (arg == "-u")
 		{
-			cout << fixed << "Zeta0 unit test result, with n = 3: " << boolalpha << unit_test() << endl;
+			cout << fixed << "mach0 unit test result, with n = 3: " << boolalpha << unit_test() << endl;
 		}
-		else if (argv[0] == "-v")
+		else if (arg== "-v")
 		{
-			cout << fixed << "Running verification tests: " << endl;
+			cout << fixed << "Running mach0 verification tests: " << endl;
 			cout << verification_test(24);
 		}
 	}
