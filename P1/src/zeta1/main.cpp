@@ -13,7 +13,7 @@ bool unit_test()
 {
 	const auto answer_should_be = &zeta1_expected_value_after_3_iterations;
 
-	return *answer_should_be == run_calculation(3);
+	return *answer_should_be == run_calculation(2, 3);
 }
 
 string verification_test(const int maxk)
@@ -23,7 +23,7 @@ string verification_test(const int maxk)
 	for (auto k = 1; k <= maxk; k++)
 	{
 		n = pow(2, k);
-		oss << "n = 2^" << k << " = " << n << " M_PI - pi_n = " << abs(M_PI - run_calculation(n)) << endl;
+		oss << "n = 2^" << k << " = " << n << " M_PI - pi_n = " << abs(M_PI - run_calculation(2, n)) << endl;
 	}
 
 	return oss.str();
@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
 
 	if (argc == argument_number)
 	{
-		cout << fixed << "Calculate pi for zeta1 function: " << run_calculation(n) << endl;
+		cout << fixed << "Calculate pi for zeta1 function: " << run_calculation(2, n) << endl;
 	}
 
 	else
@@ -60,7 +60,7 @@ int main(int argc, char* argv[])
 				return -1;
 			}
 			cout << fixed << "Running zeta1 with " << arg << " processes." << endl;
-			cout << fixed << run_calculation(argument) << endl;
+			cout << fixed << run_calculation(2, argument) << endl;
 		}
 	}
 	return 0;
