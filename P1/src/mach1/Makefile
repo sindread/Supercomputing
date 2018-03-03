@@ -14,7 +14,7 @@ all: $(TARGETS)
 	$(CC) $(CFLAGS) -c $<
 
 run: all
-	./$(APPNAME)
+	$(MPI) -np 1 $(APPNAME)
 
 utest: all 
 	./$(APPNAME) -u
