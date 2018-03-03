@@ -1,8 +1,7 @@
 APPNAME = calculatePI.out
 TARGETS = main.o zeta0.o
 
-CC = mpiCC
-MPI = mpirun
+CC = g++
 RM=rm -f
 CFLAGS = -Wall -g
 LDFLAGS = -O1
