@@ -24,7 +24,7 @@ bool unit_test(int* argc, char** argv[])
 
 int main(int argc, char* argv[])
 {
-	auto n = 3;
+	auto n = 300;
 	auto argument_number = 1;
 
 	cout.precision(numeric_limits<double>::digits10 + 2);
