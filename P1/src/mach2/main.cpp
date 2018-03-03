@@ -1,4 +1,4 @@
-#include "zeta0.h"
+#include "mach0.h"
 #include <cmath>
 #include <iostream>
 #include <sstream>
@@ -10,24 +10,24 @@ using namespace std;
 
 double calculate_pi(const int &n)
 {
-	return zeta0_calculate_pi(n);
+	return mach2_calculate_pi(n);
 }
 
 bool unit_test()
 {
-	const auto answer_should_be = &zeta0_expected_value_after_3_iterations;
+	const auto answer_should_be = &mach0_expected_value_after_3_iterations;
 
 	return *answer_should_be == calculate_pi(3);
 }
 
-string verification_test(const int maxk)
+string verification_test(const unsigned int maxk)
 {
 	ostringstream oss;
 	auto n = 0;
 	for (auto k = 1; k <= maxk; k++)
 	{
 		n = pow(2, k);
-		oss << "n =" << n << ", error: M_PI - pi_n = " << abs(M_PI - calculate_pi(n)) << endl;
+		oss << "n = " << n << " M_PI - pi_n = " << abs(M_PI - calculate_pi(n)) << endl;
 	}
 
 	return oss.str();
@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
 
 	if (argc == argument_number)
 	{
-		cout << fixed << "Calculate pi for zeta0 function: " << calculate_pi(n) << endl;
+		cout << fixed << "Calculate pi for mach0 function: " << calculate_pi(n) << endl;
 	}
 
 	else
@@ -50,13 +50,15 @@ int main(int argc, char* argv[])
 		string arg = argv[argument_number];
 		if (arg == "-u")
 		{
-			cout << fixed << "zeta0 unit test result, with n = 3: " << boolalpha << unit_test() << endl;
+			cout << fixed << "mach0 unit test result, with n = 3: " << boolalpha << unit_test() << endl;
 		}
 		else if (arg== "-v")
 		{
-			cout << fixed << "Running zeta0 verification tests: " << endl;
+			cout << fixed << "Running mach0 verification tests: " << endl;
 			cout << verification_test(24);
 		}
 	}
+
+	cin.get();
 	return 0;
 }

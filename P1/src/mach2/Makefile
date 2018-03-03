@@ -1,13 +1,13 @@
 APPNAME = calculatePI.out
-TARGETS = main.o zeta0.o
+TARGETS = main.o mach2.o
 
 CC = g++
-RM=rm -f
+RM = rm -f
 CFLAGS = -Wall -g
 LDFLAGS = -O1
 
 all: $(TARGETS)
-	$(CC) $(CFLAGS) -o $(APPNAME) $(TARGETS) $(LDFLAGS)
+  $(CC) $(CFLAGS) -o $(APPNAME) $(TARGETS) $(LDFLAGS)
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $<

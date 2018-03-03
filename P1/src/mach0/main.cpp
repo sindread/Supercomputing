@@ -27,7 +27,7 @@ string verification_test(const unsigned int maxk)
 	for (auto k = 1; k <= maxk; k++)
 	{
 		n = pow(2, k);
-		oss << "n = " << n << " M_PI - pi_n = " << abs(M_PI - calculate_pi(n)) << endl;
+		oss << "n =" << n << ", error: M_PI - pi_n = " << abs(M_PI - calculate_pi(n)) << endl;
 	}
 
 	return oss.str();
