@@ -4,16 +4,16 @@
 
 using namespace std;
 
-void zeta1_calculate_vi(const int &numberOfProcesses, const int &rank, const int &n, double* answers)
-{
-	int j = 0;
-	for (int i = rank + 1; i <= n; i += numberOfProcesses)
-	{
-		const double v_i = 1.0 / (i*i);	
-		answers[j] = v_i;
-		j++;
-	}
-}
+// void zeta1_calculate_vi(const int &numberOfProcesses, const int &rank, const int &n, double* answers)
+// {
+// 	int j = 0;
+// 	for (int i = rank + 1; i <= n; i += numberOfProcesses)
+// 	{
+// 		const double v_i = 1.0 / (i*i);	
+// 		answers[j] = v_i;
+// 		j++;
+// 	}
+// }
 
 void zeta1_calculate_vi(const int &numberOfProcesses, const int &rank, const int &n, double &sumPiParts)
 {
@@ -29,7 +29,7 @@ void sumVector(const double* vector, const int& length, double& sum){
 	}
 }
 
-double zeta1_calculate_pi(int &rank, const int &numberOfProcessors, const int &numberOfIntervals){
+double zeta1_calculate_pi(const int &rank, const int &numberOfProcessors, const int &numberOfIntervals){
 	int length = numberOfIntervals / numberOfProcessors + (numberOfIntervals % numberOfProcessors == 0 ? 0 : 1);
 
 	double startTime;

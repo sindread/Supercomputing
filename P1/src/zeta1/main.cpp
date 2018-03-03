@@ -9,9 +9,9 @@
 
 using namespace std;
 
-double calculate_pi(int &rank, const int &nop, const int &n)
+double calculate_pi(const int &rank, const int &numberOfProsesses, const int &n)
 {
-	return zeta1_calculate_pi(rank , nop, n);
+	return zeta1_calculate_pi(rank , numberOfProsesses, n);
 }
 
 bool unit_test(int &rank)
