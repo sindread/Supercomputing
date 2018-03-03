@@ -1,10 +1,9 @@
 APPNAME = calculatePI.out
-TARGETS = main.o zeta1.o
+TARGETS = main.o zeta2.o
 
-CC = mpiCC
-MPI = mpirun
+CC = g++
 RM=rm -f
-CFLAGS = -Wall -g
+CFLAGS = -fopenmp
 LDFLAGS = -O1
 
 all: $(TARGETS)
@@ -14,7 +13,7 @@ all: $(TARGETS)
 	$(CC) $(CFLAGS) -c $<
 
 run: all
-	$(MPI) -np 2 $(APPNAME)
+	OMP_NUM_THREADS=2 ./$(APPNAME)
 
 utest: all 
 	./$(APPNAME) -u
