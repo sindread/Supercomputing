@@ -14,13 +14,10 @@ all: $(TARGETS)
 	$(CC) $(CFLAGS) -c $<
 
 run: all
-	$(MPI) -np 2 $(APPNAME)
+	$(MPI) -np 4 $(APPNAME)
 
 utest: all 
-	./$(APPNAME) -u
-
-vtest: all
-	./$(APPNAME) -v
+	$(MPI) -np 2 $(APPNAME) -u
 
 .PHONY: clean
 clean:
