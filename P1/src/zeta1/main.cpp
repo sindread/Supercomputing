@@ -26,7 +26,6 @@ int main(int argc, char* argv[])
 		bool isUnitTest = false;
 		master_init(argc, argv, n, isUnitTest);
 		master_task(n, isUnitTest, numberOfProcesses);
-		
 	} else {
 		slave_task(rank, numberOfProcesses);
 	}
