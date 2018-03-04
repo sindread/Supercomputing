@@ -14,8 +14,6 @@ int main(int argc, char* argv[])
 	MPI_Comm_size(MPI_COMM_WORLD, &numberOfProcesses);
 	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
-	
-
 	if (rank == 0){
 		if ( (numberOfProcesses & (numberOfProcesses-1) ) != 0 && numberOfProcesses != 0) {
 			cout << fixed << "Number of processes need to be power of two";
