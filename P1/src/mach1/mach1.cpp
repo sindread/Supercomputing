@@ -22,7 +22,10 @@ void master_init(int argc, char* argv[], int &n, bool &isUnitTest){
 
 void master_task(const int &n, const bool &isUnitTest, const int &numberOfProcesses){
 	double vi5[n], vi239[n];
-	double piSum, piSumPpart, pi;
+	double piSum, piSumPpart, pi, start, end;
+
+	start = MPI_Wtime();
+
 	vi_parts(n, vi5, vi239);
 
 	int lengthForRank[numberOfProcesses];
@@ -53,6 +56,9 @@ void master_task(const int &n, const bool &isUnitTest, const int &numberOfProces
 	}
 
 	pi = piSum;
+
+	end = MPI_Wtime();
+
 	if (isUnitTest){
 		auto result = "Failed";
 		if ((pi - mach1_expected_value_after_3_iterations) < 0.0000000001){
@@ -64,6 +70,7 @@ void master_task(const int &n, const bool &isUnitTest, const int &numberOfProces
 	}else {
 		cout << "Pi is with mach1, with " << n << " iterations: Pi = " << pi <<  endl;
 		cout << "Error(PI-pi_" << n << "): E  = " << M_PI-pi <<  endl;
+		cout << "Runtime: Time =" <<  (end-start)*1000 << "ms" << endl;
 	}
 }
 
