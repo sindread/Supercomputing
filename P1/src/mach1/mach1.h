@@ -6,8 +6,8 @@ const int TAG_LENGTH = 42;
 const int TAG_VPARTS_5 = 1337;
 const int TAG_VPARTS_239 = 13;
 
-void master_init(int argc, char* argv[], int &n, bool &isUnitTest);
-void master_task(const int &n, const bool &isUnitTest, const int &numberOfProcesses);
+void master_init(int argc, char* argv[], int &n);
+void master_task(const int &n, const int &numberOfProcesses);
 void slave_task(int &rank, int &numberOfProcesses);
 void vi_parts(const int& n, double* vi5, double* vi239);
 double arctan_part(const int& i, const double& x);

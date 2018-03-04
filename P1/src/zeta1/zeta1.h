@@ -4,8 +4,9 @@ const double zeta1_expected_value_after_3_iterations = 2.85773803324704145; //11
 const int TAG_LENGTH = 42;
 const int TAG_VPARTS = 1337;
 
-void master_init(int argc, char* argv[], int &n, bool &isUnitTest);
-void master_task(const int &n, const bool &isUnitTest, const int &numberOfProcesses);
+void master_init(int argc, char* argv[], int &n);
+void master_task(const int &n, const int &numberOfProcesses);
 void slave_task(int &rank, int &numberOfProcesses);
 void vi_parts(const int &n, double* vi);
+void length_of_work(int* lengthForRank, const int &n, const int &numberOfProcesses);
 void sumVector(const double* vector, const int& length, double& sum);

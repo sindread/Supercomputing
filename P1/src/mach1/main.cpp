@@ -19,9 +19,8 @@ int main(int argc, char* argv[])
 		}
 
 		int n;
-		bool isUnitTest = false;
-		master_init(argc, argv, n, isUnitTest);
-		master_task(n, isUnitTest, numberOfProcesses);
+		master_init(argc, argv, n);
+		master_task(n, numberOfProcesses);
 	} else {
 		slave_task(rank, numberOfProcesses);
 	}
