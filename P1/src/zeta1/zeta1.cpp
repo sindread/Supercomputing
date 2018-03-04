@@ -54,9 +54,9 @@ double zeta1_calculate_pi(const int &rank, const int &numberOfProcessors, const 
 
 		double endTime = MPI_Wtime();
 
-		cout << "Main prosess used " << (endTime - startTime) << endl;
+		cout << "Main process used " << (endTime - startTime) << endl;
 	} else {
-		cout << "Helper prosess " << rank << " done."<< endl;  
+		cout << "Helper process " << rank << " done."<< endl;  
 	}
 	
 	return pi;

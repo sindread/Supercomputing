@@ -1,7 +1,7 @@
 ﻿#include "mach0.h"
 #include <cmath>
 
-double zeta0_calculate_pi(const int& n) 
+double mach0_calculate_pi(const int& n) 
 {
 	const auto x1 = double(1)/5;
 	const auto x2 = double(1)/239;

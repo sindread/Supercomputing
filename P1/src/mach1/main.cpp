@@ -9,9 +9,9 @@
 
 using namespace std;
 
-double calculate_pi(const int &rank, const int &numberOfProsesses, const int &n)
+double calculate_pi(const int &rank, const int &numberOfprocesses, const int &n)
 {
-	return mach1_calculate_pi(rank , numberOfProsesses, n);
+	return mach1_calculate_pi(rank , numberOfprocesses, n);
 }
 
 bool unit_test(int &rank)
@@ -43,11 +43,11 @@ int main(int argc, char* argv[])
 {
 	auto n = 100;
 	auto argument_number = 1;
-	auto numberOfProsesses = 4;
+	auto numberOfprocesses = 4;
 	int rank;
 
 	MPI_Init(&argc , &argv);
-	MPI_Comm_size(MPI_COMM_WORLD, &numberOfProsesses);
+	MPI_Comm_size(MPI_COMM_WORLD, &numberOfprocesses);
 	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
 	if (rank == 0) {

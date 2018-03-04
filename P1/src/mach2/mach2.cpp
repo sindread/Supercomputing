@@ -1,17 +1,29 @@
-﻿#include "mach1.h"
+﻿#include "mach2.h"
 #include <cmath>
-#include <iostream>
+#include <omp.h>
 #include <mpi.h>
+#include <iostream>
 
 using namespace std;
 
+
+void mach2_calculate_vi(const int& numberOfProcessors, const int& n, const int& rank, double& answer)
+{
+	const auto x1 = double(1)/5;
+	const auto x2 = double(1)/239;
+
+	// pi = 4 * (4 * arctan(1/5) - arctan (1/239))
+	answer = (4 * arctan(numberOfProcessors, n, x1, rank) - arctan(numberOfProcessors, n, x2, rank));
+}
 
 double arctan(const int& numberOfProcessors, const int& n, const double& x, const int& rank)
 {
 	auto s = 0.0;
 
+	#pragma omp parallel for reduction (+:s)
 	for (auto i = rank + 1; i <= n; i += numberOfProcessors)
 	{
+		cout << omp_get_thread_num() <<endl;
 		const auto part1 = pow(-1, i - 1);
 		const auto part3 = (2 * i) - 1;
 		const auto part2 = pow(x, part3);
@@ -21,22 +33,14 @@ double arctan(const int& numberOfProcessors, const int& n, const double& x, cons
 	return s;
 }
 
-void mach1_calculate_vi(const int& numberOfProcessors, const int& n, const int& rank, double& answer)
-{
-	const auto x1 = double(1)/5;
-	const auto x2 = double(1)/239;
 
-	// pi = 4 * (4 * arctan(1/5) - arctan (1/239))
-	answer = (4 * arctan(numberOfProcessors, n, x1, rank) - arctan(numberOfProcessors, n, x2, rank));
-}
-
-double mach1_calculate_pi(const int &rank, const int &numberOfProcessors, const int &numberOfIntervals)
+double mach2_calculate_pi(const int &rank, const int &numberOfProcessors, const int &numberOfIntervals)
 {
 	double startTime;
 	if(rank == 0) startTime = MPI_Wtime();
 
 	double answer = 0.0;
-	mach1_calculate_vi(numberOfProcessors, numberOfIntervals, rank, answer);
+	mach2_calculate_vi(numberOfProcessors, numberOfIntervals, rank, answer);
 	
 	double pi;
 	MPI_Reduce(&answer, &pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
@@ -53,3 +57,4 @@ double mach1_calculate_pi(const int &rank, const int &numberOfProcessors, const 
 	
 	return pi;
 }
+

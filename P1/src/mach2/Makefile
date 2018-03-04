@@ -1,5 +1,5 @@
 APPNAME = calculatePI.out
-TARGETS = main.o zeta2.o
+TARGETS = main.o mach2.o
 
 CC = mpiCC
 MPI = mpirun
