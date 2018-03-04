@@ -21,6 +21,7 @@ int main(int argc, char* argv[])
 		int n;
 		master_init(argc, argv, n);
 		master_task(n, numberOfProcesses);
+		
 	} else {
 		slave_task(rank, numberOfProcesses);
 	}
