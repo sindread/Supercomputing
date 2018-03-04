@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
 
 	if (argc == argument_number)
 	{
-		cout << fixed << "Calculate pi for mach0 function: " << calculate_pi(n) << endl;
+		cout << fixed << "Calculate pi for mach0 function: " << endl << calculate_pi(n) << endl;
 	}
 
 	else

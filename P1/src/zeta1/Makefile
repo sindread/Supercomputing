@@ -14,13 +14,10 @@ build: $(TARGETS)
 	$(CC) $(CFLAGS) -c $<
 
 test: build
-	$(MPI) -np 4 $(APPNAME)
-
-test50: build
-	$(MPI) -np 4 $(APPNAME) -n 50
+	$(MPI) -np 2 $(APPNAME)
 
 utest: build 
-	$(MPI) -np 4 $(APPNAME) -u
+	$(MPI) -np 2 $(APPNAME) -u
 
 .PHONY: clean
 clean:

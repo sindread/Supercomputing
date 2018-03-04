@@ -1,5 +1,8 @@
 ﻿#include "mach0.h"
 #include <cmath>
+#include <iostream>
+
+using namespace std;
 
 double mach0_calculate_pi(const int& n) 
 {
@@ -19,7 +22,11 @@ double arctan(const int& n, const double& x)
 		const auto part1 = pow(-1, i - 1);
 		const auto part3 = (2 * i) - 1;
 		const auto part2 = pow(x, part3);
-		s += part1 * (part2 / part3);
+		double temp = part1 * (part2 / part3);
+		s += temp;
+
+		cout << i << " " << temp << " x="  << x << endl;
+		
 	}
 
 	return s;

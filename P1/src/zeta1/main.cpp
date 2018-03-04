@@ -1,7 +1,5 @@
 #include "zeta1.h"
-#include <cmath>
 #include <iostream>
-#include <limits>
 #include <mpi.h>
 
 using namespace std;
