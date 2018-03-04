@@ -6,19 +6,19 @@ RM=rm -f
 CFLAGS = -Wall -g
 LDFLAGS = -O1
 
-all: $(TARGETS)
+build: $(TARGETS)
 	$(CC) $(CFLAGS) -o $(APPNAME) $(TARGETS) $(LDFLAGS)
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $<
 
-run: all
+test: build
 	./$(APPNAME)
 
-utest: all 
+utest: build 
 	./$(APPNAME) -u
 
-vtest: all
+vtest: build
 	./$(APPNAME) -v
 
 .PHONY: clean

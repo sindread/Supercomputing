@@ -1,98 +1,28 @@
 #include "zeta1.h"
-#include <cmath>
 #include <iostream>
-#include <sstream>
-#include <limits>
 #include <mpi.h>
-
-#define M_PI acos(-1.0)
 
 using namespace std;
 
-double calculate_pi(const int &rank, const int &numberOfprocesses, const int &n)
-{
-	return zeta1_calculate_pi(rank , numberOfprocesses, n);
-}
-
-bool unit_test(int &rank)
-{
-	const auto answer_should_be = &zeta1_expected_value_after_3_iterations;
-
-	return *answer_should_be == calculate_pi(rank, 2, 3);
-}
-
-string verification_test(int &rank, const int maxk)
-{
-	ostringstream oss;
-	auto n = 0;
-	for (auto k = 1; k <= maxk; k++)
-	{
-		n = pow(2, k);
-
-		auto answer = abs(M_PI - calculate_pi(rank, 2, n));
-
-		if (rank == 0){
-			oss << "n =" << n << ", error: M_PI - pi_n = " << answer << endl;
-		}
-	}
-
-	return oss.str();
-}
-
 int main(int argc, char* argv[])
 {
-	auto n = 100;
-	auto argument_number = 1;
-	auto numberOfProcesses = 2;
-	int rank;
+	int numberOfProcesses, rank;
 
-	MPI_Init(&argc , &argv);
+	MPI_Init(NULL , NULL);
 	MPI_Comm_size(MPI_COMM_WORLD, &numberOfProcesses);
 	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
-	if (rank == 0) {
-		cout.precision(numeric_limits<double>::digits10 + 2);
-	}
-	
-	if (argc == argument_number) {
-		// Parallel calculation
-		auto answer = calculate_pi(rank, numberOfProcesses, n);
-
-		// Seriel print:
-		if (rank == 0){
-			cout << fixed << "Calculate pi for zeta1 function: " << answer << endl;
+	if (rank == 0){
+		if ( (numberOfProcesses & (numberOfProcesses-1) ) != 0 && numberOfProcesses != 0) {
+			cout << fixed << "Number of processes need to be power of two";
+			return -1;
 		}
+
+		int n;
+		master_init(argc, argv, n);
+		master_task(n, numberOfProcesses, lengthForRank);
 	} else {
-		string arg = argv[argument_number];
-		if (arg == "-u")
-		{
-			// Parallel calculation
-			auto boolalpha = unit_test(rank);
-
-			// Seriel print:
-			if (rank == 0){
-				cout << fixed << "zeta1 unit test result, with n = 3: " << boolalpha << endl;
-			}
-		}
-		else {
-			auto argument = stoi(arg);
-			// Seriel start:
-			if (rank == 0){
-				if ( (argument & (argument-1) ) != 0 && argument != 0) {
-					cout << fixed << "Number of processes need to be power of two";
-					return -1;
-				}
-			}
-
-			// Parallel calculation
-			auto answer = calculate_pi(rank, numberOfProcesses, argument);
-
-			// Seriel print:
-			if (rank == 0){
-				cout << fixed << "Running zeta1 with " << arg << " processes." << endl;
-				cout << fixed << answer << endl;
-			}
-		}
+		slave_task(rank, numberOfProcesses, lengthForRank);
 	}
 
 	MPI_Finalize();

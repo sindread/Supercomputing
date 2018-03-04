@@ -7,20 +7,17 @@ RM=rm -f
 CFLAGS = -Wall -g
 LDFLAGS = -O1
 
-all: $(TARGETS)
+build: $(TARGETS)
 	$(CC) $(CFLAGS) -o $(APPNAME) $(TARGETS) $(LDFLAGS)
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $<
 
-run: all
-	$(MPI) -np 4 $(APPNAME)
+test: build
+	$(MPI) -np 2 $(APPNAME)
 
-utest: all 
-	./$(APPNAME) -u
-
-vtest: all
-	./$(APPNAME) -v
+utest: build 
+	$(MPI) -np 2 $(APPNAME) -u
 
 .PHONY: clean
 clean:
