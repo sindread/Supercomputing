@@ -71,6 +71,19 @@ void slave_task(int &rank, int &numberOfProcesses){
 	MPI_Send(&piPart, 1, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD);
 }
 
+void length_of_work(int* lengthForRank, const int &n, const int &numberOfProcesses){
+	int length = n / (numberOfProcesses-1);
+	int rest = n % (numberOfProcesses-1);
+	
+	for(int i = 0; i < numberOfProcesses-1; i++){
+		lengthForRank[i] = length;
+
+		if(i < rest){
+			lengthForRank[i]++;
+		}
+	}
+}
+
 void vi_parts(const int& n, double* vi5, double* vi239)
 {
 	const auto x1 = double(1)/5;

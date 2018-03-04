@@ -7,6 +7,6 @@ const int TAG_VPARTS = 1337;
 void master_init(int argc, char* argv[], int &n);
 void master_task(const int &n, const int &numberOfProcesses);
 void slave_task(int &rank, int &numberOfProcesses);
-void vi_parts(const int &n, double* vi);
 void length_of_work(int* lengthForRank, const int &n, const int &numberOfProcesses);
+void vi_parts(const int &n, double* vi);
 void sumVector(const double* vector, const int& length, double& sum);

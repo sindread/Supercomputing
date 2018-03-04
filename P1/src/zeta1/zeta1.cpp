@@ -19,7 +19,7 @@ void master_init(int argc, char* argv[], int &n){
 
 void master_task(const int &n, const int &numberOfProcesses){
 	double vi[n];
-	double piSum, piSumPpart, pi, start, end;
+	double start, end;
 
 	start = MPI_Wtime();
 
@@ -36,6 +36,7 @@ void master_task(const int &n, const int &numberOfProcesses){
 	}
 	
 	int sources = 1;
+	double piSum, piSumPpart, pi;
 	while (sources < numberOfProcesses){
 		MPI_Recv(&piSumPpart, 1, MPI_DOUBLE, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 		piSum += piSumPpart;
