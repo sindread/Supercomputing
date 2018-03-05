@@ -8,7 +8,7 @@ using namespace std;
 void master_init(int argc, char* argv[], int &n){
 	if (argc > 1){
 		string arg = argv[1];
-		else if (arg =="-n"){
+		if (arg =="-n"){
 			n = stoi(argv[2]);
 		}
 	} else {
@@ -25,7 +25,7 @@ void master_task(const int &n, const int &numberOfProcesses){
 	vi_parts(n, vi5, vi239);
 
 	int lengthForRank[numberOfProcesses];
-	length_of_work(lengthForRank, n, numberOfProcesses)
+	length_of_work(lengthForRank, n, numberOfProcesses);
 
 	int index = 0;
 	for (auto i = 1; i < numberOfProcesses; i++){
@@ -67,7 +67,6 @@ void slave_task(int &rank, int &numberOfProcesses){
 	// pi = 4 * (4 * arctan(1/5) - arctan (1/239))
 
 	double piPart = 4 * (4 * piPart5 - piPart239);
-
 	MPI_Send(&piPart, 1, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD);
 }
 

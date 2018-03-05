@@ -1,5 +1,5 @@
 APPNAME = calculatePI.out
-TARGETS = main.o zeta1.o
+TARGETS = main.o zeta1r.o
 
 CC = mpiCC
 MPI = mpirun
@@ -14,7 +14,7 @@ build: $(TARGETS)
 	$(CC) $(CFLAGS) -c $<
 
 test: build
-	$(MPI) -np 3 $(APPNAME)
+	$(MPI) -np 2 $(APPNAME)
 
 utest: build 
 	$(MPI) -np 2 $(APPNAME) -u

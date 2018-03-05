@@ -1,10 +1,12 @@
-﻿#include "zeta1.h"
+﻿#include "zeta1r.h"
 #include <cmath>
 #include <mpi.h>
 
 #define M_PI acos(-1.0)
 
 using namespace std;
+
+double sum;
 
 void master_init(int argc, char* argv[], int &n){
 	if (argc > 1){
@@ -35,15 +37,10 @@ void master_task(const int &n, const int &numberOfProcesses){
 		index += lengthForRank[i-1];
 	}
 	
-	int sources = 1;
-	double piSum, piSumPpart, pi;
-	while (sources < numberOfProcesses){
-		MPI_Recv(&piSumPpart, 1, MPI_DOUBLE, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-		piSum += piSumPpart;
-		sources++;
-	}
+	double pi;
+	MPI_Reduce(&sum, &pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
-	pi = sqrt(6*piSum);
+	pi = sqrt(6*pi);
 	end = MPI_Wtime();
 	
 	cout << "Pi is with mach1, with " << n << " iterations: Pi = " << pi <<  endl;
@@ -58,10 +55,9 @@ void slave_task(int &rank, int &numberOfProcesses){
 	double vi_parts[length];
 	MPI_Recv(&vi_parts, length, MPI_DOUBLE, 0, TAG_VPARTS, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 
-	double piPart;
-	sumVector(vi_parts, length, piPart);
+	sumVector(vi_parts, length, sum);
 
-	MPI_Send(&piPart, 1, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD);
+	MPI_Reduce(&sum, NULL, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 }
 
 void vi_parts(const int &n, double* vi)
