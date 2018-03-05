@@ -35,7 +35,7 @@ string verification_test(const int maxk)
 
 int main(int argc, char* argv[])
 {
-	auto n = 100;
+	auto n = 3;
 	auto argument_number = 1;
 
 	cout.precision(numeric_limits<double>::digits10 + 2);
@@ -58,5 +58,6 @@ int main(int argc, char* argv[])
 			cout << verification_test(24);
 		}
 	}
+
 	return 0;
 }

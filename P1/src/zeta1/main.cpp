@@ -32,7 +32,7 @@ int main(int argc, char* argv[])
 	}
 
 	if (rank == 0){
-		int n = 4;
+		int n = 3;
 		master_task(n, numberOfProcesses);
 			
 	} else {

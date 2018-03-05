@@ -18,7 +18,7 @@ void master_init(int argc, char* argv[], int &n){
 
 void master_task(const int &n, const int &numberOfProcesses){
 	double vi5[n], vi239[n];
-	double piSum, piSumPpart, pi, start, end;
+	double start, end;
 
 	start = MPI_Wtime();
 
@@ -26,23 +26,13 @@ void master_task(const int &n, const int &numberOfProcesses){
 
 	int lengthForRank[numberOfProcesses];
 	length_of_work(lengthForRank, n, numberOfProcesses);
-
-	int index = 0;
-	for (auto i = 1; i < numberOfProcesses; i++){
-		MPI_Send(&lengthForRank[i-1], 1, MPI_INT, i, TAG_LENGTH, MPI_COMM_WORLD);
-		MPI_Send(&vi5[index], lengthForRank[i-1], MPI_DOUBLE, i, TAG_VPARTS_5, MPI_COMM_WORLD);
-		MPI_Send(&vi239[index], lengthForRank[i-1], MPI_DOUBLE, i, TAG_VPARTS_239, MPI_COMM_WORLD);
-		index += lengthForRank[i-1];
-	}
 	
-	int sources = 1;
-	while (sources < numberOfProcesses){
-		MPI_Recv(&piSumPpart, 1, MPI_DOUBLE, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-		piSum += piSumPpart;
-		sources++;
-	}
-
-	pi = piSum;
+	MPI_Bcast(&lengthForRank, numberOfProcesses-1, MPI_INT, 0, MPI_COMM_WORLD);
+	MPI_Bcast(&vi5, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+	MPI_Bcast(&vi239, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+	
+	double piSum, pi;
+	MPI_Reduce(&piSum, &pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
 	end = MPI_Wtime();
 
@@ -52,22 +42,30 @@ void master_task(const int &n, const int &numberOfProcesses){
 }
 
 void slave_task(int &rank, int &numberOfProcesses){
-	int length;
-	MPI_Recv(&length, 1, MPI_INT, 0, TAG_LENGTH, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+	int n;
+	int slaves = numberOfProcesses-1;
+	int workeRank = rank -1;
+	int lengthForRank[workeRank];
 	
-	double vi_parts5[length];
-	double vi_parts239[length];
-	MPI_Recv(&vi_parts5, length, MPI_DOUBLE, 0, TAG_VPARTS_5, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-	MPI_Recv(&vi_parts239, length, MPI_DOUBLE, 0, TAG_VPARTS_239, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+	MPI_Bcast(&lengthForRank, slaves, MPI_INT, 0, MPI_COMM_WORLD);
+	sumVector(lengthForRank, slaves, n);
+
+	double vi5[n], vi239[n];
+	MPI_Bcast(&vi5, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+	MPI_Bcast(&vi239, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+
+	int length = lengthForRank[workeRank];
+	int index = 0;
+	sumVector(lengthForRank, workeRank, index);
 
 	double piPart5, piPart239;
-	sumVector(vi_parts5, length, piPart5);
-	sumVector(vi_parts239, length, piPart239);
+	sumVector(vi5, length, piPart5);
+	sumVector(vi239, length, piPart239);
 
 	// pi = 4 * (4 * arctan(1/5) - arctan (1/239))
+	double piSum = 4 * (4 * piPart5 - piPart239);
 
-	double piPart = 4 * (4 * piPart5 - piPart239);
-	MPI_Send(&piPart, 1, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD);
+	MPI_Reduce(&piSum, NULL, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 }
 
 void length_of_work(int* lengthForRank, const int &n, const int &numberOfProcesses){
@@ -92,6 +90,7 @@ void vi_parts(const int& n, double* vi5, double* vi239)
 		vi5[i-1] = arctan_part(i, x1);
 		vi239[i-1] = arctan_part(i, x2);
 	}
+	
 }
 
 double arctan_part(const int& i, const double& x)
@@ -100,10 +99,16 @@ double arctan_part(const int& i, const double& x)
 	const auto part3 = (2 * i) - 1;
 	const auto part2 = pow(x, part3); 
 
-	return part1 * (part2 / part3);;
+	return part1 * (part2 / part3);
 }
 
 void sumVector(const double* vector, const int& length, double& sum){
+	for(int i = 0; i < length; i++){
+		sum += vector[i];	
+	}
+}
+
+void sumVector(const int* vector, const int& length, int& sum){
 	for(int i = 0; i < length; i++){
 		sum += vector[i];	
 	}

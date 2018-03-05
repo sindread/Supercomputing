@@ -38,10 +38,8 @@ void slave_task(int &rank, int &numberOfProcesses){
 	int workeRank = rank -1;
 	int lengthForRank[workeRank];
 	
-	MPI_Bcast(&lengthForRank, workeRank, MPI_INT, 0, MPI_COMM_WORLD);
-	
-	//MPI_Bcast(&n, 1, MPI_INT, 0, MPI_COMM_WORLD);
-	sumVector(lengthForRank, workeRank, n);
+	MPI_Bcast(&lengthForRank, slaves, MPI_INT, 0, MPI_COMM_WORLD);
+	sumVector(lengthForRank, slaves, n);
 
 	double vi[n];
 	MPI_Bcast(&vi, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
@@ -58,7 +56,7 @@ void slave_task(int &rank, int &numberOfProcesses){
 
 void vi_parts(const int &n, double* vi)
 {
-	for (int i = 1; i < n; i++)
+	for (int i = 1; i <= n; i++)
 	{
 		 vi[i-1] = 1.0 / pow(i,2);
 	}

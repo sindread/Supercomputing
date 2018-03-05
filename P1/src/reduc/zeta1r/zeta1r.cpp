@@ -15,7 +15,7 @@ void master_init(int argc, char* argv[], int &n){
 			n = stoi(argv[2]);
 		}
 	} else {
-		n = 4;
+		n = 3;
 	}
 }
 
@@ -31,13 +31,10 @@ void master_task(const int &n, const int &numberOfProcesses){
 	length_of_work(lengthForRank, n, numberOfProcesses);
 
 	MPI_Bcast(&lengthForRank, numberOfProcesses-1, MPI_INT, 0, MPI_COMM_WORLD);
-	//MPI_Bcast(&sendN, 1, MPI_INT, 0, MPI_COMM_WORLD);
-
 	MPI_Bcast(&vi, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 	
 	//Reduction and broadcast with MPI
 	double pi;
-
 	MPI_Allreduce(&sum, &pi, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
 
 	pi = sqrt(6*pi);
@@ -46,11 +43,7 @@ void master_task(const int &n, const int &numberOfProcesses){
 	double sum2;
 	globalReduce(numberOfProcesses, sum2, lengthForRank);
 
-	MPI_Barrier(MPI_COMM_WORLD);
-
 	MPI_Bcast(&sum2, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-	
-	cout << sum2 << endl;
 
 	end = MPI_Wtime();
 	
@@ -62,45 +55,38 @@ void master_task(const int &n, const int &numberOfProcesses){
 void slave_task(int &rank, int &numberOfProcesses){
 	int n;
 	int slaves = numberOfProcesses-1;
-	int workeRank = rank -1;
-	int lengthForRank[workeRank];
+	int workerRank = rank -1;
+	int lengthForRank[workerRank];
 
-	cout << 1 <<"--------"<< endl; 
-	
-	MPI_Bcast(&lengthForRank, workeRank, MPI_INT, 0, MPI_COMM_WORLD);
-	
-	//MPI_Bcast(&n, 1, MPI_INT, 0, MPI_COMM_WORLD);
-	sumVector(lengthForRank, workeRank, n);
-	cout << 2 <<"--------"<< endl; 
+	MPI_Bcast(&lengthForRank, slaves, MPI_INT, 0, MPI_COMM_WORLD);
+	sumVector(lengthForRank, slaves, n);
 
 	double vi[n];
 	MPI_Bcast(&vi, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-	cout << 3 <<"--------"<< endl; 
 
-	int length = lengthForRank[workeRank];
+	int length = lengthForRank[workerRank];
 	int index = 0;
-	sumVector(lengthForRank, workeRank, index);
+	sumVector(lengthForRank, workerRank, index);
 
 	double partSum = 0.0;
-	sumVector(&vi[index], length ,partSum);
-
-	cout << 4 <<"--------"<< partSum << " " << n  << " " <<  endl; 
+	sumVector(&vi[index], length, partSum);
 
 	//Reduction and broadcast with MPI
 	MPI_Allreduce(&partSum, &sum, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
-	cout << "Sum in slave number " << rank << ": " << sum << endl;
+	sum = sqrt(6*sum);
+	cout << "Sum in slave number " << rank << " after global reduction (MPI): " << sum << endl;
 	
 	// //Manual global reduction
-	// MPI_Send(&vi_parts, length, MPI_DOUBLE, 0, TAG_PARTSUM, MPI_COMM_WORLD);
-	// double sum2 = 0.0;
+	MPI_Send(&vi[index], length, MPI_DOUBLE, 0, TAG_PARTSUM, MPI_COMM_WORLD);
+	double sum2 = 0.0;
 
-	// MPI_Bcast(&sum2, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-	// cout << "Sum from rank " << rank << ": " << sum2 << endl;
+	MPI_Bcast(&sum2, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+	cout << "Sum in slave number " << rank << " after global reduction (manual): " << sum2 << endl;
 }
 
 void vi_parts(const int &n, double* vi)
 {
-	for (int i = 1; i < n; i++)
+	for (int i = 1; i <= n; i++)
 	{
 		 vi[i-1] = 1.0 / pow(i,2);
 	}
