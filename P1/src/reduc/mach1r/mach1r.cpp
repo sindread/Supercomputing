@@ -5,19 +5,6 @@
 
 using namespace std;
 
-double sum;
-
-void master_init(int argc, char* argv[], int &n){
-	if (argc > 1){
-		string arg = argv[1];
-		if (arg =="-n"){
-			n = stoi(argv[2]);
-		}
-	} else {
-		n = 3;
-	}
-}
-
 void master_task(const int &n, const int &numberOfProcesses){
 	double vi5[n], vi239[n];
 	double start, end;
@@ -55,8 +42,8 @@ void master_task(const int &n, const int &numberOfProcesses){
 void slave_task(int &rank, int &numberOfProcesses){
 	int n;
 	int slaves = numberOfProcesses-1;
-	int workeRank = rank -1;
-	int lengthForRank[workeRank];
+	int WorkerRank = rank -1;
+	int lengthForRank[WorkerRank];
 	
 	MPI_Bcast(&lengthForRank, slaves, MPI_INT, 0, MPI_COMM_WORLD);
 	sumVector(lengthForRank, slaves, n);
@@ -65,9 +52,9 @@ void slave_task(int &rank, int &numberOfProcesses){
 	MPI_Bcast(&vi5, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 	MPI_Bcast(&vi239, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
-	int length = lengthForRank[workeRank];
+	int length = lengthForRank[WorkerRank];
 	int index = 0;
-	sumVector(lengthForRank, workeRank, index);
+	sumVector(lengthForRank, WorkerRank, index);
 
 	double piPart5, piPart239;
 	sumVector(vi5, length, piPart5);

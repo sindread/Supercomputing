@@ -76,7 +76,8 @@ void vi_parts(const int& n, double* vi5, double* vi239)
 {
 	const auto x1 = double(1)/5;
 	const auto x2 = double(1)/239;
-
+	
+	#pragma omp parallel for reduction (+:s)
 	for (int i = 1; i <= n; i++){
 		vi5[i-1] = arctan_part(i, x1);
 		vi239[i-1] = arctan_part(i, x2);

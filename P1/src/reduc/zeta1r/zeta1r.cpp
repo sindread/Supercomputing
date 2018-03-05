@@ -6,19 +6,6 @@
 
 using namespace std;
 
-double sum;
-
-void master_init(int argc, char* argv[], int &n){
-	if (argc > 1){
-		string arg = argv[1];
-		if (arg =="-n"){
-			n = stoi(argv[2]);
-		}
-	} else {
-		n = 3;
-	}
-}
-
 void master_task(const int &n, const int &numberOfProcesses){
 	double vi[n];
 	double start, end;
@@ -34,7 +21,7 @@ void master_task(const int &n, const int &numberOfProcesses){
 	MPI_Bcast(&vi, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 	
 	//Reduction and broadcast with MPI
-	double pi;
+	double sum, pi;
 	MPI_Allreduce(&sum, &pi, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
 
 	pi = sqrt(6*pi);
@@ -72,6 +59,7 @@ void slave_task(int &rank, int &numberOfProcesses){
 	sumVector(&vi[index], length, partSum);
 
 	//Reduction and broadcast with MPI
+	double sum;
 	MPI_Allreduce(&partSum, &sum, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
 	sum = sqrt(6*sum);
 	cout << "Sum in slave number " << rank << " after global reduction (MPI): " << sum << endl;
