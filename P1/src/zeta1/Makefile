@@ -14,7 +14,7 @@ build: $(TARGETS)
 	$(CC) $(CFLAGS) -c $<
 
 test: build
-	$(MPI) -np 2 $(APPNAME)
+	$(MPI) -np 3 $(APPNAME)
 
 utest: build 
 	$(MPI) -np 2 $(APPNAME) -u

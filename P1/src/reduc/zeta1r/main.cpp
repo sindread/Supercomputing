@@ -1,4 +1,4 @@
-#include "zeta1.h"
+#include "zeta1r.h"
 #include <iostream>
 #include <mpi.h>
 

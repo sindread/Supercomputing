@@ -1,9 +1,11 @@
-﻿#include "mach1.h"
+﻿#include "mach1r.h"
 #include <cmath>
 #include <iostream>
 #include <mpi.h>
 
 using namespace std;
+
+double sum;
 
 void master_init(int argc, char* argv[], int &n){
 	if (argc > 1){
@@ -18,7 +20,7 @@ void master_init(int argc, char* argv[], int &n){
 
 void master_task(const int &n, const int &numberOfProcesses){
 	double vi5[n], vi239[n];
-	double piSum, piSumPpart, pi, start, end;
+	double start, end;
 
 	start = MPI_Wtime();
 
@@ -35,14 +37,14 @@ void master_task(const int &n, const int &numberOfProcesses){
 		index += lengthForRank[i-1];
 	}
 	
-	int sources = 1;
-	while (sources < numberOfProcesses){
-		MPI_Recv(&piSumPpart, 1, MPI_DOUBLE, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-		piSum += piSumPpart;
-		sources++;
-	}
+	//Reduction with broadcast
+	double pi;
+	MPI_Allreduce(&sum, &pi, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
 
-	pi = piSum;
+	//Manual global reduction
+	double sum2;
+	globalReduce(numberOfProcesses, sum2, lengthForRank);
+	MPI_Bcast(&sum2, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
 	end = MPI_Wtime();
 
@@ -65,9 +67,19 @@ void slave_task(int &rank, int &numberOfProcesses){
 	sumVector(vi_parts239, length, piPart239);
 
 	// pi = 4 * (4 * arctan(1/5) - arctan (1/239))
+	double partSum = 0.0;
+	partSum = 4 * (4 * piPart5 - piPart239);
 
-	double piPart = 4 * (4 * piPart5 - piPart239);
-	MPI_Send(&piPart, 1, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD);
+	//Reduction and broadcast with MPI
+	MPI_Allreduce(&partSum, &sum, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
+	cout << "Sum in slave number " << rank << " after global reduction (MPI): " << partSum << endl;
+
+	//Manual global reduction
+	MPI_Send(&vi_parts5, length, MPI_DOUBLE, 0, TAG_PARTSUM1, MPI_COMM_WORLD);
+	MPI_Send(&vi_parts239, length, MPI_DOUBLE, 0, TAG_PARTSUM2, MPI_COMM_WORLD);
+	double sum2 = 0.0;
+	MPI_Bcast(&sum2, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+	cout << "Sum in slave number " << rank << " after global reduction (manual): " << sum2 << endl;
 }
 
 void length_of_work(int* lengthForRank, const int &n, const int &numberOfProcesses){
@@ -107,4 +119,20 @@ void sumVector(const double* vector, const int& length, double& sum){
 	for(int i = 0; i < length; i++){
 		sum += vector[i];	
 	}
+}
+
+
+void globalReduce(const int &numberOfProcesses, double &sum, const int *lengthForProcesses){
+	//MPI_Allgather(&myArray, length, MPI_DOUBLE, array&, )
+	double sum1, sum2;
+	for (int i = 1; i < numberOfProcesses; i++){
+		int length = lengthForProcesses[i-1];
+		double array5[length];
+		double array239[length];
+		MPI_Recv(&array5, length, MPI_DOUBLE, i, TAG_PARTSUM1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+		MPI_Recv(&array239, length, MPI_DOUBLE, i, TAG_PARTSUM2, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+		sumVector(array5, length, sum1);
+		sumVector(array239, length, sum2);
+	}
+	sum = 4*(4*sum1 - sum2);
 }

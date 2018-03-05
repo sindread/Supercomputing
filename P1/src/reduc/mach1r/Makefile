@@ -1,10 +1,10 @@
 APPNAME = calculatePI.out
-TARGETS = main.o zeta2.o
+TARGETS = main.o mach1r.o
 
-CC = g++
+CC = mpiCC
 MPI = mpirun
 RM=rm -f
-CFLAGS = -fopenmp
+CFLAGS = -Wall -g
 LDFLAGS = -O1
 
 build: $(TARGETS)
@@ -14,13 +14,10 @@ build: $(TARGETS)
 	$(CC) $(CFLAGS) -c $<
 
 test: build
-	./$(APPNAME)
+	$(MPI) -np 2 $(APPNAME)
 
 utest: build 
-	./$(APPNAME) -u
-
-vtest: build
-	./$(APPNAME) -v
+	$(MPI) -np 2 $(APPNAME) -u
 
 .PHONY: clean
 clean:
