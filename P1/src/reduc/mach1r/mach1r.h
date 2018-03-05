@@ -16,3 +16,4 @@ void vi_parts(const int& n, double* vi5, double* vi239);
 double arctan_part(const int& i, const double& x);
 void sumVector(const double* vector, const int& length, double& sum);
 void globalReduce(const int &numberOfProcesses, double &sum, const int *lengthForProcesses);
+void sumVector(const int* vector, const int& length, int& sum);

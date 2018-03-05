@@ -13,3 +13,4 @@ void length_of_work(int* lengthForRank, const int &n, const int &numberOfProcess
 void vi_parts(const int& n, double* vi5, double* vi239);
 double arctan_part(const int& i, const double& x);
 void sumVector(const double* vector, const int& length, double& sum);
+void sumVector(const int* vector, const int& length, int& sum);

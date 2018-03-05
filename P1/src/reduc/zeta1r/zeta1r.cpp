@@ -15,7 +15,7 @@ void master_init(int argc, char* argv[], int &n){
 			n = stoi(argv[2]);
 		}
 	} else {
-		n = 100000;
+		n = 3;
 	}
 }
 
@@ -30,12 +30,8 @@ void master_task(const int &n, const int &numberOfProcesses){
 	int lengthForRank[numberOfProcesses];
 	length_of_work(lengthForRank, n, numberOfProcesses);
 
-	int index = 0;
-	for (auto i = 1; i < numberOfProcesses; i++){
-		MPI_Send(&lengthForRank[i-1], 1, MPI_INT, i, TAG_LENGTH, MPI_COMM_WORLD);
-		MPI_Send(&vi[index], lengthForRank[i-1], MPI_DOUBLE, i, TAG_VPARTS, MPI_COMM_WORLD);
-		index += lengthForRank[i-1];
-	}
+	MPI_Bcast(&lengthForRank, numberOfProcesses-1, MPI_INT, 0, MPI_COMM_WORLD);
+	MPI_Bcast(&vi, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 	
 	//Reduction and broadcast with MPI
 	double pi;
@@ -46,8 +42,8 @@ void master_task(const int &n, const int &numberOfProcesses){
 	//Manual global reduction
 	double sum2;
 	globalReduce(numberOfProcesses, sum2, lengthForRank);
+
 	MPI_Bcast(&sum2, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-	cout << sum2 << endl;
 
 	end = MPI_Wtime();
 	
@@ -57,31 +53,40 @@ void master_task(const int &n, const int &numberOfProcesses){
 }
 
 void slave_task(int &rank, int &numberOfProcesses){
-	int length;
-	MPI_Recv(&length, 1, MPI_INT, 0, TAG_LENGTH, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-	
-	double vi_parts[length];
-	MPI_Recv(&vi_parts, length, MPI_DOUBLE, 0, TAG_VPARTS, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+	int n;
+	int slaves = numberOfProcesses-1;
+	int workerRank = rank -1;
+	int lengthForRank[workerRank];
+
+	MPI_Bcast(&lengthForRank, slaves, MPI_INT, 0, MPI_COMM_WORLD);
+	sumVector(lengthForRank, slaves, n);
+
+	double vi[n];
+	MPI_Bcast(&vi, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+
+	int length = lengthForRank[workerRank];
+	int index = 0;
+	sumVector(lengthForRank, workerRank, index);
 
 	double partSum = 0.0;
-	sumVector(vi_parts, length, partSum);
+	sumVector(&vi[index], length, partSum);
 
 	//Reduction and broadcast with MPI
 	MPI_Allreduce(&partSum, &sum, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
-	cout << "Sum in slave number " << rank << ": " << sum << endl;
-
-	//Manual global reduction
-	MPI_Send(&vi_parts, length, MPI_DOUBLE, 0, TAG_PARTSUM, MPI_COMM_WORLD);
-	double sum2 = 0.0;
-	MPI_Bcast(&sum2, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-	cout << "Sum from rank " << rank << ": " << sum2 << endl;
+	sum = sqrt(6*sum);
+	cout << "Sum in slave number " << rank << " after global reduction (MPI): " << sum << endl;
 	
+	// //Manual global reduction
+	MPI_Send(&vi[index], length, MPI_DOUBLE, 0, TAG_PARTSUM, MPI_COMM_WORLD);
+	double sum2 = 0.0;
 
+	MPI_Bcast(&sum2, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+	cout << "Sum in slave number " << rank << " after global reduction (manual): " << sum2 << endl;
 }
 
 void vi_parts(const int &n, double* vi)
 {
-	for (int i = 1; i < n; i++)
+	for (int i = 1; i <= n; i++)
 	{
 		 vi[i-1] = 1.0 / pow(i,2);
 	}
@@ -101,6 +106,12 @@ void length_of_work(int* lengthForRank, const int &n, const int &numberOfProcess
 }
 
 void sumVector(const double* vector, const int& length, double& sum){
+	for(int i = 0; i < length; i++){
+		sum += vector[i];	
+	}
+}
+
+void sumVector(const int* vector, const int& length, int& sum){
 	for(int i = 0; i < length; i++){
 		sum += vector[i];	
 	}
