@@ -15,7 +15,7 @@ void master_init(int argc, char* argv[], int &n){
 			n = stoi(argv[2]);
 		}
 	} else {
-		n = 100;
+		n = 100000;
 	}
 }
 
@@ -37,13 +37,21 @@ void master_task(const int &n, const int &numberOfProcesses){
 		index += lengthForRank[i-1];
 	}
 	
+	//Reduction and broadcast with MPI
 	double pi;
-	MPI_Reduce(&sum, &pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+	MPI_Allreduce(&sum, &pi, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
 
 	pi = sqrt(6*pi);
+	
+	//Manual global reduction
+	double sum2;
+	globalReduce(numberOfProcesses, sum2, lengthForRank);
+	MPI_Bcast(&sum2, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+	cout << sum2 << endl;
+
 	end = MPI_Wtime();
 	
-	cout << "Pi is with mach1, with " << n << " iterations: Pi = " << pi <<  endl;
+	cout << "Pi is with zeta1, with " << n << " iterations: Pi = " << pi <<  endl;
 	cout << "Error(PI-pi_" << n << "): E  = " << M_PI-pi <<  endl;
 	cout << "Runtime: Time = " <<  (end-start)*1000 << "ms" << endl;
 }
@@ -55,9 +63,20 @@ void slave_task(int &rank, int &numberOfProcesses){
 	double vi_parts[length];
 	MPI_Recv(&vi_parts, length, MPI_DOUBLE, 0, TAG_VPARTS, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 
-	sumVector(vi_parts, length, sum);
+	double partSum = 0.0;
+	sumVector(vi_parts, length, partSum);
 
-	MPI_Reduce(&sum, NULL, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+	//Reduction and broadcast with MPI
+	MPI_Allreduce(&partSum, &sum, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
+	cout << "Sum in slave number " << rank << ": " << sum << endl;
+
+	//Manual global reduction
+	MPI_Send(&vi_parts, length, MPI_DOUBLE, 0, TAG_PARTSUM, MPI_COMM_WORLD);
+	double sum2 = 0.0;
+	MPI_Bcast(&sum2, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+	cout << "Sum from rank " << rank << ": " << sum2 << endl;
+	
+
 }
 
 void vi_parts(const int &n, double* vi)
@@ -85,4 +104,15 @@ void sumVector(const double* vector, const int& length, double& sum){
 	for(int i = 0; i < length; i++){
 		sum += vector[i];	
 	}
+}
+
+void globalReduce(const int &numberOfProcesses, double &sum, const int *lengthForProcesses){
+	//MPI_Allgather(&myArray, length, MPI_DOUBLE, array&, )
+	for (int i = 1; i < numberOfProcesses; i++){
+		int length = lengthForProcesses[i-1];
+		double array[length];
+		MPI_Recv(&array, length, MPI_DOUBLE, i, TAG_PARTSUM, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+		sumVector(array, length, sum);
+	}
+	sum = sqrt(sum*6);
 }
