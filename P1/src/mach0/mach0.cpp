@@ -22,8 +22,7 @@ double arctan(const int& n, const double& x)
 		const auto part1 = pow(-1, i - 1);
 		const auto part3 = (2 * i) - 1;
 		const auto part2 = pow(x, part3);
-		double temp = part1 * (part2 / part3);
-		s += temp;		
+		s +=  part1 * (part2 / part3);		
 	}
 
 	return s;
