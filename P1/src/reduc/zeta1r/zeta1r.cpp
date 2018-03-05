@@ -45,7 +45,7 @@ void master_task(const int &n, const int &numberOfProcesses){
 	
 	cout << "Pi is with mach1, with " << n << " iterations: Pi = " << pi <<  endl;
 	cout << "Error(PI-pi_" << n << "): E  = " << M_PI-pi <<  endl;
-	cout << "Runtime: Time =" <<  (end-start)*1000 << "ms" << endl;
+	cout << "Runtime: Time = " <<  (end-start)*1000 << "ms" << endl;
 }
 
 void slave_task(int &rank, int &numberOfProcesses){
