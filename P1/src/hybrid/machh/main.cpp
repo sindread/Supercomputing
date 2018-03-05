@@ -1,4 +1,4 @@
-#include "mach1.h"
+#include "machh.h"
 #include <iostream>
 #include <mpi.h>
 

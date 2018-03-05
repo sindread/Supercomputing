@@ -22,8 +22,7 @@ int main(int argc, char* argv[])
 	}
 
 	if (rank == 0){
-		int n;
-		master_init(argc, argv, n);
+		int n = 3;
 		master_task(n, numberOfProcesses);
 		
 	} else {

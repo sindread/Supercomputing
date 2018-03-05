@@ -1,10 +1,10 @@
 APPNAME = calculatePI.out
-TARGETS = main.o mach2.o
+TARGETS = main.o zetah.o
 
 CC = mpiCC
 MPI = mpirun
 RM=rm -f
-CFLAGS = -fopenmp
+CFLAGS = -Wall -g
 LDFLAGS = -O1
 
 build: $(TARGETS)
@@ -14,13 +14,10 @@ build: $(TARGETS)
 	$(CC) $(CFLAGS) -c $<
 
 test: build
-	OMP_NUM_THREADS=2 $(MPI) -np 2 $(APPNAME)
+	$(MPI) -np 4 $(APPNAME)
 
 utest: build 
-	./$(APPNAME) -u
-
-vtest: build
-	./$(APPNAME) -v
+	$(MPI) -np 2 $(APPNAME) -u
 
 .PHONY: clean
 clean:

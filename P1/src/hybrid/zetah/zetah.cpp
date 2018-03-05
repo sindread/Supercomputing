@@ -1,34 +1,32 @@
-﻿#include "mach1.h"
+﻿#include "zetah.h"
 #include <cmath>
-#include <iostream>
 #include <mpi.h>
+
+#define M_PI acos(-1.0)
 
 using namespace std;
 
 void master_task(const int &n, const int &numberOfProcesses){
-	double vi5[n], vi239[n];
+	double vi[n];
 	double start, end;
 
 	start = MPI_Wtime();
 
-	vi_parts(n, vi5, vi239);
+	vi_parts(n, vi);
 
-	int lengthForRank[numberOfProcesses];
+	int lengthForRank[numberOfProcesses-1];
 	length_of_work(lengthForRank, n, numberOfProcesses);
-	
+
 	MPI_Bcast(&lengthForRank, numberOfProcesses-1, MPI_INT, 0, MPI_COMM_WORLD);
-	MPI_Bcast(&vi5, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-	MPI_Bcast(&vi239, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-	
-	double piPart5, piPart239, pi5, pi239, pi;
-	MPI_Reduce(&piPart5, &pi5, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
-	MPI_Reduce(&piPart239, &pi239, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+	//MPI_Bcast(&sendN, 1, MPI_INT, 0, MPI_COMM_WORLD);
+	MPI_Bcast(&vi, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
-	// pi = 4 * (4 * arctan(1/5) - arctan (1/239))
-	pi = 4 * (4 * pi5 - pi239);
+	double piSum, pi;
+	MPI_Reduce(&piSum, &pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
+	pi = sqrt(6*pi);
 	end = MPI_Wtime();
-
+	
 	cout << "Pi is with mach1, with " << n << " iterations: Pi = " << pi <<  endl;
 	cout << "Error(PI-pi_" << n << "): E  = " << M_PI-pi <<  endl;
 	cout << "Runtime: Time = " <<  (end-start)*1000 << "ms" << endl;
@@ -43,20 +41,26 @@ void slave_task(int &rank, int &numberOfProcesses){
 	MPI_Bcast(&lengthForRank, slaves, MPI_INT, 0, MPI_COMM_WORLD);
 	sumVector(lengthForRank, slaves, n);
 
-	double vi5[n], vi239[n];
-	MPI_Bcast(&vi5, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-	MPI_Bcast(&vi239, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-
+	double vi[n];
+	MPI_Bcast(&vi, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+	
 	int length = lengthForRank[WorkerRank];
 	int index = 0;
 	sumVector(lengthForRank, WorkerRank, index);
 
-	double piPart5, piPart239;
-	sumVector(vi5, length, piPart5);
-	sumVector(vi239, length, piPart239);
+	double piSum;
+	sumVector(&vi[index], length ,piSum);
+	
+	MPI_Reduce(&piSum, NULL, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+}
 
-	MPI_Reduce(&piPart5, NULL, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
-	MPI_Reduce(&piPart239, NULL, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+void vi_parts(const int &n, double* vi)
+{
+	#pragma omp parallel for reduction (+:s)
+	for (int i = 1; i <= n; i++)
+	{
+		 vi[i-1] = 1.0 / pow(i,2);
+	}
 }
 
 void length_of_work(int* lengthForRank, const int &n, const int &numberOfProcesses){
@@ -70,27 +74,6 @@ void length_of_work(int* lengthForRank, const int &n, const int &numberOfProcess
 			lengthForRank[i]++;
 		}
 	}
-}
-
-void vi_parts(const int& n, double* vi5, double* vi239)
-{
-	const auto x1 = double(1)/5;
-	const auto x2 = double(1)/239;
-
-	for (int i = 1; i <= n; i++){
-		vi5[i-1] = arctan_part(i, x1);
-		vi239[i-1] = arctan_part(i, x2);
-	}
-	
-}
-
-double arctan_part(const int& i, const double& x)
-{
-	const auto part1 = pow(-1, i - 1);
-	const auto part3 = (2 * i) - 1;
-	const auto part2 = pow(x, part3); 
-
-	return part1 * (part2 / part3);
 }
 
 void sumVector(const double* vector, const int& length, double& sum){

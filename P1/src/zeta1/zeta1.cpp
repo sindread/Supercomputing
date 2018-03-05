@@ -35,8 +35,8 @@ void master_task(const int &n, const int &numberOfProcesses){
 void slave_task(int &rank, int &numberOfProcesses){
 	int n;
 	int slaves = numberOfProcesses-1;
-	int workeRank = rank -1;
-	int lengthForRank[workeRank];
+	int WorkerRank = rank -1;
+	int lengthForRank[WorkerRank];
 	
 	MPI_Bcast(&lengthForRank, slaves, MPI_INT, 0, MPI_COMM_WORLD);
 	sumVector(lengthForRank, slaves, n);
@@ -44,9 +44,9 @@ void slave_task(int &rank, int &numberOfProcesses){
 	double vi[n];
 	MPI_Bcast(&vi, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 	
-	int length = lengthForRank[workeRank];
+	int length = lengthForRank[WorkerRank];
 	int index = 0;
-	sumVector(lengthForRank, workeRank, index);
+	sumVector(lengthForRank, WorkerRank, index);
 
 	double piSum;
 	sumVector(&vi[index], length ,piSum);
