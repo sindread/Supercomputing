@@ -22,22 +22,18 @@ int main(int argc, char* argv[])
 		return -1;
 	}
 
+	auto plot = false;
+
 	if (argc > 1){
 		string arg = argv[1];
 		if (arg =="-v"){
-			maxK = 24;
+			plot = true;
 		}
 	} 
 
-	// ostringstream oss;
-	// auto n = 0;
-	// for (auto k = 1; k <= maxk; k++)
-	// {
-	// 	// 	oss << calculate_pi(n)) << endl;
-	// }
-
-	if (maxK > 0){
-		for (int k = 0; k < maxK ; k++){
+	if (plot) {
+		auto maxK = 7;
+		for (int k = 1; k <= maxK ; k++){
 			if (rank == 0){
 				int n = pow(2, k);
 				master_task(n, numberOfProcesses);
@@ -48,8 +44,9 @@ int main(int argc, char* argv[])
 		}
 	} else {
 		if (rank == 0){
-			int n = 3;
-			master_task(n, numberOfProcesses);	
+			int n = 1000;
+			master_task(n, numberOfProcesses);
+				
 		} else {
 			slave_task(rank, numberOfProcesses);
 		}

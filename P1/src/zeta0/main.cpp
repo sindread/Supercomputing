@@ -1,7 +1,7 @@
 #include "zeta0.h"
 #include <cmath>
 #include <iostream>
-#include <sstream>
+#include <fstream>
 #include <limits>
 
 #define M_PI acos(-1.0)
@@ -20,17 +20,17 @@ bool unit_test()
 	return *answer_should_be == calculate_pi(3);
 }
 
-string verification_test(const int maxk)
+void verification_test(const int maxk)
 {
-	ostringstream oss;
+	ofstream write_to_file("../verification/zeta0 verification.txt");
 	auto n = 0;
+
+	write_to_file << "zeta0 verification tests " << endl;
 	for (auto k = 1; k <= maxk; k++)
 	{
 		n = pow(2, k);
-		oss << "n =" << n << ", error: M_PI - pi_n = " << abs(M_PI - calculate_pi(n)) << endl;
+		write_to_file << "n =" << n << ", error: M_PI - pi_" << n << " = " << abs(M_PI - calculate_pi(n)) << endl;
 	}
-
-	return oss.str();
 }
 
 int main(int argc, char* argv[])
@@ -54,8 +54,8 @@ int main(int argc, char* argv[])
 		}
 		else if (arg== "-v")
 		{
-			cout << fixed << "Running zeta0 verification tests: " << endl;
-			cout << verification_test(24);
+			cout << fixed << "Running zeta0 verification tests, writing to file" << endl;
+			verification_test(24);
 		}
 	}
 

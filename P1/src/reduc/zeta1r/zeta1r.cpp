@@ -21,26 +21,26 @@ void master_task(const int &n, const int &numberOfProcesses){
 	MPI_Bcast(&vi, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 	
 	//Reduction and broadcast with MPI
-	double sum, pi;
+	double sum=0, pi=0;
 	MPI_Allreduce(&sum, &pi, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
 
 	pi = sqrt(6*pi);
 	
 	//Manual global reduction
-	double sum2;
+	double sum2=0;
 	globalReduce(numberOfProcesses, sum2, lengthForRank);
 
 	MPI_Bcast(&sum2, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
 	end = MPI_Wtime();
-	
-	cout << "Pi is with zeta1, with " << n << " iterations: Pi = " << pi <<  endl;
-	cout << "Error(PI-pi_" << n << "): E  = " << M_PI-pi <<  endl;
+
+	cout << "Pi is with zeta1r, with " << n << " iterations: Pi_" << n <<" = "<< pi <<  endl;
+	cout << "Error(PI-pi_" << n << "): E  = " << abs(M_PI-pi) <<  endl;
 	cout << "Runtime: Time = " <<  (end-start)*1000 << "ms" << endl;
 }
 
 void slave_task(int &rank, int &numberOfProcesses){
-	int n;
+	int n=0;
 	int slaves = numberOfProcesses-1;
 	int workerRank = rank -1;
 	int lengthForRank[workerRank];
@@ -59,17 +59,17 @@ void slave_task(int &rank, int &numberOfProcesses){
 	sumVector(&vi[index], length, partSum);
 
 	//Reduction and broadcast with MPI
-	double sum;
+	double sum=0;
 	MPI_Allreduce(&partSum, &sum, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
 	sum = sqrt(6*sum);
-	cout << "Sum in slave number " << rank << " after global reduction (MPI): " << sum << endl;
+	cout << "Sum in slave number " << rank << " after global reduction (MPI): Pi_" << n <<" = " << sum << endl;
 	
 	// //Manual global reduction
 	MPI_Send(&vi[index], length, MPI_DOUBLE, 0, TAG_PARTSUM, MPI_COMM_WORLD);
 	double sum2 = 0.0;
 
 	MPI_Bcast(&sum2, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-	cout << "Sum in slave number " << rank << " after global reduction (manual): " << sum2 << endl;
+	cout << "Sum in slave number " << rank << " after global reduction (manual): P_" << n <<" = " <<  sum2 << endl;
 }
 
 void vi_parts(const int &n, double* vi)

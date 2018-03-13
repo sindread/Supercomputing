@@ -1,12 +1,14 @@
 #include "mach1.h"
 #include <iostream>
 #include <mpi.h>
+#include <cmath>
 
 using namespace std;
 
 int main(int argc, char* argv[])
 {
 	int numberOfProcesses, rank;
+
 
 	MPI_Init(NULL , NULL);
 	MPI_Comm_size(MPI_COMM_WORLD, &numberOfProcesses);
@@ -21,12 +23,34 @@ int main(int argc, char* argv[])
 		return -1;
 	}
 
-	if (rank == 0){
-		int n = 3;
-		master_task(n, numberOfProcesses);
-		
+	auto plot = false;
+
+	if (argc > 1){
+		string arg = argv[1];
+		if (arg =="-v"){
+			plot = true;
+		}
+	} 
+
+	if (plot) {
+		auto maxK = 7;
+		for (int k = 1; k <= maxK ; k++){
+			if (rank == 0){
+				int n = pow(2, k);
+				master_task(n, numberOfProcesses);
+					
+			} else {
+				slave_task(rank, numberOfProcesses);
+			}
+		}
 	} else {
-		slave_task(rank, numberOfProcesses);
+		if (rank == 0){
+			int n = 1000;
+			master_task(n, numberOfProcesses);
+				
+		} else {
+			slave_task(rank, numberOfProcesses);
+		}
 	}
 
 	MPI_Finalize();

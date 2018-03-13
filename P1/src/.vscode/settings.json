@@ -35,6 +35,16 @@
         "xtr1common": "cpp",
         "xutility": "cpp",
         "string_view": "cpp",
-        "array": "cpp"
+        "array": "cpp",
+        "chrono": "cpp",
+        "cctype": "cpp",
+        "clocale": "cpp",
+        "cwctype": "cpp",
+        "*.tcc": "cpp",
+        "ctime": "cpp",
+        "fstream": "cpp",
+        "optional": "cpp",
+        "ratio": "cpp",
+        "tuple": "cpp"
     }
 }

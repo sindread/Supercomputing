@@ -18,17 +18,17 @@ void master_task(const int &n, const int &numberOfProcesses){
 	length_of_work(lengthForRank, n, numberOfProcesses);
 
 	MPI_Bcast(&lengthForRank, numberOfProcesses-1, MPI_INT, 0, MPI_COMM_WORLD);
-	//MPI_Bcast(&sendN, 1, MPI_INT, 0, MPI_COMM_WORLD);
+
 	MPI_Bcast(&vi, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
-	double piSum, pi;
+	double piSum = 0, pi = 0;
 	MPI_Reduce(&piSum, &pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
 	pi = sqrt(6*pi);
 	end = MPI_Wtime();
 	
-	cout << "Pi is with mach1, with " << n << " iterations: Pi = " << pi <<  endl;
-	cout << "Error(PI-pi_" << n << "): E  = " << M_PI-pi <<  endl;
+	cout << "Pi is with zeta1, with " << n << " iterations: Pi = " << pi <<  endl;
+	cout << "Error(PI-pi_" << n << "): E  = " << abs(M_PI-pi) <<  endl;
 	cout << "Runtime: Time = " <<  (end-start)*1000 << "ms" << endl;
 }
 
@@ -38,17 +38,17 @@ void slave_task(int &rank, int &numberOfProcesses){
 	int WorkerRank = rank -1;
 	int lengthForRank[WorkerRank];
 	
-	MPI_Bcast(&lengthForRank, slaves, MPI_INT, 0, MPI_COMM_WORLD);
+	MPI_Bcast(lengthForRank, slaves, MPI_INT, 0, MPI_COMM_WORLD);
 	sumVector(lengthForRank, slaves, n);
 
 	double vi[n];
-	MPI_Bcast(&vi, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+	MPI_Bcast(vi, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 	
 	int length = lengthForRank[WorkerRank];
 	int index = 0;
 	sumVector(lengthForRank, WorkerRank, index);
 
-	double piSum;
+	double piSum=0;
 	sumVector(&vi[index], length ,piSum);
 	
 	MPI_Reduce(&piSum, NULL, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);

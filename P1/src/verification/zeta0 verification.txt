@@ -1,0 +1,25 @@
+zeta0 verification tests 
+n =2, error: M_PI - pi_2 = 0.40298
+n =4, error: M_PI - pi_4 = 0.21898
+n =8, error: M_PI - pi_8 = 0.114295
+n =16, error: M_PI - pi_16 = 0.0583996
+n =32, error: M_PI - pi_32 = 0.0295188
+n =64, error: M_PI - pi_64 = 0.0148399
+n =128, error: M_PI - pi_128 = 0.00744013
+n =256, error: M_PI - pi_256 = 0.00372513
+n =512, error: M_PI - pi_512 = 0.00186383
+n =1024, error: M_PI - pi_1024 = 0.000932232
+n =2048, error: M_PI - pi_2048 = 0.000466195
+n =4096, error: M_PI - pi_4096 = 0.000233117
+n =8192, error: M_PI - pi_8192 = 0.000116564
+n =16384, error: M_PI - pi_16384 = 5.8283e-05
+n =32768, error: M_PI - pi_32768 = 2.91418e-05
+n =65536, error: M_PI - pi_65536 = 1.4571e-05
+n =131072, error: M_PI - pi_131072 = 7.28552e-06
+n =262144, error: M_PI - pi_262144 = 3.64276e-06
+n =524288, error: M_PI - pi_524288 = 1.82138e-06
+n =1048576, error: M_PI - pi_1048576 = 9.10692e-07
+n =2097152, error: M_PI - pi_2097152 = 4.55346e-07
+n =4194304, error: M_PI - pi_4194304 = 2.27673e-07
+n =8388608, error: M_PI - pi_8388608 = 1.13837e-07
+n =16777216, error: M_PI - pi_16777216 = 5.69228e-08
