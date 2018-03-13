@@ -21,7 +21,7 @@ void master_task(const int &n, const int &numberOfProcesses){
 	//MPI_Bcast(&sendN, 1, MPI_INT, 0, MPI_COMM_WORLD);
 	MPI_Bcast(&vi, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
-	double piSum, pi;
+	double piSum = 0, pi = 0;
 	MPI_Reduce(&piSum, &pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
 	pi = sqrt(6*pi);
@@ -33,7 +33,7 @@ void master_task(const int &n, const int &numberOfProcesses){
 }
 
 void slave_task(int &rank, int &numberOfProcesses){
-	int n;
+	int n = 0;
 	int slaves = numberOfProcesses-1;
 	int WorkerRank = rank -1;
 	int lengthForRank[WorkerRank];
@@ -48,7 +48,7 @@ void slave_task(int &rank, int &numberOfProcesses){
 	int index = 0;
 	sumVector(lengthForRank, WorkerRank, index);
 
-	double piSum;
+	double piSum = 0;
 	sumVector(&vi[index], length ,piSum);
 	
 	MPI_Reduce(&piSum, NULL, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);

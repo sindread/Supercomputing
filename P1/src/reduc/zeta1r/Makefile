@@ -16,8 +16,8 @@ build: $(TARGETS)
 test: build
 	$(MPI) -np 2 $(APPNAME)
 
-utest: build 
-	$(MPI) -np 2 $(APPNAME) -u
+vtest: build 
+	$(MPI) -np 4 $(APPNAME) -v
 
 .PHONY: clean
 clean:

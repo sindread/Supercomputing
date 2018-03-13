@@ -16,9 +16,6 @@ build: $(TARGETS)
 test: build
 	./$(APPNAME)
 
-utest: build 
-	./$(APPNAME) -u
-
 vtest: build
 	./$(APPNAME) -v
 
