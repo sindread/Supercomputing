@@ -1,7 +1,7 @@
 ﻿#include "zeta1r.h"
 #include <cmath>
 #include <mpi.h>
-#include <stdio.h>
+#include <iostream>
 
 #define M_PI acos(-1.0)
 
@@ -35,9 +35,9 @@ void master_task(const int &n, const int &numberOfProcesses){
 
 	end = MPI_Wtime();
 	
-	printf("Pi is with zeta1, with ", n," iterations: Pi = ", pi );
-	printf("Error(PI-pi_" ,n ,"): E  = " ,M_PI-pi );
-	printf("Runtime: Time = " , (end-start)*1000 ,"ms" );
+	cout << "Pi is with zeta1, with " << n << " iterations: Pi = " << pi <<  endl;
+	cout << "Error(PI-pi_" << n << "): E  = " << M_PI-pi <<  endl;
+	cout << "Runtime: Time = " <<  (end-start)*1000 << "ms" << endl;
 }
 
 void slave_task(int &rank, int &numberOfProcesses){
@@ -63,14 +63,14 @@ void slave_task(int &rank, int &numberOfProcesses){
 	double sum;
 	MPI_Allreduce(&partSum, &sum, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
 	sum = sqrt(6*sum);
-	printf("Sum in slave number " ,rank ," after global reduction (MPI): " ,sum );
+	cout << "Sum in slave number " << rank << " after global reduction (MPI): " << sum << endl;
 	
 	// //Manual global reduction
 	MPI_Send(&vi[index], length, MPI_DOUBLE, 0, TAG_PARTSUM, MPI_COMM_WORLD);
 	double sum2 = 0.0;
 
 	MPI_Bcast(&sum2, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-	printf("Sum in slave number " ,rank ," after global reduction (manual): " ,sum2 );
+	cout << "Sum in slave number " << rank << " after global reduction (manual): " << sum2 << endl;
 }
 
 void vi_parts(const int &n, double* vi)
