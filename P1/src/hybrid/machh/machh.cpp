@@ -1,4 +1,4 @@
-﻿#include "mach1.h"
+﻿#include "machh.h"
 #include <cmath>
 #include <iostream>
 #include <mpi.h>
@@ -20,7 +20,7 @@ void master_task(const int &n, const int &numberOfProcesses){
 	MPI_Bcast(&vi5, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 	MPI_Bcast(&vi239, n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 	
-	double piPart5, piPart239, pi5, pi239, pi;
+	double piPart5 = 0, piPart239 = 0, pi5 = 0, pi239 = 0, pi =0;
 	MPI_Reduce(&piPart5, &pi5, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 	MPI_Reduce(&piPart239, &pi239, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
@@ -30,12 +30,12 @@ void master_task(const int &n, const int &numberOfProcesses){
 	end = MPI_Wtime();
 
 	cout << "Pi is with mach1, with " << n << " iterations: Pi = " << pi <<  endl;
-	cout << "Error(PI-pi_" << n << "): E  = " << M_PI-pi <<  endl;
+	cout << "Error(PI-pi_" << n << "): E  = " << abs(M_PI-pi) <<  endl;
 	cout << "Runtime: Time = " <<  (end-start)*1000 << "ms" << endl;
 }
 
 void slave_task(int &rank, int &numberOfProcesses){
-	int n;
+	int n = 0;
 	int slaves = numberOfProcesses-1;
 	int WorkerRank = rank -1;
 	int lengthForRank[WorkerRank];
@@ -51,9 +51,9 @@ void slave_task(int &rank, int &numberOfProcesses){
 	int index = 0;
 	sumVector(lengthForRank, WorkerRank, index);
 
-	double piPart5, piPart239;
-	sumVector(vi5, length, piPart5);
-	sumVector(vi239, length, piPart239);
+	double piPart5 = 0, piPart239 = 0;
+	sumVector(&vi5[index], length, piPart5);
+	sumVector(&vi239[index], length, piPart239);
 
 	MPI_Reduce(&piPart5, NULL, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 	MPI_Reduce(&piPart239, NULL, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
