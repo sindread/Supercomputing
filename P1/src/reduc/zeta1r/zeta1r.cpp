@@ -1,6 +1,7 @@
 ﻿#include "zeta1r.h"
 #include <cmath>
 #include <mpi.h>
+#include <iostream>
 
 #define M_PI acos(-1.0)
 
