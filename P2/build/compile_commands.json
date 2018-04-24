@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/steine/Documents/TMA4280v2018/P2/build",
+  "command": "/usr/bin/gfortran  -DHAVE_MPI=1 -DHAVE_OPENMP=1 -I/usr/include    -c /home/steine/Documents/TMA4280v2018/P2/fst.f -o CMakeFiles/common.dir/fst.f.o",
+  "file": "/home/steine/Documents/TMA4280v2018/P2/fst.f"
+},
+{
+  "directory": "/home/steine/Documents/TMA4280v2018/P2/build",
+  "command": "/usr/bin/cc  -DHAVE_MPI=1 -DHAVE_OPENMP=1  -std=c99  -fopenmp   -o CMakeFiles/poisson.dir/poisson.c.o   -c /home/steine/Documents/TMA4280v2018/P2/poisson.c",
+  "file": "/home/steine/Documents/TMA4280v2018/P2/poisson.c"
+},
+{
+  "directory": "/home/steine/Documents/TMA4280v2018/P2/build",
+  "command": "/usr/bin/gfortran  -DHAVE_MPI=1 -DHAVE_OPENMP=1 -I/usr/include    -c /home/steine/Documents/TMA4280v2018/P2/poisson.f90 -o CMakeFiles/poisson-f.dir/poisson.f90.o",
+  "file": "/home/steine/Documents/TMA4280v2018/P2/poisson.f90"
+}
+]

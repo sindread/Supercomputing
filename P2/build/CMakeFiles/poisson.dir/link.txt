@@ -1,0 +1,1 @@
+/usr/bin/cc  -std=c99  -fopenmp   CMakeFiles/poisson.dir/poisson.c.o  -o poisson -Wl,-rpath,/usr/lib64/openmpi -rdynamic libcommon.a /usr/lib64/openmpi/libmpi.so -lgfortran -lm -lquadmath -lm 

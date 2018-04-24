@@ -14,8 +14,12 @@
 #include <math.h>
 
 #define PI 3.14159265358979323846
+#define true 1
+#define false 0
+
 
 typedef double real;
+typedef int bool;
 
 // Function prototypes
 real *mk_1D_array(size_t n, bool zero);
@@ -31,6 +35,7 @@ void fstinv_(real *v, int *n, real *w, int *nn);
 
 int main(int argc, char **argv)
 {
+    printf("asdasd\n");
     if (argc < 2) {
         printf("Usage:\n");
         printf("  poisson n\n\n");
