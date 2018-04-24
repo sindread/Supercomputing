@@ -14,11 +14,8 @@
 #include <math.h>
 
 #define PI 3.14159265358979323846
-#define true 1
-#define false 0
 
 typedef double real;
-typedef int bool;
 
 // Function prototypes
 real *mk_1D_array(size_t n, bool zero);
