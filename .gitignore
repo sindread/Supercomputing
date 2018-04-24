@@ -54,6 +54,7 @@ dkms.conf
 
 #Folders
 .vs/
+.vscode/
 Debug/
 x64/
 x86/
