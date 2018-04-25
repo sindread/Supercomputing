@@ -37,13 +37,16 @@ void fstinv_(real *v, int *n, real *w, int *nn);
 
 
 //Our code
-void transpose_parallel(real **bt, real **b, size_t m, int* sendcount, int* senddis, int* recvcount, int* recvdis);
-void divide_work(size_t m, int numProcs, int rank, int* sendr, int* senddis, int* recvr, int* recvdis);
+void transpose_parallel(real **bt, real **b, size_t m);
+void divide_work(size_t m, int numProcs, int rank);
+void printMatrix(real** matrix, int size, char* c);
+void create_mpi_datatype(size_t m);
+void free_mpi_datatype();
 
 int main(int argc, char **argv)
 {
     int numProcs, rank, numThreads, startTime;
-    int* sendcount, *senddis, *recvcount, *recvdis;
+    //int* sendcount, *senddis, *recvcount, *recvdis;
 
     MPI_Init(&argc, &argv);
     MPI_Comm_size(MPI_COMM_WORLD, &numProcs);
@@ -64,10 +67,9 @@ int main(int argc, char **argv)
             return -1;
         }
         
-        printf("Running with %d processes and %d threads\n", numProcs, numThreads);
+        printf("Running with %d processes anasdasdasdd %d threads\n", numProcs, numThreads);
         startTime = MPI_Wtime();
     }
-    
     
     omp_set_dynamic(0);
     omp_set_num_threads(numThreads);
@@ -92,12 +94,6 @@ int main(int argc, char **argv)
         MPI_Finalize();
         return -1;
     }
-    sendcount = (int*) malloc(numProcs*sizeof(int));
-    recvcount = (int*) calloc(numProcs,sizeof(int));
-    senddis = (int*) malloc(numProcs*sizeof(int));
-    recvdis = (int*) calloc(numProcs,sizeof(int));
-
-    divide_work(m, numProcs, rank, sendcount, senddis, recvcount, recvdis);
 
     /*
      * Grid points are generated with constant mesh size on both x- and y-axis.
@@ -113,6 +109,7 @@ int main(int argc, char **argv)
      * defined Chapter 9. page 93 of the Lecture Notes.
      * Note that the indexing starts from zero here, thus i+1.
      */
+    
     real *diag = mk_1D_array(m, false);
     #pragma omp parallel for 
     for (size_t i = 0; i < m; i++) {
@@ -155,6 +152,12 @@ int main(int argc, char **argv)
         }
     }
 
+
+    create_mpi_datatype(m);
+
+    divide_work(m, numProcs, rank);
+    
+
     /*
      * Compute \tilde G^T = S^-1 * (S * G)^T (Chapter 9. page 101 step 1)
      * Instead of using two matrix-matrix products the Discrete Sine Transform
@@ -170,7 +173,7 @@ int main(int argc, char **argv)
         fst_(b[i], &n, z, &nn);
     }
     //transpose(bt, b, m); Need to implement transpose for parallel
-    transpose_parallel(bt, b, m, sendcount, senddis, recvcount, recvdis);
+    transpose_parallel(b, bt, m);
     #pragma omp parallel for 
     for (size_t i = 0; i < m; i++) {
         fstinv_(bt[i], &n, z, &nn);
@@ -194,7 +197,7 @@ int main(int argc, char **argv)
         fst_(bt[i], &n, z, &nn);
     }
     //transpose(b, bt, m);
-    transpose_parallel(bt, b, m, sendcount, senddis, recvcount, recvdis);
+    transpose_parallel(bt, b, m);
     
     #pragma omp parallel for 
     for (size_t i = 0; i < m; i++) {
@@ -214,8 +217,13 @@ int main(int argc, char **argv)
     }
     
     if(rank == 0){
-        printf("u_max = %e\n", u_max);    
+        printf("uu_max = %e\n", u_max);
+        //printMatrix(b, m, "U values");
     }
+
+    free_mpi_datatype();
+    MPI_Finalize();
+
     return 0;
 }
 
@@ -292,15 +300,48 @@ real **mk_2D_array(size_t n1, size_t n2, bool zero)
  * 
  */
 
-void transpose_parallel(real **bt, real **b, size_t m, int* sendcount, int* senddis, int* recvcount, int* recvdis){
-    MPI_Alltoallv(b[0], sendcount, senddis, MPI_DOUBLE, bt[0], recvcount, recvdis, MPI_DOUBLE, MPI_COMM_WORLD);
+MPI_Datatype type_matrix;
+MPI_Datatype column;
+
+void create_mpi_datatype(size_t m){//creat the custom datatypes for storing matrix as vectors, columwise.
+    //Pack the data into custom datatypes for MPI, one column at a time. 
+    //We want every process to be responsible for one row at a time. 
+    // count = m, block_length = 1 (block per element), stride = m (how far to same element column in next row)
+    /*  count = 3, block_length = 1, stride = 3. 
+        a b c
+        a b c
+        a b c
+    */
+    MPI_Type_vector(m, 1, m, MPI_DOUBLE , &column);
+    MPI_Type_commit(&column);//commit the datatype
+    //lb = 0, extend = sizeof(double)
+    MPI_Type_create_resized(column, 0, sizeof(double),&type_matrix); //duplicates the matrix datatype and changes the upper bound, lower bound and extent.
+    MPI_Type_commit(&type_matrix); //commit the datatype
+
+}
+
+void free_mpi_datatype(){ // Free the created types after use from memory from each process.
+    MPI_Type_free(&column);
+    MPI_Type_free(&type_matrix);
+}
+
+int *sendcount, *senddis, *recvcount, *recvdis;
+
+
+void transpose_parallel(real **b, real **bt, size_t m){
+    MPI_Alltoallv(b[0], sendcount, senddis, MPI_DOUBLE, bt[0], recvcount, recvdis, type_matrix, MPI_COMM_WORLD);
 }
 
 
 
-void divide_work(size_t m, int numProcs, int rank, int* sendcount, int* senddis, int* recvcount, int* recvdis){
+void divide_work(size_t m, int numProcs, int rank){
     int rows_pr_processor = m/numProcs;
     int remainder = m%numProcs;
+    
+    sendcount = (int*) malloc(numProcs*sizeof(int));
+    recvcount = (int*) calloc(numProcs,sizeof(int));
+    senddis = (int*) malloc(numProcs*sizeof(int));
+    recvdis = (int*) calloc(numProcs,sizeof(int));
 
     for(int i=0; i<numProcs; i++){
         if(m <= numProcs && i < m){
@@ -319,6 +360,18 @@ void divide_work(size_t m, int numProcs, int rank, int* sendcount, int* senddis,
 
     for(int i=0; i<numProcs; i++){
         sendcount[i]=recvcount[rank]*m;
-        senddis[i]=recvcount[rank]*m;
+        senddis[i]=recvdis[rank]*m;
+    }
+}
+
+//Printout function, to debug and figure out what the code actualy does
+void printMatrix(real** matrix, int size, char* c){
+    printf("%s ->\n",c);
+    for (size_t i = 0; i < size; i++) {
+        for (size_t j = 0; j < size; j++) {
+            printf("%f ", matrix[i][j]);
+            //u_max = u_max > b[i][j] ? u_max : b[i][j];
+        }
+    printf("\n");
     }
 }
