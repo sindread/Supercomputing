@@ -41,13 +41,16 @@ int* sendcounts;
 int* sdispls; 
 int* recvcounts; 
 int* rdispls;
-void transpose_parallel(real **bt, real **b, size_t m, int* sendcount, int* senddis, int* recvcount, int* recvdis);
+void transpose_parallel(real **bt, real **b, size_t m);
 void divide_work(size_t m, int numProcs, int rank, int* sendr, int* senddis, int* recvr, int* recvdis);
+void printMatrix(real** matrix, int size);
+void create_mpi_datatype(size_t m);
+void free_mpi_datatype();
 
 int main(int argc, char **argv)
 {
     int numProcs, rank, numThreads, startTime;
-    int* sendcount, *senddis, *recvcount, *recvdis;
+    //int* sendcount, *senddis, *recvcount, *recvdis;
 
     MPI_Init(&argc, &argv);
     MPI_Comm_size(MPI_COMM_WORLD, &numProcs);
@@ -68,10 +71,9 @@ int main(int argc, char **argv)
             return -1;
         }
         
-        printf("Running with %d processes and %d threads\n", numProcs, numThreads);
+        printf("Running with %d processes anasdasdasdd %d threads\n", numProcs, numThreads);
         startTime = MPI_Wtime();
     }
-    
     
     omp_set_dynamic(0);
     omp_set_num_threads(numThreads);
@@ -96,12 +98,6 @@ int main(int argc, char **argv)
         MPI_Finalize();
         return -1;
     }
-    sendcount = (int*) malloc(numProcs*sizeof(int));
-    recvcount = (int*) calloc(numProcs,sizeof(int));
-    senddis = (int*) malloc(numProcs*sizeof(int));
-    recvdis = (int*) calloc(numProcs,sizeof(int));
-
-    divide_work(m, numProcs, rank, sendcount, senddis, recvcount, recvdis);
 
     /*
      * Grid points are generated with constant mesh size on both x- and y-axis.
@@ -117,6 +113,7 @@ int main(int argc, char **argv)
      * defined Chapter 9. page 93 of the Lecture Notes.
      * Note that the indexing starts from zero here, thus i+1.
      */
+    
     real *diag = mk_1D_array(m, false);
     #pragma omp parallel for 
     for (size_t i = 0; i < m; i++) {
@@ -159,6 +156,12 @@ int main(int argc, char **argv)
         }
     }
 
+
+    create_mpi_datatype(m);
+
+    length_of_work(m, numProcs, rank);
+    
+
     /*
      * Compute \tilde G^T = S^-1 * (S * G)^T (Chapter 9. page 101 step 1)
      * Instead of using two matrix-matrix products the Discrete Sine Transform
@@ -174,7 +177,7 @@ int main(int argc, char **argv)
         fst_(b[i], &n, z, &nn);
     }
     //transpose(bt, b, m); Need to implement transpose for parallel
-    transpose_parallel(bt, b, m, sendcount, senddis, recvcount, recvdis);
+    transpose_parallel(b, bt, m);
     #pragma omp parallel for 
     for (size_t i = 0; i < m; i++) {
         fstinv_(bt[i], &n, z, &nn);
@@ -198,7 +201,7 @@ int main(int argc, char **argv)
         fst_(bt[i], &n, z, &nn);
     }
     //transpose(b, bt, m);
-    transpose_parallel(bt, b, m, sendcount, senddis, recvcount, recvdis);
+    transpose_parallel(bt, b, m);
     
     #pragma omp parallel for 
     for (size_t i = 0; i < m; i++) {
@@ -221,6 +224,10 @@ int main(int argc, char **argv)
         printf("u_max = %e\n", u_max);    
         printMatrix(b,m);
     }
+
+    free_mpi_datatype();
+    MPI_Finalize();
+
     return 0;
 }
 
@@ -300,8 +307,38 @@ real **mk_2D_array(size_t n1, size_t n2, bool zero)
     return ret;
 }
 
+/*
+ *
+ *  OUR CODE
+ * 
+ */
 
-void length_of_work(int m, int rank){
+MPI_Datatype mpi_vector;
+MPI_Datatype mpi_matrix;
+
+void create_mpi_datatype(size_t m){
+
+   //Creating datatype for vectors for mpi
+    MPI_Type_vector(m, 1, m, MPI_DOUBLE , &mpi_vector);
+    MPI_Type_commit(&mpi_vector);
+
+    //Using vectors as columns in matrix
+    MPI_Type_create_resized(mpi_vector, 0, sizeof(double),&mpi_matrix);
+    MPI_Type_commit(&mpi_matrix);
+
+}
+
+void free_mpi_datatype(){
+    MPI_Type_free(&mpi_vector);
+    MPI_Type_free(&mpi_matrix);
+}
+
+void transpose_parallel(real **b, real **bt, size_t m){
+    MPI_Alltoallv(b[0], sendcounts, sdispls, MPI_DOUBLE, bt[0], recvcounts, rdispls, mpi_matrix, MPI_COMM_WORLD);
+}
+
+
+void length_of_work(int m, int numProcs, int rank){
     int numProcs = 1;
 
     sendcounts = (int*) calloc(numProcs, sizeof(int));
@@ -331,7 +368,7 @@ void length_of_work(int m, int rank){
     }
 }
 
-void lengthOfWork_FourWorkersTenWorkTasks_AllResiveTheSame(int m, int rank){
+void lengthOfWork_FourWorkersTenWorkTasks_AllResiveTheSame(int m, int numProcs, int rank){
     int numProcs = 0;
     
     int* expectedSendcounts = {3*10, 3*10, 2*10, 2*10}; 
@@ -339,7 +376,7 @@ void lengthOfWork_FourWorkersTenWorkTasks_AllResiveTheSame(int m, int rank){
     int* expectedRecvcounts = {3, 3, 2, 2};
     int* expectedRdispls  = {0, 3, 6, 8};
 
-    length_of_work(m, rank);
+    length_of_work(m, numProcs, rank);
 
     print ("Verification test for processor:", rank);
     
