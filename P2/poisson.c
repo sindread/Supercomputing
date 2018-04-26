@@ -339,7 +339,6 @@ void transpose_parallel(real **b, real **bt, size_t m){
 
 
 void length_of_work(int m, int numProcs, int rank){
-    int numProcs = 1;
 
     sendcounts = (int*) calloc(numProcs, sizeof(int));
     sdispls = (int*) calloc(numProcs, sizeof(int));
@@ -358,46 +357,12 @@ void length_of_work(int m, int numProcs, int rank){
         }  
 
         if (i > 0){ 
-            rdispls[i] = rdispls[i-1] + recvcounts[i];
+            rdispls[i] = rdispls[i-1] + recvcounts[i-1];
         }
     }
 
     for (int j = 0; j<numProcs; j++){
         sendcounts[j] = recvcounts[rank]*m;
         sdispls[j] = rdispls[rank]*m; 
-    }
-}
-
-void lengthOfWork_FourWorkersTenWorkTasks_AllResiveTheSame(int m, int numProcs, int rank){
-    int numProcs = 0;
-    
-    int* expectedSendcounts = {3*10, 3*10, 2*10, 2*10}; 
-    int* expectedSdispls = {0*10, 3*10, 6*10, 8*10};
-    int* expectedRecvcounts = {3, 3, 2, 2};
-    int* expectedRdispls  = {0, 3, 6, 8};
-
-    length_of_work(m, numProcs, rank);
-
-    print ("Verification test for processor:", rank);
-    
-    for (int i = 0; i < numProcs ; i++){
-        if (!assert_equal(expectedSendcounts[rank], sendcounts[i])){
-            print("Processor", rank , ": Not expected sendcounts in length of work, expeced: ", expectedSendcounts[rank], " was ", sendcounts[i]);
-        }   
-        if (!assert_equal(expectedSdispls[rank], sdispls[i])){
-            print("Processor", rank , ": Not expected sdispls in length of work, expeced: ", expectedSdispls[rank], " was ", sdispls[i]);
-        }  
-        if (!assert_equal(expectedRecvcounts[i], recvcounts[i])){
-            print("Processor", rank , ": Not expected recvcounts in length of work, expeced: ", expectedRecvcounts[i], " was ", recvcounts[i]);
-        } 
-        if (!assert_equal(expectedRdispls[i], rdispls[i])){
-            print("Processor", rank , ": Not expected rdispls in length of work, expeced: ", expectedRdispls[i], " was ", rdispls[i]);
-        } 
-    }
-}
-
-bool assert_equal(int a, int b){
-    if (a != b){
-        return false;
     }
 }
