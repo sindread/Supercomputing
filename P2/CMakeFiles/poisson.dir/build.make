@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/manjaro/Documents/code/TMA4280v2018/P2
+CMAKE_SOURCE_DIR = /home/steine/Documents/TMA4280v2018/P2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/manjaro/Documents/code/TMA4280v2018/P2
+CMAKE_BINARY_DIR = /home/steine/Documents/TMA4280v2018/P2
 
 # Include any dependencies generated for this target.
 include CMakeFiles/poisson.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/poisson.dir/flags.make
 
 CMakeFiles/poisson.dir/main.c.o: CMakeFiles/poisson.dir/flags.make
 CMakeFiles/poisson.dir/main.c.o: main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/poisson.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/poisson.dir/main.c.o   -c /home/manjaro/Documents/code/TMA4280v2018/P2/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/steine/Documents/TMA4280v2018/P2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/poisson.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/poisson.dir/main.c.o   -c /home/steine/Documents/TMA4280v2018/P2/main.c
 
 CMakeFiles/poisson.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/poisson.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/manjaro/Documents/code/TMA4280v2018/P2/main.c > CMakeFiles/poisson.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/steine/Documents/TMA4280v2018/P2/main.c > CMakeFiles/poisson.dir/main.c.i
 
 CMakeFiles/poisson.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/poisson.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/manjaro/Documents/code/TMA4280v2018/P2/main.c -o CMakeFiles/poisson.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/steine/Documents/TMA4280v2018/P2/main.c -o CMakeFiles/poisson.dir/main.c.s
 
 CMakeFiles/poisson.dir/main.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/poisson.dir/main.c.o.provides.build: CMakeFiles/poisson.dir/main.c.o
 
 CMakeFiles/poisson.dir/poisson_test.c.o: CMakeFiles/poisson.dir/flags.make
 CMakeFiles/poisson.dir/poisson_test.c.o: poisson_test.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/poisson.dir/poisson_test.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/poisson.dir/poisson_test.c.o   -c /home/manjaro/Documents/code/TMA4280v2018/P2/poisson_test.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/steine/Documents/TMA4280v2018/P2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/poisson.dir/poisson_test.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/poisson.dir/poisson_test.c.o   -c /home/steine/Documents/TMA4280v2018/P2/poisson_test.c
 
 CMakeFiles/poisson.dir/poisson_test.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/poisson.dir/poisson_test.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/manjaro/Documents/code/TMA4280v2018/P2/poisson_test.c > CMakeFiles/poisson.dir/poisson_test.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/steine/Documents/TMA4280v2018/P2/poisson_test.c > CMakeFiles/poisson.dir/poisson_test.c.i
 
 CMakeFiles/poisson.dir/poisson_test.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/poisson.dir/poisson_test.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/manjaro/Documents/code/TMA4280v2018/P2/poisson_test.c -o CMakeFiles/poisson.dir/poisson_test.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/steine/Documents/TMA4280v2018/P2/poisson_test.c -o CMakeFiles/poisson.dir/poisson_test.c.s
 
 CMakeFiles/poisson.dir/poisson_test.c.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/poisson.dir/poisson_test.c.o.provides.build: CMakeFiles/poisson.dir/p
 
 CMakeFiles/poisson.dir/poisson.c.o: CMakeFiles/poisson.dir/flags.make
 CMakeFiles/poisson.dir/poisson.c.o: poisson.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/poisson.dir/poisson.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/poisson.dir/poisson.c.o   -c /home/manjaro/Documents/code/TMA4280v2018/P2/poisson.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/steine/Documents/TMA4280v2018/P2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/poisson.dir/poisson.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/poisson.dir/poisson.c.o   -c /home/steine/Documents/TMA4280v2018/P2/poisson.c
 
 CMakeFiles/poisson.dir/poisson.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/poisson.dir/poisson.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/manjaro/Documents/code/TMA4280v2018/P2/poisson.c > CMakeFiles/poisson.dir/poisson.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/steine/Documents/TMA4280v2018/P2/poisson.c > CMakeFiles/poisson.dir/poisson.c.i
 
 CMakeFiles/poisson.dir/poisson.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/poisson.dir/poisson.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/manjaro/Documents/code/TMA4280v2018/P2/poisson.c -o CMakeFiles/poisson.dir/poisson.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/steine/Documents/TMA4280v2018/P2/poisson.c -o CMakeFiles/poisson.dir/poisson.c.s
 
 CMakeFiles/poisson.dir/poisson.c.o.requires:
 
@@ -145,7 +145,7 @@ poisson: CMakeFiles/poisson.dir/build.make
 poisson: libcommon.a
 poisson: /usr/lib/openmpi/libmpi.so
 poisson: CMakeFiles/poisson.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable poisson"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/steine/Documents/TMA4280v2018/P2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable poisson"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/poisson.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -164,6 +164,6 @@ CMakeFiles/poisson.dir/clean:
 .PHONY : CMakeFiles/poisson.dir/clean
 
 CMakeFiles/poisson.dir/depend:
-	cd /home/manjaro/Documents/code/TMA4280v2018/P2 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/manjaro/Documents/code/TMA4280v2018/P2 /home/manjaro/Documents/code/TMA4280v2018/P2 /home/manjaro/Documents/code/TMA4280v2018/P2 /home/manjaro/Documents/code/TMA4280v2018/P2 /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/poisson.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/steine/Documents/TMA4280v2018/P2 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/steine/Documents/TMA4280v2018/P2 /home/steine/Documents/TMA4280v2018/P2 /home/steine/Documents/TMA4280v2018/P2 /home/steine/Documents/TMA4280v2018/P2 /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/poisson.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/poisson.dir/depend
 

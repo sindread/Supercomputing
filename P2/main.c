@@ -5,7 +5,7 @@
 
 int main(int argc, char **argv) {
     int numProcs, rank, numThreads, n;
-
+    double startTime = 0;
     MPI_Init(&argc, &argv);
     MPI_Comm_size(MPI_COMM_WORLD, &numProcs);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
@@ -33,6 +33,7 @@ int main(int argc, char **argv) {
     if (argc == 3){
         if(rank == 0){
             printf("Kjører program \n");
+            startTime = MPI_Wtime();
         }
 
         run_poisson(numProcs, rank, numThreads, n);
@@ -44,6 +45,10 @@ int main(int argc, char **argv) {
         //run_poisson_unit_tests(numProcs, rank, n-1);
     }
 
+    if(rank == 0){
+        double endTime = MPI_Wtime() - startTime;
+        printf("Elapsed time: %f ms\n", endTime*1000);
+    }
     MPI_Finalize();
     return 0;
 }

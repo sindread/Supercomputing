@@ -1,4 +1,4 @@
-The system is: Linux - 4.14.34-1-MANJARO - x86_64
+The system is: Linux - 4.4.48-1-MANJARO - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
 Compiler: /usr/bin/cc 
 Build flags: 
@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/3.10.3/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/3.10.3/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,33 +23,33 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/3.10.3/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/3.10.3/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp
+Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_94bd8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_94bd8.dir/build.make CMakeFiles/cmTC_94bd8.dir/build
-make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_94bd8.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_94bd8.dir/testCCompiler.c.o   -c /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_94bd8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_94bd8.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_94bd8.dir/testCCompiler.c.o  -o cmTC_94bd8 
-make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_aabe4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_aabe4.dir/build.make CMakeFiles/cmTC_aabe4.dir/build
+make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_aabe4.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_aabe4.dir/testCCompiler.c.o   -c /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_aabe4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aabe4.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_aabe4.dir/testCCompiler.c.o  -o cmTC_aabe4 
+make[1]: Leaving directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp
+Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ad366/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ad366.dir/build.make CMakeFiles/cmTC_ad366.dir/build
-make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_ad366.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_ad366.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_ad366
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ad366.dir/link.txt --verbose=1
-/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_ad366.dir/CMakeCCompilerABI.c.o  -o cmTC_ad366 
+Run Build Command:"/usr/bin/make" "cmTC_0a215/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0a215.dir/build.make CMakeFiles/cmTC_0a215.dir/build
+make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0a215.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_0a215.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_0a215
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0a215.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_0a215.dir/CMakeCCompilerABI.c.o  -o cmTC_0a215 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper
@@ -59,24 +59,24 @@ Thread model: posix
 gcc version 7.3.1 20180312 (GCC) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ad366' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc0wfeoa.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_ad366 /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_ad366.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ad366' '-mtune=generic' '-march=x86-64'
-make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_0a215' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccNDEr9G.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_0a215 /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_0a215.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_0a215' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_ad366/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_ad366.dir/build.make CMakeFiles/cmTC_ad366.dir/build]
-  ignore line: [make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_ad366.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_ad366.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_ad366]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ad366.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_ad366.dir/CMakeCCompilerABI.c.o  -o cmTC_ad366 ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_0a215/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_0a215.dir/build.make CMakeFiles/cmTC_0a215.dir/build]
+  ignore line: [make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_0a215.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_0a215.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_0a215]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0a215.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_0a215.dir/CMakeCCompilerABI.c.o  -o cmTC_0a215 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper]
@@ -86,13 +86,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 7.3.1 20180312 (GCC) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ad366' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc0wfeoa.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_ad366 /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_ad366.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_0a215' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccNDEr9G.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_0a215 /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_0a215.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o]
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cc0wfeoa.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccNDEr9G.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -108,7 +108,7 @@ Parsed C implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-pie] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_ad366] ==> ignore
+    arg [cmTC_0a215] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o] ==> ignore
@@ -117,7 +117,7 @@ Parsed C implicit link information from above output:
     arg [-L/lib/../lib] ==> dir [/lib/../lib]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../..]
-    arg [CMakeFiles/cmTC_ad366.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_0a215.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -142,17 +142,17 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp
+Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_95c42/fast"
-/usr/bin/make -f CMakeFiles/cmTC_95c42.dir/build.make CMakeFiles/cmTC_95c42.dir/build
-make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_95c42.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_95c42.dir/feature_tests.c.o   -c /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/feature_tests.c
-Linking C executable cmTC_95c42
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_95c42.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_95c42.dir/feature_tests.c.o  -o cmTC_95c42 
-make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_196a1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_196a1.dir/build.make CMakeFiles/cmTC_196a1.dir/build
+make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_196a1.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_196a1.dir/feature_tests.c.o   -c /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/feature_tests.c
+Linking C executable cmTC_196a1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_196a1.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_196a1.dir/feature_tests.c.o  -o cmTC_196a1 
+make[1]: Leaving directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -162,17 +162,17 @@ make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFi
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp
+Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_6ddc1/fast"
-/usr/bin/make -f CMakeFiles/cmTC_6ddc1.dir/build.make CMakeFiles/cmTC_6ddc1.dir/build
-make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_6ddc1.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_6ddc1.dir/feature_tests.c.o   -c /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/feature_tests.c
-Linking C executable cmTC_6ddc1
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6ddc1.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_6ddc1.dir/feature_tests.c.o  -o cmTC_6ddc1 
-make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_466f0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_466f0.dir/build.make CMakeFiles/cmTC_466f0.dir/build
+make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_466f0.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_466f0.dir/feature_tests.c.o   -c /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/feature_tests.c
+Linking C executable cmTC_466f0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_466f0.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_466f0.dir/feature_tests.c.o  -o cmTC_466f0 
+make[1]: Leaving directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -182,17 +182,17 @@ make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFi
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp
+Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_575f1/fast"
-/usr/bin/make -f CMakeFiles/cmTC_575f1.dir/build.make CMakeFiles/cmTC_575f1.dir/build
-make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_575f1.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_575f1.dir/feature_tests.c.o   -c /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/feature_tests.c
-Linking C executable cmTC_575f1
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_575f1.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_575f1.dir/feature_tests.c.o  -o cmTC_575f1 
-make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_874fc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_874fc.dir/build.make CMakeFiles/cmTC_874fc.dir/build
+make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_874fc.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_874fc.dir/feature_tests.c.o   -c /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/feature_tests.c
+Linking C executable cmTC_874fc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_874fc.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_874fc.dir/feature_tests.c.o  -o cmTC_874fc 
+make[1]: Leaving directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -200,30 +200,30 @@ make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFi
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp
+Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3cfa4/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3cfa4.dir/build.make CMakeFiles/cmTC_3cfa4.dir/build
-make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_3cfa4.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_3cfa4.dir/testCXXCompiler.cxx.o -c /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_3cfa4
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3cfa4.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_3cfa4.dir/testCXXCompiler.cxx.o  -o cmTC_3cfa4 
-make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_77215/fast"
+/usr/bin/make -f CMakeFiles/cmTC_77215.dir/build.make CMakeFiles/cmTC_77215.dir/build
+make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_77215.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_77215.dir/testCXXCompiler.cxx.o -c /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_77215
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_77215.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_77215.dir/testCXXCompiler.cxx.o  -o cmTC_77215 
+make[1]: Leaving directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp
+Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_25f51/fast"
-/usr/bin/make -f CMakeFiles/cmTC_25f51.dir/build.make CMakeFiles/cmTC_25f51.dir/build
-make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_25f51.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_25f51.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_25f51
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_25f51.dir/link.txt --verbose=1
-/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_25f51.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_25f51 
+Run Build Command:"/usr/bin/make" "cmTC_462fe/fast"
+/usr/bin/make -f CMakeFiles/cmTC_462fe.dir/build.make CMakeFiles/cmTC_462fe.dir/build
+make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_462fe.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_462fe.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_462fe
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_462fe.dir/link.txt --verbose=1
+/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_462fe.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_462fe 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper
@@ -233,24 +233,24 @@ Thread model: posix
 gcc version 7.3.1 20180312 (GCC) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_25f51' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cclRHTqO.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_25f51 /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_25f51.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_25f51' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_462fe' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJw3cOV.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_462fe /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_462fe.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_462fe' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_25f51/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_25f51.dir/build.make CMakeFiles/cmTC_25f51.dir/build]
-  ignore line: [make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_25f51.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_25f51.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_25f51]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_25f51.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_25f51.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_25f51 ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_462fe/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_462fe.dir/build.make CMakeFiles/cmTC_462fe.dir/build]
+  ignore line: [make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_462fe.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_462fe.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_462fe]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_462fe.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_462fe.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_462fe ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper]
@@ -260,13 +260,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 7.3.1 20180312 (GCC) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_25f51' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cclRHTqO.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_25f51 /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_25f51.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_462fe' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJw3cOV.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_462fe /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_462fe.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o]
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cclRHTqO.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccJw3cOV.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -282,7 +282,7 @@ Parsed CXX implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-pie] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_25f51] ==> ignore
+    arg [cmTC_462fe] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o] ==> ignore
@@ -291,7 +291,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/lib/../lib] ==> dir [/lib/../lib]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../..]
-    arg [CMakeFiles/cmTC_25f51.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_462fe.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -314,17 +314,17 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
-Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp
+Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_0de90/fast"
-/usr/bin/make -f CMakeFiles/cmTC_0de90.dir/build.make CMakeFiles/cmTC_0de90.dir/build
-make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_0de90.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_0de90.dir/feature_tests.cxx.o -c /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_0de90
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0de90.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_0de90.dir/feature_tests.cxx.o  -o cmTC_0de90 
-make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_b7cc0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b7cc0.dir/build.make CMakeFiles/cmTC_b7cc0.dir/build
+make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b7cc0.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_b7cc0.dir/feature_tests.cxx.o -c /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_b7cc0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b7cc0.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_b7cc0.dir/feature_tests.cxx.o  -o cmTC_b7cc0 
+make[1]: Leaving directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -387,17 +387,17 @@ make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFi
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp
+Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_639ba/fast"
-/usr/bin/make -f CMakeFiles/cmTC_639ba.dir/build.make CMakeFiles/cmTC_639ba.dir/build
-make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_639ba.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_639ba.dir/feature_tests.cxx.o -c /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_639ba
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_639ba.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_639ba.dir/feature_tests.cxx.o  -o cmTC_639ba 
-make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_2658b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2658b.dir/build.make CMakeFiles/cmTC_2658b.dir/build
+make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_2658b.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_2658b.dir/feature_tests.cxx.o -c /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_2658b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2658b.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_2658b.dir/feature_tests.cxx.o  -o cmTC_2658b 
+make[1]: Leaving directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -460,17 +460,17 @@ make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFi
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp
+Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3a4d5/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3a4d5.dir/build.make CMakeFiles/cmTC_3a4d5.dir/build
-make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_3a4d5.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_3a4d5.dir/feature_tests.cxx.o -c /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_3a4d5
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3a4d5.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_3a4d5.dir/feature_tests.cxx.o  -o cmTC_3a4d5 
-make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_5a096/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5a096.dir/build.make CMakeFiles/cmTC_5a096.dir/build
+make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5a096.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_5a096.dir/feature_tests.cxx.o -c /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_5a096
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5a096.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_5a096.dir/feature_tests.cxx.o  -o cmTC_5a096 
+make[1]: Leaving directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -533,17 +533,17 @@ make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFi
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp
+Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_7584f/fast"
-/usr/bin/make -f CMakeFiles/cmTC_7584f.dir/build.make CMakeFiles/cmTC_7584f.dir/build
-make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_7584f.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_7584f.dir/feature_tests.cxx.o -c /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_7584f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7584f.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_7584f.dir/feature_tests.cxx.o  -o cmTC_7584f 
-make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_6575b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6575b.dir/build.make CMakeFiles/cmTC_6575b.dir/build
+make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_6575b.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_6575b.dir/feature_tests.cxx.o -c /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_6575b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6575b.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_6575b.dir/feature_tests.cxx.o  -o cmTC_6575b 
+make[1]: Leaving directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -619,7 +619,7 @@ Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --
 Thread model: posix
 gcc version 7.3.1 20180312 (GCC) 
 COLLECT_GCC_OPTIONS='-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/f951 CMakeFortranCompilerId.F -ffixed-form -cpp=/tmp/ccLRq7Op.f90 -quiet -v CMakeFortranCompilerId.F -quiet -dumpbase CMakeFortranCompilerId.F -mtune=generic -march=x86-64 -auxbase CMakeFortranCompilerId -version -fintrinsic-modules-path /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/finclude -o /tmp/ccwiUwAj.s
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/f951 CMakeFortranCompilerId.F -ffixed-form -cpp=/tmp/ccyTIIzx.f90 -quiet -v CMakeFortranCompilerId.F -quiet -dumpbase CMakeFortranCompilerId.F -mtune=generic -march=x86-64 -auxbase CMakeFortranCompilerId -version -fintrinsic-modules-path /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/finclude -o /tmp/cc8Orruf.s
 GNU Fortran (GCC) version 7.3.1 20180312 (x86_64-pc-linux-gnu)
 	compiled by GNU C version 7.3.1 20180312, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
 
@@ -638,7 +638,7 @@ GNU Fortran2008 (GCC) version 7.3.1 20180312 (x86_64-pc-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 COLLECT_GCC_OPTIONS='-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- as -v --64 -o /tmp/ccZdsXpd.o /tmp/ccwiUwAj.s
+ as -v --64 -o /tmp/ccEJhfsX.o /tmp/cc8Orruf.s
 GNU assembler version 2.29.1 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.29.1
 Reading specs from /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/libgfortran.spec
 rename spec lib to liborig
@@ -646,40 +646,40 @@ COLLECT_GCC_OPTIONS='-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
 COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/
 COLLECT_GCC_OPTIONS='-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccSJQOg7.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lquadmath -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. /tmp/ccZdsXpd.o -lgfortran -lm -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccKRHTqF.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lquadmath -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. /tmp/ccEJhfsX.o -lgfortran -lm -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o
 COLLECT_GCC_OPTIONS='-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
 
 
 Compilation of the Fortran compiler identification source "CMakeFortranCompilerId.F" produced "a.out"
 
-The Fortran compiler identification is GNU, found in "/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/3.10.3/CompilerIdFortran/a.out"
+The Fortran compiler identification is GNU, found in "/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/3.10.3/CompilerIdFortran/a.out"
 
 Determining if the Fortran compiler works passed with the following output:
-Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp
+Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_b5cbe/fast"
-/usr/bin/make -f CMakeFiles/cmTC_b5cbe.dir/build.make CMakeFiles/cmTC_b5cbe.dir/build
-make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
-Building Fortran object CMakeFiles/cmTC_b5cbe.dir/testFortranCompiler.f.o
-/usr/bin/gfortran    -c /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp/testFortranCompiler.f -o CMakeFiles/cmTC_b5cbe.dir/testFortranCompiler.f.o
-Linking Fortran executable cmTC_b5cbe
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b5cbe.dir/link.txt --verbose=1
-/usr/bin/gfortran      CMakeFiles/cmTC_b5cbe.dir/testFortranCompiler.f.o  -o cmTC_b5cbe 
-make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_71b07/fast"
+/usr/bin/make -f CMakeFiles/cmTC_71b07.dir/build.make CMakeFiles/cmTC_71b07.dir/build
+make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Building Fortran object CMakeFiles/cmTC_71b07.dir/testFortranCompiler.f.o
+/usr/bin/gfortran    -c /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp/testFortranCompiler.f -o CMakeFiles/cmTC_71b07.dir/testFortranCompiler.f.o
+Linking Fortran executable cmTC_71b07
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_71b07.dir/link.txt --verbose=1
+/usr/bin/gfortran      CMakeFiles/cmTC_71b07.dir/testFortranCompiler.f.o  -o cmTC_71b07 
+make[1]: Leaving directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
 
 
 Detecting Fortran compiler ABI info compiled with the following output:
-Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp
+Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_fa984/fast"
-/usr/bin/make -f CMakeFiles/cmTC_fa984.dir/build.make CMakeFiles/cmTC_fa984.dir/build
-make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
-Building Fortran object CMakeFiles/cmTC_fa984.dir/CMakeFortranCompilerABI.F.o
-/usr/bin/gfortran    -c /usr/share/cmake-3.10/Modules/CMakeFortranCompilerABI.F -o CMakeFiles/cmTC_fa984.dir/CMakeFortranCompilerABI.F.o
-Linking Fortran executable cmTC_fa984
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fa984.dir/link.txt --verbose=1
-/usr/bin/gfortran   -v   CMakeFiles/cmTC_fa984.dir/CMakeFortranCompilerABI.F.o  -o cmTC_fa984 
-Driving: /usr/bin/gfortran -v CMakeFiles/cmTC_fa984.dir/CMakeFortranCompilerABI.F.o -o cmTC_fa984 -l gfortran -l m -shared-libgcc
+Run Build Command:"/usr/bin/make" "cmTC_cd97f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cd97f.dir/build.make CMakeFiles/cmTC_cd97f.dir/build
+make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Building Fortran object CMakeFiles/cmTC_cd97f.dir/CMakeFortranCompilerABI.F.o
+/usr/bin/gfortran    -c /usr/share/cmake-3.10/Modules/CMakeFortranCompilerABI.F -o CMakeFiles/cmTC_cd97f.dir/CMakeFortranCompilerABI.F.o
+Linking Fortran executable cmTC_cd97f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cd97f.dir/link.txt --verbose=1
+/usr/bin/gfortran   -v   CMakeFiles/cmTC_cd97f.dir/CMakeFortranCompilerABI.F.o  -o cmTC_cd97f 
+Driving: /usr/bin/gfortran -v CMakeFiles/cmTC_cd97f.dir/CMakeFortranCompilerABI.F.o -o cmTC_cd97f -l gfortran -l m -shared-libgcc
 Using built-in specs.
 COLLECT_GCC=/usr/bin/gfortran
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper
@@ -689,28 +689,28 @@ Thread model: posix
 gcc version 7.3.1 20180312 (GCC) 
 Reading specs from /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/libgfortran.spec
 rename spec lib to liborig
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fa984' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cd97f' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
 COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fa984' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccXj7B1M.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lquadmath -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_fa984 /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_fa984.dir/CMakeFortranCompilerABI.F.o -lgfortran -lm -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fa984' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cd97f' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccKPaTnJ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lquadmath -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_cd97f /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_cd97f.dir/CMakeFortranCompilerABI.F.o -lgfortran -lm -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cd97f' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
 
 
 Parsed Fortran implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_fa984/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_fa984.dir/build.make CMakeFiles/cmTC_fa984.dir/build]
-  ignore line: [make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp']
-  ignore line: [Building Fortran object CMakeFiles/cmTC_fa984.dir/CMakeFortranCompilerABI.F.o]
-  ignore line: [/usr/bin/gfortran    -c /usr/share/cmake-3.10/Modules/CMakeFortranCompilerABI.F -o CMakeFiles/cmTC_fa984.dir/CMakeFortranCompilerABI.F.o]
-  ignore line: [Linking Fortran executable cmTC_fa984]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fa984.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/gfortran   -v   CMakeFiles/cmTC_fa984.dir/CMakeFortranCompilerABI.F.o  -o cmTC_fa984 ]
-  ignore line: [Driving: /usr/bin/gfortran -v CMakeFiles/cmTC_fa984.dir/CMakeFortranCompilerABI.F.o -o cmTC_fa984 -l gfortran -l m -shared-libgcc]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_cd97f/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_cd97f.dir/build.make CMakeFiles/cmTC_cd97f.dir/build]
+  ignore line: [make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp']
+  ignore line: [Building Fortran object CMakeFiles/cmTC_cd97f.dir/CMakeFortranCompilerABI.F.o]
+  ignore line: [/usr/bin/gfortran    -c /usr/share/cmake-3.10/Modules/CMakeFortranCompilerABI.F -o CMakeFiles/cmTC_cd97f.dir/CMakeFortranCompilerABI.F.o]
+  ignore line: [Linking Fortran executable cmTC_cd97f]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cd97f.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/gfortran   -v   CMakeFiles/cmTC_cd97f.dir/CMakeFortranCompilerABI.F.o  -o cmTC_cd97f ]
+  ignore line: [Driving: /usr/bin/gfortran -v CMakeFiles/cmTC_cd97f.dir/CMakeFortranCompilerABI.F.o -o cmTC_cd97f -l gfortran -l m -shared-libgcc]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/gfortran]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper]
@@ -720,16 +720,16 @@ Parsed Fortran implicit link information from above output:
   ignore line: [gcc version 7.3.1 20180312 (GCC) ]
   ignore line: [Reading specs from /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/libgfortran.spec]
   ignore line: [rename spec lib to liborig]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fa984' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cd97f' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fa984' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccXj7B1M.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lquadmath -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_fa984 /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_fa984.dir/CMakeFortranCompilerABI.F.o -lgfortran -lm -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cd97f' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccKPaTnJ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lquadmath -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_cd97f /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_cd97f.dir/CMakeFortranCompilerABI.F.o -lgfortran -lm -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o]
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccXj7B1M.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccKPaTnJ.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lquadmath] ==> ignore
@@ -748,7 +748,7 @@ Parsed Fortran implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-pie] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_fa984] ==> ignore
+    arg [cmTC_cd97f] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o] ==> ignore
@@ -757,7 +757,7 @@ Parsed Fortran implicit link information from above output:
     arg [-L/lib/../lib] ==> dir [/lib/../lib]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../..]
-    arg [CMakeFiles/cmTC_fa984.dir/CMakeFortranCompilerABI.F.o] ==> ignore
+    arg [CMakeFiles/cmTC_cd97f.dir/CMakeFortranCompilerABI.F.o] ==> ignore
     arg [-lgfortran] ==> lib [gfortran]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -782,35 +782,35 @@ Parsed Fortran implicit link information from above output:
 
 
 Determining if the Fortran compiler supports Fortran 90 passed with the following output:
-Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp
+Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_6339e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_6339e.dir/build.make CMakeFiles/cmTC_6339e.dir/build
-make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
-Building Fortran object CMakeFiles/cmTC_6339e.dir/testFortranCompilerF90.f90.o
-/usr/bin/gfortran    -c /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp/testFortranCompilerF90.f90 -o CMakeFiles/cmTC_6339e.dir/testFortranCompilerF90.f90.o
-Linking Fortran executable cmTC_6339e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6339e.dir/link.txt --verbose=1
-/usr/bin/gfortran      CMakeFiles/cmTC_6339e.dir/testFortranCompilerF90.f90.o  -o cmTC_6339e 
-make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_229f7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_229f7.dir/build.make CMakeFiles/cmTC_229f7.dir/build
+make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Building Fortran object CMakeFiles/cmTC_229f7.dir/testFortranCompilerF90.f90.o
+/usr/bin/gfortran    -c /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp/testFortranCompilerF90.f90 -o CMakeFiles/cmTC_229f7.dir/testFortranCompilerF90.f90.o
+Linking Fortran executable cmTC_229f7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_229f7.dir/link.txt --verbose=1
+/usr/bin/gfortran      CMakeFiles/cmTC_229f7.dir/testFortranCompilerF90.f90.o  -o cmTC_229f7 
+make[1]: Leaving directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
 
 
 Detecting C OpenMP compiler ABI info compiled with the following output:
-Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp
+Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_68ac9/fast"
-/usr/bin/make -f CMakeFiles/cmTC_68ac9.dir/build.make CMakeFiles/cmTC_68ac9.dir/build
-make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_68ac9.dir/OpenMPTryFlag.c.o
-/usr/bin/cc   -fopenmp -v   -o CMakeFiles/cmTC_68ac9.dir/OpenMPTryFlag.c.o   -c /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.c
+Run Build Command:"/usr/bin/make" "cmTC_91f56/fast"
+/usr/bin/make -f CMakeFiles/cmTC_91f56.dir/build.make CMakeFiles/cmTC_91f56.dir/build
+make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_91f56.dir/OpenMPTryFlag.c.o
+/usr/bin/cc   -fopenmp -v   -o CMakeFiles/cmTC_91f56.dir/OpenMPTryFlag.c.o   -c /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.c
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 Target: x86_64-pc-linux-gnu
 Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,c++,ada,fortran,go,lto,objc,obj-c++ --enable-shared --enable-threads=posix --enable-libmpx --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp
 Thread model: posix
 gcc version 7.3.1 20180312 (GCC) 
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_68ac9.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread'
- /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/cc1 -quiet -v -D_REENTRANT /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.c -quiet -dumpbase OpenMPTryFlag.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_68ac9.dir/OpenMPTryFlag.c.o -version -fopenmp -o /tmp/cc1GsHXi.s
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_91f56.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/cc1 -quiet -v -D_REENTRANT /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.c -quiet -dumpbase OpenMPTryFlag.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_91f56.dir/OpenMPTryFlag.c.o -version -fopenmp -o /tmp/ccMNOF7l.s
 GNU C11 (GCC) version 7.3.1 20180312 (x86_64-pc-linux-gnu)
 	compiled by GNU C version 7.3.1 20180312, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
 
@@ -828,15 +828,15 @@ GNU C11 (GCC) version 7.3.1 20180312 (x86_64-pc-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 121f9f727d11ead0d09a68222241b5b1
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_68ac9.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread'
- as -v --64 -o CMakeFiles/cmTC_68ac9.dir/OpenMPTryFlag.c.o /tmp/cc1GsHXi.s
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_91f56.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread'
+ as -v --64 -o CMakeFiles/cmTC_91f56.dir/OpenMPTryFlag.c.o /tmp/ccMNOF7l.s
 GNU assembler version 2.29.1 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.29.1
 COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_68ac9.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread'
-Linking C executable cmTC_68ac9
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_68ac9.dir/link.txt --verbose=1
-/usr/bin/cc  -fopenmp -v    -rdynamic CMakeFiles/cmTC_68ac9.dir/OpenMPTryFlag.c.o  -o cmTC_68ac9 -v 
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_91f56.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread'
+Linking C executable cmTC_91f56
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_91f56.dir/link.txt --verbose=1
+/usr/bin/cc  -fopenmp -v    -rdynamic CMakeFiles/cmTC_91f56.dir/OpenMPTryFlag.c.o  -o cmTC_91f56 -v 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper
@@ -847,29 +847,29 @@ gcc version 7.3.1 20180312 (GCC)
 COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/
 Reading specs from /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/libgomp.spec
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-rdynamic' '-o' 'cmTC_68ac9' '-v' '-mtune=generic' '-march=x86-64' '-pthread'
- /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCKrBAj.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_68ac9 /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_68ac9.dir/OpenMPTryFlag.c.o -lgomp -lgcc --as-needed -lgcc_s --no-as-needed -lpthread -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-rdynamic' '-o' 'cmTC_68ac9' '-v' '-mtune=generic' '-march=x86-64' '-pthread'
-make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-rdynamic' '-o' 'cmTC_91f56' '-v' '-mtune=generic' '-march=x86-64' '-pthread'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvr7Xsq.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_91f56 /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_91f56.dir/OpenMPTryFlag.c.o -lgomp -lgcc --as-needed -lgcc_s --no-as-needed -lpthread -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-rdynamic' '-o' 'cmTC_91f56' '-v' '-mtune=generic' '-march=x86-64' '-pthread'
+make[1]: Leaving directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
 
 
 Parsed C OpenMP implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_68ac9/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_68ac9.dir/build.make CMakeFiles/cmTC_68ac9.dir/build]
-  ignore line: [make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_68ac9.dir/OpenMPTryFlag.c.o]
-  ignore line: [/usr/bin/cc   -fopenmp -v   -o CMakeFiles/cmTC_68ac9.dir/OpenMPTryFlag.c.o   -c /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.c]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_91f56/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_91f56.dir/build.make CMakeFiles/cmTC_91f56.dir/build]
+  ignore line: [make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_91f56.dir/OpenMPTryFlag.c.o]
+  ignore line: [/usr/bin/cc   -fopenmp -v   -o CMakeFiles/cmTC_91f56.dir/OpenMPTryFlag.c.o   -c /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.c]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [Target: x86_64-pc-linux-gnu]
   ignore line: [Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,c++,ada,fortran,go,lto,objc,obj-c++ --enable-shared --enable-threads=posix --enable-libmpx --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 7.3.1 20180312 (GCC) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_68ac9.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread']
-  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/cc1 -quiet -v -D_REENTRANT /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.c -quiet -dumpbase OpenMPTryFlag.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_68ac9.dir/OpenMPTryFlag.c.o -version -fopenmp -o /tmp/cc1GsHXi.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_91f56.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread']
+  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/cc1 -quiet -v -D_REENTRANT /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.c -quiet -dumpbase OpenMPTryFlag.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_91f56.dir/OpenMPTryFlag.c.o -version -fopenmp -o /tmp/ccMNOF7l.s]
   ignore line: [GNU C11 (GCC) version 7.3.1 20180312 (x86_64-pc-linux-gnu)]
   ignore line: [	compiled by GNU C version 7.3.1 20180312, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP]
   ignore line: []
@@ -887,15 +887,15 @@ Parsed C OpenMP implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 121f9f727d11ead0d09a68222241b5b1]
-  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_68ac9.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_68ac9.dir/OpenMPTryFlag.c.o /tmp/cc1GsHXi.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_91f56.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_91f56.dir/OpenMPTryFlag.c.o /tmp/ccMNOF7l.s]
   ignore line: [GNU assembler version 2.29.1 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.29.1]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_68ac9.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread']
-  ignore line: [Linking C executable cmTC_68ac9]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_68ac9.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc  -fopenmp -v    -rdynamic CMakeFiles/cmTC_68ac9.dir/OpenMPTryFlag.c.o  -o cmTC_68ac9 -v ]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_91f56.dir/OpenMPTryFlag.c.o' '-c' '-mtune=generic' '-march=x86-64' '-pthread']
+  ignore line: [Linking C executable cmTC_91f56]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_91f56.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc  -fopenmp -v    -rdynamic CMakeFiles/cmTC_91f56.dir/OpenMPTryFlag.c.o  -o cmTC_91f56 -v ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper]
@@ -906,13 +906,13 @@ Parsed C OpenMP implicit link information from above output:
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/]
   ignore line: [Reading specs from /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/libgomp.spec]
-  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-rdynamic' '-o' 'cmTC_68ac9' '-v' '-mtune=generic' '-march=x86-64' '-pthread']
-  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCKrBAj.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_68ac9 /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_68ac9.dir/OpenMPTryFlag.c.o -lgomp -lgcc --as-needed -lgcc_s --no-as-needed -lpthread -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-rdynamic' '-o' 'cmTC_91f56' '-v' '-mtune=generic' '-march=x86-64' '-pthread']
+  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvr7Xsq.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_91f56 /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_91f56.dir/OpenMPTryFlag.c.o -lgomp -lgcc --as-needed -lgcc_s --no-as-needed -lpthread -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o]
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccCKrBAj.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccvr7Xsq.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
@@ -929,7 +929,7 @@ Parsed C OpenMP implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-pie] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_68ac9] ==> ignore
+    arg [cmTC_91f56] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o] ==> ignore
@@ -938,7 +938,7 @@ Parsed C OpenMP implicit link information from above output:
     arg [-L/lib/../lib] ==> dir [/lib/../lib]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../..]
-    arg [CMakeFiles/cmTC_68ac9.dir/OpenMPTryFlag.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_91f56.dir/OpenMPTryFlag.c.o] ==> ignore
     arg [-lgomp] ==> lib [gomp]
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
@@ -963,21 +963,21 @@ Parsed C OpenMP implicit link information from above output:
 
 
 Detecting CXX OpenMP compiler ABI info compiled with the following output:
-Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp
+Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ac874/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ac874.dir/build.make CMakeFiles/cmTC_ac874.dir/build
-make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_ac874.dir/OpenMPTryFlag.cpp.o
-/usr/bin/c++    -fopenmp -v   -o CMakeFiles/cmTC_ac874.dir/OpenMPTryFlag.cpp.o -c /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp
+Run Build Command:"/usr/bin/make" "cmTC_bdaa7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bdaa7.dir/build.make CMakeFiles/cmTC_bdaa7.dir/build
+make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_bdaa7.dir/OpenMPTryFlag.cpp.o
+/usr/bin/c++    -fopenmp -v   -o CMakeFiles/cmTC_bdaa7.dir/OpenMPTryFlag.cpp.o -c /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 Target: x86_64-pc-linux-gnu
 Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,c++,ada,fortran,go,lto,objc,obj-c++ --enable-shared --enable-threads=posix --enable-libmpx --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp
 Thread model: posix
 gcc version 7.3.1 20180312 (GCC) 
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_ac874.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
- /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/cc1plus -quiet -v -D_GNU_SOURCE -D_REENTRANT /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp -quiet -dumpbase OpenMPTryFlag.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_ac874.dir/OpenMPTryFlag.cpp.o -version -fopenmp -o /tmp/cckAHEdp.s
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_bdaa7.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/cc1plus -quiet -v -D_GNU_SOURCE -D_REENTRANT /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp -quiet -dumpbase OpenMPTryFlag.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_bdaa7.dir/OpenMPTryFlag.cpp.o -version -fopenmp -o /tmp/ccph6OUq.s
 GNU C++14 (GCC) version 7.3.1 20180312 (x86_64-pc-linux-gnu)
 	compiled by GNU C version 7.3.1 20180312, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
 
@@ -998,15 +998,15 @@ GNU C++14 (GCC) version 7.3.1 20180312 (x86_64-pc-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 3fb60f63f2e4dccab1b015b716b8b627
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_ac874.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
- as -v --64 -o CMakeFiles/cmTC_ac874.dir/OpenMPTryFlag.cpp.o /tmp/cckAHEdp.s
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_bdaa7.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
+ as -v --64 -o CMakeFiles/cmTC_bdaa7.dir/OpenMPTryFlag.cpp.o /tmp/ccph6OUq.s
 GNU assembler version 2.29.1 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.29.1
 COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_ac874.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
-Linking CXX executable cmTC_ac874
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ac874.dir/link.txt --verbose=1
-/usr/bin/c++   -fopenmp -v    -rdynamic CMakeFiles/cmTC_ac874.dir/OpenMPTryFlag.cpp.o  -o cmTC_ac874 -v 
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_bdaa7.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
+Linking CXX executable cmTC_bdaa7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bdaa7.dir/link.txt --verbose=1
+/usr/bin/c++   -fopenmp -v    -rdynamic CMakeFiles/cmTC_bdaa7.dir/OpenMPTryFlag.cpp.o  -o cmTC_bdaa7 -v 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper
@@ -1017,29 +1017,29 @@ gcc version 7.3.1 20180312 (GCC)
 COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/
 Reading specs from /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/libgomp.spec
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-rdynamic' '-o' 'cmTC_ac874' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
- /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccRvylHr.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_ac874 /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_ac874.dir/OpenMPTryFlag.cpp.o -lstdc++ -lm -lgomp -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-rdynamic' '-o' 'cmTC_ac874' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
-make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-rdynamic' '-o' 'cmTC_bdaa7' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVowg1u.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_bdaa7 /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_bdaa7.dir/OpenMPTryFlag.cpp.o -lstdc++ -lm -lgomp -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-rdynamic' '-o' 'cmTC_bdaa7' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
+make[1]: Leaving directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX OpenMP implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_ac874/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_ac874.dir/build.make CMakeFiles/cmTC_ac874.dir/build]
-  ignore line: [make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_ac874.dir/OpenMPTryFlag.cpp.o]
-  ignore line: [/usr/bin/c++    -fopenmp -v   -o CMakeFiles/cmTC_ac874.dir/OpenMPTryFlag.cpp.o -c /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_bdaa7/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_bdaa7.dir/build.make CMakeFiles/cmTC_bdaa7.dir/build]
+  ignore line: [make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_bdaa7.dir/OpenMPTryFlag.cpp.o]
+  ignore line: [/usr/bin/c++    -fopenmp -v   -o CMakeFiles/cmTC_bdaa7.dir/OpenMPTryFlag.cpp.o -c /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [Target: x86_64-pc-linux-gnu]
   ignore line: [Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,c++,ada,fortran,go,lto,objc,obj-c++ --enable-shared --enable-threads=posix --enable-libmpx --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 7.3.1 20180312 (GCC) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_ac874.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread']
-  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/cc1plus -quiet -v -D_GNU_SOURCE -D_REENTRANT /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp -quiet -dumpbase OpenMPTryFlag.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_ac874.dir/OpenMPTryFlag.cpp.o -version -fopenmp -o /tmp/cckAHEdp.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_bdaa7.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread']
+  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/cc1plus -quiet -v -D_GNU_SOURCE -D_REENTRANT /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp -quiet -dumpbase OpenMPTryFlag.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_bdaa7.dir/OpenMPTryFlag.cpp.o -version -fopenmp -o /tmp/ccph6OUq.s]
   ignore line: [GNU C++14 (GCC) version 7.3.1 20180312 (x86_64-pc-linux-gnu)]
   ignore line: [	compiled by GNU C version 7.3.1 20180312, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP]
   ignore line: []
@@ -1060,15 +1060,15 @@ Parsed CXX OpenMP implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 3fb60f63f2e4dccab1b015b716b8b627]
-  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_ac874.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_ac874.dir/OpenMPTryFlag.cpp.o /tmp/cckAHEdp.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_bdaa7.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_bdaa7.dir/OpenMPTryFlag.cpp.o /tmp/ccph6OUq.s]
   ignore line: [GNU assembler version 2.29.1 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.29.1]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_ac874.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread']
-  ignore line: [Linking CXX executable cmTC_ac874]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ac874.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++   -fopenmp -v    -rdynamic CMakeFiles/cmTC_ac874.dir/OpenMPTryFlag.cpp.o  -o cmTC_ac874 -v ]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'CMakeFiles/cmTC_bdaa7.dir/OpenMPTryFlag.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread']
+  ignore line: [Linking CXX executable cmTC_bdaa7]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bdaa7.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++   -fopenmp -v    -rdynamic CMakeFiles/cmTC_bdaa7.dir/OpenMPTryFlag.cpp.o  -o cmTC_bdaa7 -v ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper]
@@ -1079,13 +1079,13 @@ Parsed CXX OpenMP implicit link information from above output:
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/]
   ignore line: [Reading specs from /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/libgomp.spec]
-  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-rdynamic' '-o' 'cmTC_ac874' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread']
-  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccRvylHr.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_ac874 /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_ac874.dir/OpenMPTryFlag.cpp.o -lstdc++ -lm -lgomp -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-rdynamic' '-o' 'cmTC_bdaa7' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread']
+  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVowg1u.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_bdaa7 /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_bdaa7.dir/OpenMPTryFlag.cpp.o -lstdc++ -lm -lgomp -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o]
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccRvylHr.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccVowg1u.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
@@ -1102,7 +1102,7 @@ Parsed CXX OpenMP implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-pie] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_ac874] ==> ignore
+    arg [cmTC_bdaa7] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o] ==> ignore
@@ -1111,7 +1111,7 @@ Parsed CXX OpenMP implicit link information from above output:
     arg [-L/lib/../lib] ==> dir [/lib/../lib]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../..]
-    arg [CMakeFiles/cmTC_ac874.dir/OpenMPTryFlag.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_bdaa7.dir/OpenMPTryFlag.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgomp] ==> lib [gomp]
@@ -1134,21 +1134,21 @@ Parsed CXX OpenMP implicit link information from above output:
 
 
 Detecting Fortran OpenMP compiler ABI info compiled with the following output:
-Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp
+Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_11d2a/fast"
-/usr/bin/make -f CMakeFiles/cmTC_11d2a.dir/build.make CMakeFiles/cmTC_11d2a.dir/build
-make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
-Building Fortran object CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o
-/usr/bin/gfortran   -fopenmp -v   -c /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.f90 -o CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o
+Run Build Command:"/usr/bin/make" "cmTC_7914f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7914f.dir/build.make CMakeFiles/cmTC_7914f.dir/build
+make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Building Fortran object CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o
+/usr/bin/gfortran   -fopenmp -v   -c /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.f90 -o CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o
 Using built-in specs.
 COLLECT_GCC=/usr/bin/gfortran
 Target: x86_64-pc-linux-gnu
 Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,c++,ada,fortran,go,lto,objc,obj-c++ --enable-shared --enable-threads=posix --enable-libmpx --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp
 Thread model: posix
 gcc version 7.3.1 20180312 (GCC) 
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread'
- /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/f951 /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.f90 -quiet -dumpbase OpenMPTryFlag.f90 -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o -version -fopenmp -fintrinsic-modules-path /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/finclude -o /tmp/ccTwCdOB.s
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/f951 /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.f90 -quiet -dumpbase OpenMPTryFlag.f90 -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o -version -fopenmp -fintrinsic-modules-path /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/finclude -o /tmp/cc6b9Bdz.s
 GNU Fortran (GCC) version 7.3.1 20180312 (x86_64-pc-linux-gnu)
 	compiled by GNU C version 7.3.1 20180312, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
 
@@ -1157,16 +1157,16 @@ GNU Fortran2008 (GCC) version 7.3.1 20180312 (x86_64-pc-linux-gnu)
 	compiled by GNU C version 7.3.1 20180312, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread'
- as -v --64 -o CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o /tmp/ccTwCdOB.s
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread'
+ as -v --64 -o CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o /tmp/cc6b9Bdz.s
 GNU assembler version 2.29.1 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.29.1
 COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread'
-Linking Fortran executable cmTC_11d2a
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_11d2a.dir/link.txt --verbose=1
-/usr/bin/gfortran     -fopenmp -v CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o  -o cmTC_11d2a -v 
-Driving: /usr/bin/gfortran -fopenmp -v CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o -o cmTC_11d2a -v -l gfortran -l m -shared-libgcc
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread'
+Linking Fortran executable cmTC_7914f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7914f.dir/link.txt --verbose=1
+/usr/bin/gfortran     -fopenmp -v CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o  -o cmTC_7914f -v 
+Driving: /usr/bin/gfortran -fopenmp -v CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o -o cmTC_7914f -v -l gfortran -l m -shared-libgcc
 Using built-in specs.
 COLLECT_GCC=/usr/bin/gfortran
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper
@@ -1176,33 +1176,33 @@ Thread model: posix
 gcc version 7.3.1 20180312 (GCC) 
 Reading specs from /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/libgfortran.spec
 rename spec lib to liborig
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_11d2a' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_7914f' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
 COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/
 Reading specs from /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/libgomp.spec
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_11d2a' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
- /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccaAm41D.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lquadmath -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_11d2a /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o -lgfortran -lm -lgomp -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_11d2a' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
-make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_7914f' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccMMLX3A.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lquadmath -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_7914f /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o -lgfortran -lm -lgomp -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_7914f' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
+make[1]: Leaving directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
 
 
 Parsed Fortran OpenMP implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_11d2a/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_11d2a.dir/build.make CMakeFiles/cmTC_11d2a.dir/build]
-  ignore line: [make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp']
-  ignore line: [Building Fortran object CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o]
-  ignore line: [/usr/bin/gfortran   -fopenmp -v   -c /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.f90 -o CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_7914f/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_7914f.dir/build.make CMakeFiles/cmTC_7914f.dir/build]
+  ignore line: [make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp']
+  ignore line: [Building Fortran object CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o]
+  ignore line: [/usr/bin/gfortran   -fopenmp -v   -c /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.f90 -o CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/gfortran]
   ignore line: [Target: x86_64-pc-linux-gnu]
   ignore line: [Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,c++,ada,fortran,go,lto,objc,obj-c++ --enable-shared --enable-threads=posix --enable-libmpx --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 7.3.1 20180312 (GCC) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread']
-  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/f951 /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.f90 -quiet -dumpbase OpenMPTryFlag.f90 -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o -version -fopenmp -fintrinsic-modules-path /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/finclude -o /tmp/ccTwCdOB.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread']
+  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/f951 /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.f90 -quiet -dumpbase OpenMPTryFlag.f90 -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o -version -fopenmp -fintrinsic-modules-path /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/finclude -o /tmp/cc6b9Bdz.s]
   ignore line: [GNU Fortran (GCC) version 7.3.1 20180312 (x86_64-pc-linux-gnu)]
   ignore line: [	compiled by GNU C version 7.3.1 20180312, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP]
   ignore line: []
@@ -1211,16 +1211,16 @@ Parsed Fortran OpenMP implicit link information from above output:
   ignore line: [	compiled by GNU C version 7.3.1 20180312, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o /tmp/ccTwCdOB.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o /tmp/cc6b9Bdz.s]
   ignore line: [GNU assembler version 2.29.1 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.29.1]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread']
-  ignore line: [Linking Fortran executable cmTC_11d2a]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_11d2a.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/gfortran     -fopenmp -v CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o  -o cmTC_11d2a -v ]
-  ignore line: [Driving: /usr/bin/gfortran -fopenmp -v CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o -o cmTC_11d2a -v -l gfortran -l m -shared-libgcc]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread']
+  ignore line: [Linking Fortran executable cmTC_7914f]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7914f.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/gfortran     -fopenmp -v CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o  -o cmTC_7914f -v ]
+  ignore line: [Driving: /usr/bin/gfortran -fopenmp -v CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o -o cmTC_7914f -v -l gfortran -l m -shared-libgcc]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/gfortran]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper]
@@ -1230,17 +1230,17 @@ Parsed Fortran OpenMP implicit link information from above output:
   ignore line: [gcc version 7.3.1 20180312 (GCC) ]
   ignore line: [Reading specs from /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/libgfortran.spec]
   ignore line: [rename spec lib to liborig]
-  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_11d2a' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread']
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_7914f' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread']
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/]
   ignore line: [Reading specs from /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/libgomp.spec]
-  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_11d2a' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread']
-  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccaAm41D.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lquadmath -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_11d2a /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o -lgfortran -lm -lgomp -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_7914f' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread']
+  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccMMLX3A.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lquadmath -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_7914f /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o -lgfortran -lm -lgomp -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o]
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccaAm41D.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccMMLX3A.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lquadmath] ==> ignore
@@ -1260,7 +1260,7 @@ Parsed Fortran OpenMP implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-pie] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_11d2a] ==> ignore
+    arg [cmTC_7914f] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o] ==> ignore
@@ -1269,7 +1269,7 @@ Parsed Fortran OpenMP implicit link information from above output:
     arg [-L/lib/../lib] ==> dir [/lib/../lib]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../..]
-    arg [CMakeFiles/cmTC_11d2a.dir/OpenMPTryFlag.f90.o] ==> ignore
+    arg [CMakeFiles/cmTC_7914f.dir/OpenMPTryFlag.f90.o] ==> ignore
     arg [-lgfortran] ==> lib [gfortran]
     arg [-lm] ==> lib [m]
     arg [-lgomp] ==> lib [gomp]
@@ -1296,21 +1296,21 @@ Parsed Fortran OpenMP implicit link information from above output:
 
 
 Detecting Fortran OpenMP compiler ABI info compiled with the following output:
-Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp
+Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a1a30/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a1a30.dir/build.make CMakeFiles/cmTC_a1a30.dir/build
-make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
-Building Fortran object CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o
-/usr/bin/gfortran   -fopenmp -v   -c /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.f90 -o CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o
+Run Build Command:"/usr/bin/make" "cmTC_8ddd4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8ddd4.dir/build.make CMakeFiles/cmTC_8ddd4.dir/build
+make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+Building Fortran object CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o
+/usr/bin/gfortran   -fopenmp -v   -c /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.f90 -o CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o
 Using built-in specs.
 COLLECT_GCC=/usr/bin/gfortran
 Target: x86_64-pc-linux-gnu
 Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,c++,ada,fortran,go,lto,objc,obj-c++ --enable-shared --enable-threads=posix --enable-libmpx --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp
 Thread model: posix
 gcc version 7.3.1 20180312 (GCC) 
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread'
- /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/f951 /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.f90 -quiet -dumpbase OpenMPTryFlag.f90 -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o -version -fopenmp -fintrinsic-modules-path /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/finclude -o /tmp/ccyJnNaI.s
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/f951 /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.f90 -quiet -dumpbase OpenMPTryFlag.f90 -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o -version -fopenmp -fintrinsic-modules-path /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/finclude -o /tmp/cc1HSSvH.s
 GNU Fortran (GCC) version 7.3.1 20180312 (x86_64-pc-linux-gnu)
 	compiled by GNU C version 7.3.1 20180312, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
 
@@ -1319,16 +1319,16 @@ GNU Fortran2008 (GCC) version 7.3.1 20180312 (x86_64-pc-linux-gnu)
 	compiled by GNU C version 7.3.1 20180312, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread'
- as -v --64 -o CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o /tmp/ccyJnNaI.s
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread'
+ as -v --64 -o CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o /tmp/cc1HSSvH.s
 GNU assembler version 2.29.1 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.29.1
 COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread'
-Linking Fortran executable cmTC_a1a30
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1a30.dir/link.txt --verbose=1
-/usr/bin/gfortran     -fopenmp -v CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o  -o cmTC_a1a30 -v 
-Driving: /usr/bin/gfortran -fopenmp -v CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o -o cmTC_a1a30 -v -l gfortran -l m -shared-libgcc
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread'
+Linking Fortran executable cmTC_8ddd4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ddd4.dir/link.txt --verbose=1
+/usr/bin/gfortran     -fopenmp -v CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o  -o cmTC_8ddd4 -v 
+Driving: /usr/bin/gfortran -fopenmp -v CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o -o cmTC_8ddd4 -v -l gfortran -l m -shared-libgcc
 Using built-in specs.
 COLLECT_GCC=/usr/bin/gfortran
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper
@@ -1338,33 +1338,33 @@ Thread model: posix
 gcc version 7.3.1 20180312 (GCC) 
 Reading specs from /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/libgfortran.spec
 rename spec lib to liborig
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_a1a30' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_8ddd4' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
 COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/
 Reading specs from /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/libgomp.spec
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_a1a30' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
- /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJtSuhK.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lquadmath -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_a1a30 /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o -lgfortran -lm -lgomp -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o
-COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_a1a30' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
-make[1]: Leaving directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_8ddd4' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccDaFk5I.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lquadmath -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_8ddd4 /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o -lgfortran -lm -lgomp -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o
+COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_8ddd4' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread'
+make[1]: Leaving directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp'
 
 
 Parsed Fortran OpenMP implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_a1a30/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_a1a30.dir/build.make CMakeFiles/cmTC_a1a30.dir/build]
-  ignore line: [make[1]: Entering directory '/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/CMakeTmp']
-  ignore line: [Building Fortran object CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o]
-  ignore line: [/usr/bin/gfortran   -fopenmp -v   -c /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.f90 -o CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_8ddd4/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_8ddd4.dir/build.make CMakeFiles/cmTC_8ddd4.dir/build]
+  ignore line: [make[1]: Entering directory '/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/CMakeTmp']
+  ignore line: [Building Fortran object CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o]
+  ignore line: [/usr/bin/gfortran   -fopenmp -v   -c /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.f90 -o CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/gfortran]
   ignore line: [Target: x86_64-pc-linux-gnu]
   ignore line: [Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,c++,ada,fortran,go,lto,objc,obj-c++ --enable-shared --enable-threads=posix --enable-libmpx --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 7.3.1 20180312 (GCC) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread']
-  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/f951 /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.f90 -quiet -dumpbase OpenMPTryFlag.f90 -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o -version -fopenmp -fintrinsic-modules-path /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/finclude -o /tmp/ccyJnNaI.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread']
+  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/f951 /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/FindOpenMP/OpenMPTryFlag.f90 -quiet -dumpbase OpenMPTryFlag.f90 -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o -version -fopenmp -fintrinsic-modules-path /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/finclude -o /tmp/cc1HSSvH.s]
   ignore line: [GNU Fortran (GCC) version 7.3.1 20180312 (x86_64-pc-linux-gnu)]
   ignore line: [	compiled by GNU C version 7.3.1 20180312, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP]
   ignore line: []
@@ -1373,16 +1373,16 @@ Parsed Fortran OpenMP implicit link information from above output:
   ignore line: [	compiled by GNU C version 7.3.1 20180312, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o /tmp/ccyJnNaI.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o /tmp/cc1HSSvH.s]
   ignore line: [GNU assembler version 2.29.1 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.29.1]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread']
-  ignore line: [Linking Fortran executable cmTC_a1a30]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1a30.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/gfortran     -fopenmp -v CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o  -o cmTC_a1a30 -v ]
-  ignore line: [Driving: /usr/bin/gfortran -fopenmp -v CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o -o cmTC_a1a30 -v -l gfortran -l m -shared-libgcc]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-c' '-o' 'CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o' '-mtune=generic' '-march=x86-64' '-pthread']
+  ignore line: [Linking Fortran executable cmTC_8ddd4]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ddd4.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/gfortran     -fopenmp -v CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o  -o cmTC_8ddd4 -v ]
+  ignore line: [Driving: /usr/bin/gfortran -fopenmp -v CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o -o cmTC_8ddd4 -v -l gfortran -l m -shared-libgcc]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/gfortran]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper]
@@ -1392,17 +1392,17 @@ Parsed Fortran OpenMP implicit link information from above output:
   ignore line: [gcc version 7.3.1 20180312 (GCC) ]
   ignore line: [Reading specs from /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/libgfortran.spec]
   ignore line: [rename spec lib to liborig]
-  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_a1a30' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread']
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_8ddd4' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread']
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../:/lib/:/usr/lib/]
   ignore line: [Reading specs from /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/libgomp.spec]
-  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_a1a30' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread']
-  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJtSuhK.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lquadmath -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_a1a30 /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o -lgfortran -lm -lgomp -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-fopenmp' '-v' '-o' 'cmTC_8ddd4' '-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-pthread']
+  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccDaFk5I.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lquadmath -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_8ddd4 /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../.. CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o -lgfortran -lm -lgomp -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crtn.o]
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccJtSuhK.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccDaFk5I.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lquadmath] ==> ignore
@@ -1422,7 +1422,7 @@ Parsed Fortran OpenMP implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-pie] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_a1a30] ==> ignore
+    arg [cmTC_8ddd4] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../../../lib/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/crtbeginS.o] ==> ignore
@@ -1431,7 +1431,7 @@ Parsed Fortran OpenMP implicit link information from above output:
     arg [-L/lib/../lib] ==> dir [/lib/../lib]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/7.3.1/../../..]
-    arg [CMakeFiles/cmTC_a1a30.dir/OpenMPTryFlag.f90.o] ==> ignore
+    arg [CMakeFiles/cmTC_8ddd4.dir/OpenMPTryFlag.f90.o] ==> ignore
     arg [-lgfortran] ==> lib [gfortran]
     arg [-lm] ==> lib [m]
     arg [-lgomp] ==> lib [gomp]

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_Fortran
-  "/home/manjaro/Documents/code/TMA4280v2018/P2/fst.f" "/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/common.dir/fst.f.o"
+  "/home/steine/Documents/TMA4280v2018/P2/fst.f" "/home/steine/Documents/TMA4280v2018/P2/CMakeFiles/common.dir/fst.f.o"
   )
 set(CMAKE_Fortran_COMPILER_ID "GNU")
 
