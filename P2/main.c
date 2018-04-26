@@ -1,27 +1,19 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
+
 #include <mpi.h>
 #include "poisson.h"
 #include "poisson_test.h"
 
-int main (int argc, char** argv){
+int main(int argc, char **argv) {
     int numProcs, rank, numThreads, n;
-    int a = 0;
-    MPI_Init(NULL, NULL);
+
+    MPI_Init(&argc, &argv);
     MPI_Comm_size(MPI_COMM_WORLD, &numProcs);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
-    if (rank = 0){
-        printf("oe galt ", argc, " og hva er n \n");
-    }
+    printf("Min rank %d \n" , rank);
     
     n = atoi(argv[1]);
     numThreads = atoi(argv[2]);
-
-    if (rank = 0){
-        printf("n er ", n);
-    }
 
     if(rank == 0){
         if (argc < 3) {
@@ -42,15 +34,16 @@ int main (int argc, char** argv){
         if(rank == 0){
             printf("Kjører program \n");
         }
-        a = run_poisson(numProcs, rank, numThreads, n);
+
+        run_poisson(numProcs, rank, numThreads, n);
     }
     else{
         if(rank == 0){
             printf("Kommer i test \n");
         }
-        run_poisson_unit_tests(numProcs, rank, n-1);
+        //run_poisson_unit_tests(numProcs, rank, n-1);
     }
 
     MPI_Finalize();
-    return a;
+    return 0;
 }

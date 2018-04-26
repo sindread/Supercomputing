@@ -9,19 +9,9 @@
  * Revised by Eivind Fonn, February 2015
  */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-#include <mpi.h>
-#include <omp.h>
 #include "poisson.h"
 
-#define PI 3.14159265358979323846
-#define true 1
-#define false 0
-
-int run_poisson(int numProcs, int rank, int numThreads, int n){
-    int *sendcounts, *sdispls, *recvcounts, *rdispls;
+void run_poisson(int numProcs, int rank, int numThreads, int n){
     /*
      *  The equation is solved on a 2D structured grid and homogeneous Dirichlet
      *  conditions are applied on the boundary:
@@ -42,7 +32,6 @@ int run_poisson(int numProcs, int rank, int numThreads, int n){
         }
 
         MPI_Finalize();
-        return -1;
     }
 
     /*
@@ -73,11 +62,6 @@ int run_poisson(int numProcs, int rank, int numThreads, int n){
     real **b = mk_2D_array(m, m, false);
     real **bt = mk_2D_array(m, m, false);
 
-    if(rank == 0){
-        printf("b og bt \n");    
-        printMatrix(b,m);
-    }
-
     /*
      * This vector will holds coefficients of the Discrete Sine Transform (DST)
      * but also of the Fast Fourier Transform used in the FORTRAN code.
@@ -107,14 +91,7 @@ int run_poisson(int numProcs, int rank, int numThreads, int n){
         }
     }
 
-    if(rank == 0){
-        printf("b utregnet \n");    
-        printMatrix(b,m);
-    }
-
-    create_mpi_datatype(m);
-
-    length_of_work(m, numProcs, rank, sendcounts, sdispls, recvcounts, rdispls);
+    length_of_work(m, numProcs, rank);
 
     /*
      * Compute \tilde G^T = S^-1 * (S * G)^T (Chapter 9. page 101 step 1)
@@ -126,31 +103,20 @@ int run_poisson(int numProcs, int rank, int numThreads, int n){
      * In functions fst_ and fst_inv_ coefficients are written back to the input 
      * array (first argument) so that the initial values are overwritten.
      */
+
     #pragma omp parallel for 
     for (size_t i = 0; i < m; i++) {
         fst_(b[i], &n, z, &nn);
     }
-    
-    if(rank == 0){
-        printf("b før t \n");    
-        printMatrix(b,m);
-    }
+
+    create_mpi_datatype(m);
 
     //transpose(bt, b, m); Need to implement transpose for parallel
-    transpose_parallel(b, bt, m,  sendcounts, sdispls, recvcounts, rdispls);
-
-    if(rank == 0){
-        printf("b etter t \n");    
-        printMatrix(b,m);
-    }
+    transpose_parallel(b, bt, m);
 
     #pragma omp parallel for 
     for (size_t i = 0; i < m; i++) {
         fstinv_(bt[i], &n, z, &nn);
-    }
-
-    if(rank == 0){
-        printf("test 0 \n");    
     }
 
     /*
@@ -175,7 +141,7 @@ int run_poisson(int numProcs, int rank, int numThreads, int n){
         fst_(bt[i], &n, z, &nn);
     }
     //transpose(b, bt, m);
-    transpose_parallel(bt, b, m, sendcounts, sdispls, recvcounts, rdispls);
+    transpose_parallel(bt, b, m);
     
     #pragma omp parallel for 
     for (size_t i = 0; i < m; i++) {
@@ -203,8 +169,6 @@ int run_poisson(int numProcs, int rank, int numThreads, int n){
     }
 
     free_mpi_datatype();
-
-    return 0;
 }
 
 /*
@@ -301,11 +265,11 @@ void free_mpi_datatype(){
     MPI_Type_free(&mpi_matrix);
 }
 
-void transpose_parallel(real **b, real **bt, size_t m, int *sendcounts, int *sdispls, int *recvcounts, int *rdispls){
+void transpose_parallel(real **b, real **bt, size_t m){
     MPI_Alltoallv(b[0], sendcounts, sdispls, MPI_DOUBLE, bt[0], recvcounts, rdispls, mpi_matrix, MPI_COMM_WORLD);
 }
 
-void length_of_work(int m, int numProcs, int rank, int* sendcounts, int* sdispls, int* recvcounts, int* rdispls){
+void length_of_work(int m, int numProcs, int rank){
     
     sendcounts = mk_1D_array_int(numProcs, false);
     sdispls = mk_1D_array_int(numProcs, false);
