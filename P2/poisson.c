@@ -16,6 +16,10 @@
 #include <omp.h>
 #include "poisson.h"
 
+#define PI 3.14159265358979323846
+#define true 1
+#define false 0
+
 int run_poisson(int numProcs, int rank, int numThreads, int n){
     int *sendcounts, *sdispls, *recvcounts, *rdispls;
     /*
@@ -25,11 +29,6 @@ int run_poisson(int numProcs, int rank, int numThreads, int n){
      *  - the number of degrees of freedom in each direction is m = n-1,
      *  - the mesh size is constant h = 1/n.
      */
-
-    if(rank == 0){
-        printf("Start \n");     
-        //printMatrix(b,m);
-    }
 
     omp_set_dynamic(0);
     omp_set_num_threads(numThreads);
@@ -113,10 +112,7 @@ int run_poisson(int numProcs, int rank, int numThreads, int n){
         printMatrix(b,m);
     }
 
-    MPI_Datatype mpi_vector;
-    MPI_Datatype mpi_matrix;
-
-    create_mpi_datatype(m, mpi_vector, mpi_matrix);
+    create_mpi_datatype(m);
 
     length_of_work(m, numProcs, rank, sendcounts, sdispls, recvcounts, rdispls);
 
@@ -141,7 +137,7 @@ int run_poisson(int numProcs, int rank, int numThreads, int n){
     }
 
     //transpose(bt, b, m); Need to implement transpose for parallel
-    transpose_parallel(b, bt, m,  sendcounts, sdispls, recvcounts, rdispls, mpi_matrix);
+    transpose_parallel(b, bt, m,  sendcounts, sdispls, recvcounts, rdispls);
 
     if(rank == 0){
         printf("b etter t \n");    
@@ -179,7 +175,7 @@ int run_poisson(int numProcs, int rank, int numThreads, int n){
         fst_(bt[i], &n, z, &nn);
     }
     //transpose(b, bt, m);
-    transpose_parallel(bt, b, m, sendcounts, sdispls, recvcounts, rdispls, mpi_matrix);
+    transpose_parallel(bt, b, m, sendcounts, sdispls, recvcounts, rdispls);
     
     #pragma omp parallel for 
     for (size_t i = 0; i < m; i++) {
@@ -206,7 +202,7 @@ int run_poisson(int numProcs, int rank, int numThreads, int n){
         printMatrix(b,m);
     }
 
-    free_mpi_datatype(mpi_vector, mpi_matrix);
+    free_mpi_datatype();
 
     return 0;
 }
@@ -287,8 +283,10 @@ real **mk_2D_array(size_t n1, size_t n2, bool zero)
  *  OUR CODE
  * 
  */
+MPI_Datatype mpi_vector;
+MPI_Datatype mpi_matrix;
 
-void create_mpi_datatype(size_t m, MPI_Datatype mpi_vector, MPI_Datatype mpi_matrix){
+void create_mpi_datatype(size_t m){
     //Creating datatype for vectors for mpi
     MPI_Type_vector(m, 1, m, MPI_DOUBLE , &mpi_vector);
     MPI_Type_commit(&mpi_vector);
@@ -298,12 +296,12 @@ void create_mpi_datatype(size_t m, MPI_Datatype mpi_vector, MPI_Datatype mpi_mat
     MPI_Type_commit(&mpi_matrix);
 }
 
-void free_mpi_datatype(MPI_Datatype mpi_vector, MPI_Datatype mpi_matrix){
+void free_mpi_datatype(){
     MPI_Type_free(&mpi_vector);
     MPI_Type_free(&mpi_matrix);
 }
 
-void transpose_parallel(real **b, real **bt, size_t m, int *sendcounts, int *sdispls, int *recvcounts, int *rdispls, MPI_Datatype mpi_matrix){
+void transpose_parallel(real **b, real **bt, size_t m, int *sendcounts, int *sdispls, int *recvcounts, int *rdispls){
     MPI_Alltoallv(b[0], sendcounts, sdispls, MPI_DOUBLE, bt[0], recvcounts, rdispls, mpi_matrix, MPI_COMM_WORLD);
 }
 
