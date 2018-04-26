@@ -1,0 +1,1 @@
+/usr/bin/mpif90    -O3 -DNDEBUG -O3 CMakeFiles/poisson-f.dir/poisson.f90.o  -o poisson-f -Wl,-rpath,/usr/lib64/openmpi  libcommon.a /usr/lib64/openmpi/libmpi_usempif08.so /usr/lib64/openmpi/libmpi_usempi_ignore_tkr.so /usr/lib64/openmpi/libmpi_mpifh.so /usr/lib64/openmpi/libmpi.so 
