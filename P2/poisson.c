@@ -17,7 +17,6 @@
 #define true 1
 #define false 0
 
-
 typedef double real;
 typedef int bool;
 
@@ -26,6 +25,7 @@ real *mk_1D_array(size_t n, bool zero);
 real **mk_2D_array(size_t n1, size_t n2, bool zero);
 void transpose(real **bt, real **b, size_t m);
 real rhs(real x, real y);
+void printMatrix(real** matrix, int length);
 
 // Functions implemented in FORTRAN in fst.f and called from C.
 // The trailing underscore comes from a convention for symbol names, called name
@@ -33,9 +33,15 @@ real rhs(real x, real y);
 void fst_(real *v, int *n, real *w, int *nn);
 void fstinv_(real *v, int *n, real *w, int *nn);
 
+
+// Our:
+int* sendcounts; 
+int* sdispls; 
+int* recvcounts; 
+int* rdispls;
+
 int main(int argc, char **argv)
 {
-    printf("asdasd\n");
     if (argc < 2) {
         printf("Usage:\n");
         printf("  poisson n\n\n");
@@ -158,7 +164,18 @@ int main(int argc, char **argv)
 
     printf("u_max = %e\n", u_max);
 
+    printMatrix(b, m);
+
     return 0;
+}
+
+void printMatrix(real** matrix, int length){
+    for(size_t i = 0; i < length; i++){
+        for(size_t j = 0; j < length; j++){
+            printf("%f ", matrix[i][j]);
+        }
+        printf("\n");
+    }
 }
 
 /*
@@ -225,4 +242,69 @@ real **mk_2D_array(size_t n1, size_t n2, bool zero)
         ret[i] = ret[i-1] + n2;
     }
     return ret;
+}
+
+
+void length_of_work(int m, int rank){
+    int numProcs = 1;
+
+    sendcounts = (int*) calloc(numProcs, sizeof(int));
+    sdispls = (int*) calloc(numProcs, sizeof(int));
+    recvcounts = (int*) calloc(numProcs, sizeof(int));
+    rdispls = (int*) calloc(numProcs, sizeof(int));
+
+    int workTasks = m/numProcs;
+    int workLeft = m%numProcs;
+
+    for (int i = 0; i < numProcs; i++){
+        recvcounts[i] = workTasks;
+        
+        if (workLeft > 0){
+            recvcounts[i]++;
+            workLeft--;
+        }  
+
+        if (i > 0){ 
+            rdispls[i] = rdispls[i-1] + recvcounts[i];
+        }
+    }
+
+    for (int j = 0; j<numProcs; j++){
+        sendcounts[j] = recvcounts[rank]*m;
+        sdispls[j] = rdispls[rank]*m; 
+    }
+}
+
+void lengthOfWork_FourWorkersTenWorkTasks_AllResiveTheSame(int m, int rank){
+    int numProcs = 0;
+    
+    int* expectedSendcounts = {3*10, 3*10, 2*10, 2*10}; 
+    int* expectedSdispls = {0*10, 3*10, 6*10, 8*10};
+    int* expectedRecvcounts = {3, 3, 2, 2};
+    int* expectedRdispls  = {0, 3, 6, 8};
+
+    length_of_work(m, rank);
+
+    print ("Verification test for processor:", rank);
+    
+    for (int i = 0; i < numProcs ; i++){
+        if (!assert_equal(expectedSendcounts[rank], sendcounts[i])){
+            print("Processor", rank , ": Not expected sendcounts in length of work, expeced: ", expectedSendcounts[rank], " was ", sendcounts[i]);
+        }   
+        if (!assert_equal(expectedSdispls[rank], sdispls[i])){
+            print("Processor", rank , ": Not expected sdispls in length of work, expeced: ", expectedSdispls[rank], " was ", sdispls[i]);
+        }  
+        if (!assert_equal(expectedRecvcounts[i], recvcounts[i])){
+            print("Processor", rank , ": Not expected recvcounts in length of work, expeced: ", expectedRecvcounts[i], " was ", recvcounts[i]);
+        } 
+        if (!assert_equal(expectedRdispls[i], rdispls[i])){
+            print("Processor", rank , ": Not expected rdispls in length of work, expeced: ", expectedRdispls[i], " was ", rdispls[i]);
+        } 
+    }
+}
+
+bool assert_equal(int a, int b){
+    if (a != b){
+        return false;
+    }
 }
