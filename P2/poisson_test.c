@@ -10,7 +10,12 @@ typedef double real;
 typedef int bool;
 
 
-void unit_transpose_parallel(real* b){
+void unit_transpose_parallel(){
     real** arr = mk_2D_array(3,3,false);
+    printMatrix(arr, 3);
+}
+
+int main(){
+    unit_transpose_parallel();
 }
 
