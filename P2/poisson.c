@@ -9,14 +9,12 @@
  * Revised by Eivind Fonn, February 2015
  */
 
-#pragma once
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 #include <mpi.h>
 #include <omp.h>
-#include <poisson.h>
+#include "poisson.h"
 
 #define PI 3.14159265358979323846
 #define true 1
@@ -25,12 +23,6 @@
 typedef double real;
 typedef int bool;
 
-// Function prototypes
-real *mk_1D_array(size_t n, bool zero);
-real **mk_2D_array(size_t n1, size_t n2, bool zero);
-void transpose(real **bt, real **b, size_t m);
-real rhs(real x, real y);
-void printMatrix(real** matrix, int length);
 
 // Functions implemented in FORTRAN in fst.f and called from C.
 // The trailing underscore comes from a convention for symbol names, called name
@@ -39,21 +31,11 @@ void fst_(real *v, int *n, real *w, int *nn);
 void fstinv_(real *v, int *n, real *w, int *nn);
 
 
-//Our code
-int* sendcounts; 
-int* sdispls; 
-int* recvcounts; 
-int* rdispls;
-void transpose_parallel(real **bt, real **b, size_t m);
-void divide_work(size_t m, int numProcs, int rank, int* sendr, int* senddis, int* recvr, int* recvdis);
-void printMatrix(real** matrix, int size);
-void create_mpi_datatype(size_t m);
-void free_mpi_datatype();
 
 int main(int argc, char **argv)
 {
     int numProcs, rank, numThreads, startTime;
-    //int* sendcount, *senddis, *recvcount, *recvdis;
+    int *sendcounts, *sdispls, *recvcounts, *rdispls;
 
     MPI_Init(&argc, &argv);
     MPI_Comm_size(MPI_COMM_WORLD, &numProcs);
@@ -162,7 +144,7 @@ int main(int argc, char **argv)
 
     create_mpi_datatype(m);
 
-    length_of_work(m, numProcs, rank);
+    length_of_work(m, numProcs, rank, sendcounts, sdispls, recvcounts, rdispls);
     
 
     /*
@@ -180,7 +162,7 @@ int main(int argc, char **argv)
         fst_(b[i], &n, z, &nn);
     }
     //transpose(bt, b, m); Need to implement transpose for parallel
-    transpose_parallel(b, bt, m);
+    transpose_parallel(b, bt, m,  sendcounts, sdispls, recvcounts, rdispls);
     #pragma omp parallel for 
     for (size_t i = 0; i < m; i++) {
         fstinv_(bt[i], &n, z, &nn);
@@ -204,7 +186,7 @@ int main(int argc, char **argv)
         fst_(bt[i], &n, z, &nn);
     }
     //transpose(b, bt, m);
-    transpose_parallel(bt, b, m);
+    transpose_parallel(bt, b, m, sendcounts, sdispls, recvcounts, rdispls);
     
     #pragma omp parallel for 
     for (size_t i = 0; i < m; i++) {
@@ -336,17 +318,17 @@ void free_mpi_datatype(){
     MPI_Type_free(&mpi_matrix);
 }
 
-void transpose_parallel(real **b, real **bt, size_t m){
+void transpose_parallel(real **b, real **bt, size_t m, int *sendcounts, int *sdispls, int *recvcounts, int *rdispls){
     MPI_Alltoallv(b[0], sendcounts, sdispls, MPI_DOUBLE, bt[0], recvcounts, rdispls, mpi_matrix, MPI_COMM_WORLD);
 }
 
 
-void length_of_work(int m, int numProcs, int rank){
-
-    sendcounts = (int*) calloc(numProcs, sizeof(int));
-    sdispls = (int*) calloc(numProcs, sizeof(int));
-    recvcounts = (int*) calloc(numProcs, sizeof(int));
-    rdispls = (int*) calloc(numProcs, sizeof(int));
+void length_of_work(int m, int numProcs, int rank, int* sendcounts, int* sdispls, int* recvcounts, int* rdispls){
+    
+    sendcounts = mk_1D_array(numProcs, false);
+    sdispls = mk_1D_array(numProcs, false);
+    recvcounts = mk_1D_array(numProcs, false);
+    rdispls = mk_1D_array(numProcs, true);
 
     int workTasks = m/numProcs;
     int workLeft = m%numProcs;
