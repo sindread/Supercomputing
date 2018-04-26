@@ -270,7 +270,6 @@ void transpose_parallel(real **b, real **bt, size_t m){
 }
 
 void length_of_work(int m, int numProcs, int rank){
-    
     sendcounts = mk_1D_array_int(numProcs, false);
     sdispls = mk_1D_array_int(numProcs, false);
     recvcounts = mk_1D_array_int(numProcs, false);

@@ -9,8 +9,6 @@ int main(int argc, char **argv) {
     MPI_Init(&argc, &argv);
     MPI_Comm_size(MPI_COMM_WORLD, &numProcs);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-
-    printf("Min rank %d \n" , rank);
     
     n = atoi(argv[1]);
     numThreads = atoi(argv[2]);
@@ -27,21 +25,35 @@ int main(int argc, char **argv) {
             return -1;
         }
         
-        printf("Running with %d processes %d threads\n", numProcs, numThreads);
+        printf("Running with %d processes %d threads:\n", numProcs, numThreads);
     }
 
     if (argc == 3){
         if(rank == 0){
-            printf("Kjører program \n");
+            printf("Running poisson \n");
         }
+        
+        MPI_Barrier(MPI_COMM_WORLD);
 
         run_poisson(numProcs, rank, numThreads, n);
     }
     else{
-        if(rank == 0){
-            printf("Kommer i test \n");
+        if (numProcs == 2) {
+            if(rank == 0 ){
+                printf("Running unit-tests: \n");
+            }
+            MPI_Barrier(MPI_COMM_WORLD);
+
+            run_poisson_unit_tests(numProcs, rank, 10);
+        } 
+        else {
+            if(rank == 0 ){
+                printf("Running unit-tests must have 2 processes, was %d \n", numProcs);
+            }
+            
+            MPI_Finalize();
+            return -1;
         }
-        //run_poisson_unit_tests(numProcs, rank, n-1);
     }
 
     MPI_Finalize();
