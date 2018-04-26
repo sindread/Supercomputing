@@ -22,7 +22,6 @@
 #define true 1
 #define false 0
 
-
 typedef double real;
 typedef int bool;
 
@@ -31,6 +30,7 @@ real *mk_1D_array(size_t n, bool zero);
 real **mk_2D_array(size_t n1, size_t n2, bool zero);
 void transpose(real **bt, real **b, size_t m);
 real rhs(real x, real y);
+void printMatrix(real** matrix, int length);
 
 // Functions implemented in FORTRAN in fst.f and called from C.
 // The trailing underscore comes from a convention for symbol names, called name
@@ -40,8 +40,12 @@ void fstinv_(real *v, int *n, real *w, int *nn);
 
 
 //Our code
+int* sendcounts; 
+int* sdispls; 
+int* recvcounts; 
+int* rdispls;
 void transpose_parallel(real **bt, real **b, size_t m);
-void divide_work(size_t m, int numProcs, int rank);
+void divide_work(size_t m, int numProcs, int rank, int* sendr, int* senddis, int* recvr, int* recvdis);
 void printMatrix(real** matrix, int size);
 void create_mpi_datatype(size_t m);
 void free_mpi_datatype();
@@ -157,7 +161,8 @@ int main(int argc, char **argv)
 
 
     create_mpi_datatype(m);
-    divide_work(m, numProcs, rank);
+
+    length_of_work(m, numProcs, rank);
     
 
     /*
@@ -174,7 +179,7 @@ int main(int argc, char **argv)
     for (size_t i = 0; i < m; i++) {
         fst_(b[i], &n, z, &nn);
     }
-    //transpose(bt, b, m); 
+    //transpose(bt, b, m); Need to implement transpose for parallel
     transpose_parallel(b, bt, m);
     #pragma omp parallel for 
     for (size_t i = 0; i < m; i++) {
@@ -219,15 +224,23 @@ int main(int argc, char **argv)
     }
     
     if(rank == 0){
-        printf("Matrix: \n");
+        printf("u_max = %e\n", u_max);    
         printMatrix(b,m);
-        printf("uu_max = %e\n", u_max);
     }
 
     free_mpi_datatype();
     MPI_Finalize();
 
     return 0;
+}
+
+void printMatrix(real** matrix, int length){
+    for(size_t i = 0; i < length; i++){
+        for(size_t j = 0; j < length; j++){
+            printf("%f ", matrix[i][j]);
+        }
+        printf("\n");
+    }
 }
 
 /*
@@ -323,70 +336,36 @@ void free_mpi_datatype(){
     MPI_Type_free(&mpi_matrix);
 }
 
-int *sendcount, *senddis, *recvcount, *recvdis;
-
-
 void transpose_parallel(real **b, real **bt, size_t m){
-    MPI_Alltoallv(b[0], sendcount, senddis, MPI_DOUBLE, bt[0], recvcount, recvdis, mpi_matrix, MPI_COMM_WORLD);
-}
-
-void calculate_work(size_t m, int numProcs, int rank){
-    int rows_pr_processor = m/numProcs;
-    int remainder = m%numProcs;
-    
-    sendcount = (int*) malloc(numProcs*sizeof(int));
-    recvcount = (int*) calloc(numProcs,sizeof(int));
-    senddis = (int*) malloc(numProcs*sizeof(int));
-    recvdis = (int*) calloc(numProcs,sizeof(int));
-
-    for(int i = 0; i < numProcs; i++){
-        if(m <= numProcs && i < m) { //If the problem size is smaller than number of processes, each process with rank <m gets one row each
-            recvcount[i] = 1;
-            recvdis[i] = i; 
-        }else if(remainder != 0){
-            
-        }
-    }
+    MPI_Alltoallv(b[0], sendcounts, sdispls, MPI_DOUBLE, bt[0], recvcounts, rdispls, mpi_matrix, MPI_COMM_WORLD);
 }
 
 
+void length_of_work(int m, int numProcs, int rank){
 
+    sendcounts = (int*) calloc(numProcs, sizeof(int));
+    sdispls = (int*) calloc(numProcs, sizeof(int));
+    recvcounts = (int*) calloc(numProcs, sizeof(int));
+    rdispls = (int*) calloc(numProcs, sizeof(int));
 
-void divide_work(size_t m, int numProcs, int rank){
-    int rows_pr_processor = m/numProcs;
-    int remainder = m%numProcs;
-    
-    sendcount = (int*) malloc(numProcs*sizeof(int));
-    recvcount = (int*) calloc(numProcs,sizeof(int));
-    senddis = (int*) malloc(numProcs*sizeof(int));
-    recvdis = (int*) calloc(numProcs,sizeof(int));
+    int workTasks = m/numProcs;
+    int workLeft = m%numProcs;
 
-    for(int i=0; i<numProcs; i++){
-        if(m <= numProcs && i < m){
-            recvcount[i] = 1;
-            recvdis[i]=i;
-        }else if(remainder != 0){
-            if(remainder > i){
-                recvcount[i] = rows_pr_processor + 1;
-                recvdis[i] = i*rows_pr_processor + i;
-            }else{
-                recvcount[i] = rows_pr_processor;
-                recvdis[i] = i*rows_pr_processor + remainder;
-            }
+    for (int i = 0; i < numProcs; i++){
+        recvcounts[i] = workTasks;
+        
+        if (workLeft > 0){
+            recvcounts[i]++;
+            workLeft--;
+        }  
+
+        if (i > 0){ 
+            rdispls[i] = rdispls[i-1] + recvcounts[i-1];
         }
     }
 
-    for(int i=0; i<numProcs; i++){
-        sendcount[i]=recvcount[rank]*m;
-        senddis[i]=recvdis[rank]*m;
-    }
-}
-
-void printMatrix(real** matrix, int length){
-    for(size_t i = 0; i < length; i++){
-        for(size_t j = 0; j < length; j++){
-            printf("%f ", matrix[i][j]);
-        }
-        printf("\n");
+    for (int j = 0; j<numProcs; j++){
+        sendcounts[j] = recvcounts[rank]*m;
+        sdispls[j] = rdispls[rank]*m; 
     }
 }
