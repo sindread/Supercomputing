@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/steine/Documents/TMA4280v2018/P2
+CMAKE_SOURCE_DIR = /home/manjaro/Documents/code/TMA4280v2018/P2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/steine/Documents/TMA4280v2018/P2
+CMAKE_BINARY_DIR = /home/manjaro/Documents/code/TMA4280v2018/P2
 
 # Include any dependencies generated for this target.
 include CMakeFiles/common.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/common.dir/flags.make
 
 CMakeFiles/common.dir/fst.f.o: CMakeFiles/common.dir/flags.make
 CMakeFiles/common.dir/fst.f.o: fst.f
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/steine/Documents/TMA4280v2018/P2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building Fortran object CMakeFiles/common.dir/fst.f.o"
-	/usr/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/steine/Documents/TMA4280v2018/P2/fst.f -o CMakeFiles/common.dir/fst.f.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building Fortran object CMakeFiles/common.dir/fst.f.o"
+	/usr/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/manjaro/Documents/code/TMA4280v2018/P2/fst.f -o CMakeFiles/common.dir/fst.f.o
 
 CMakeFiles/common.dir/fst.f.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing Fortran source to CMakeFiles/common.dir/fst.f.i"
-	/usr/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/steine/Documents/TMA4280v2018/P2/fst.f > CMakeFiles/common.dir/fst.f.i
+	/usr/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/manjaro/Documents/code/TMA4280v2018/P2/fst.f > CMakeFiles/common.dir/fst.f.i
 
 CMakeFiles/common.dir/fst.f.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling Fortran source to assembly CMakeFiles/common.dir/fst.f.s"
-	/usr/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/steine/Documents/TMA4280v2018/P2/fst.f -o CMakeFiles/common.dir/fst.f.s
+	/usr/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/manjaro/Documents/code/TMA4280v2018/P2/fst.f -o CMakeFiles/common.dir/fst.f.s
 
 CMakeFiles/common.dir/fst.f.o.requires:
 
@@ -91,7 +91,7 @@ common_EXTERNAL_OBJECTS =
 libcommon.a: CMakeFiles/common.dir/fst.f.o
 libcommon.a: CMakeFiles/common.dir/build.make
 libcommon.a: CMakeFiles/common.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/steine/Documents/TMA4280v2018/P2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking Fortran static library libcommon.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking Fortran static library libcommon.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/common.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/common.dir/link.txt --verbose=$(VERBOSE)
 
@@ -109,6 +109,6 @@ CMakeFiles/common.dir/clean:
 .PHONY : CMakeFiles/common.dir/clean
 
 CMakeFiles/common.dir/depend:
-	cd /home/steine/Documents/TMA4280v2018/P2 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/steine/Documents/TMA4280v2018/P2 /home/steine/Documents/TMA4280v2018/P2 /home/steine/Documents/TMA4280v2018/P2 /home/steine/Documents/TMA4280v2018/P2 /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/common.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/manjaro/Documents/code/TMA4280v2018/P2 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/manjaro/Documents/code/TMA4280v2018/P2 /home/manjaro/Documents/code/TMA4280v2018/P2 /home/manjaro/Documents/code/TMA4280v2018/P2 /home/manjaro/Documents/code/TMA4280v2018/P2 /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/common.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/common.dir/depend
 

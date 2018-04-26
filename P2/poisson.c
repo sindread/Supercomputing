@@ -16,54 +16,8 @@
 #include <omp.h>
 #include "poisson.h"
 
-#define PI 3.14159265358979323846
-#define true 1
-#define false 0
-
-typedef double real;
-typedef int bool;
-
-
-// Functions implemented in FORTRAN in fst.f and called from C.
-// The trailing underscore comes from a convention for symbol names, called name
-// mangling: if can differ with compilers.
-void fst_(real *v, int *n, real *w, int *nn);
-void fstinv_(real *v, int *n, real *w, int *nn);
-
-
-
-int main(int argc, char **argv)
-{
-    int numProcs, rank, numThreads, startTime;
+int run_poisson(int numProcs, int rank, int numThreads, int n){
     int *sendcounts, *sdispls, *recvcounts, *rdispls;
-
-    MPI_Init(&argc, &argv);
-    MPI_Comm_size(MPI_COMM_WORLD, &numProcs);
-    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-
-    numThreads = atoi(argv[2]);
-
-    printf("numprocs %d \n", numProcs);
-    if(rank == 0){
-        if (argc < 3) {
-            printf("Usage:\n");
-            printf("  poisson n\n\n");
-            printf("Arguments:\n");
-            printf("  n: the problem size (must be a power of 2)\n");
-            printf("  t: number of threads\n");
-
-            MPI_Finalize();
-            return -1;
-        }
-        
-        printf("Running with %d processes anasdasdasdd %d threads\n", numProcs, numThreads);
-        startTime = MPI_Wtime();
-    }
-    
-    omp_set_dynamic(0);
-    omp_set_num_threads(numThreads);
-    
-
     /*
      *  The equation is solved on a 2D structured grid and homogeneous Dirichlet
      *  conditions are applied on the boundary:
@@ -71,7 +25,15 @@ int main(int argc, char **argv)
      *  - the number of degrees of freedom in each direction is m = n-1,
      *  - the mesh size is constant h = 1/n.
      */
-    int n = atoi(argv[1]);
+
+    if(rank == 0){
+        printf("Start \n");     
+        //printMatrix(b,m);
+    }
+
+    omp_set_dynamic(0);
+    omp_set_num_threads(numThreads);
+    
     int m = n - 1;
     real h = 1.0 / n;
 
@@ -112,6 +74,11 @@ int main(int argc, char **argv)
     real **b = mk_2D_array(m, m, false);
     real **bt = mk_2D_array(m, m, false);
 
+    if(rank == 0){
+        printf("b og bt \n");    
+        printMatrix(b,m);
+    }
+
     /*
      * This vector will holds coefficients of the Discrete Sine Transform (DST)
      * but also of the Fast Fourier Transform used in the FORTRAN code.
@@ -141,11 +108,17 @@ int main(int argc, char **argv)
         }
     }
 
+    if(rank == 0){
+        printf("b utregnet \n");    
+        printMatrix(b,m);
+    }
 
-    create_mpi_datatype(m);
+    MPI_Datatype mpi_vector;
+    MPI_Datatype mpi_matrix;
+
+    create_mpi_datatype(m, mpi_vector, mpi_matrix);
 
     length_of_work(m, numProcs, rank, sendcounts, sdispls, recvcounts, rdispls);
-    
 
     /*
      * Compute \tilde G^T = S^-1 * (S * G)^T (Chapter 9. page 101 step 1)
@@ -161,11 +134,27 @@ int main(int argc, char **argv)
     for (size_t i = 0; i < m; i++) {
         fst_(b[i], &n, z, &nn);
     }
+    
+    if(rank == 0){
+        printf("b før t \n");    
+        printMatrix(b,m);
+    }
+
     //transpose(bt, b, m); Need to implement transpose for parallel
-    transpose_parallel(b, bt, m,  sendcounts, sdispls, recvcounts, rdispls);
+    transpose_parallel(b, bt, m,  sendcounts, sdispls, recvcounts, rdispls, mpi_matrix);
+
+    if(rank == 0){
+        printf("b etter t \n");    
+        printMatrix(b,m);
+    }
+
     #pragma omp parallel for 
     for (size_t i = 0; i < m; i++) {
         fstinv_(bt[i], &n, z, &nn);
+    }
+
+    if(rank == 0){
+        printf("test 0 \n");    
     }
 
     /*
@@ -178,6 +167,10 @@ int main(int argc, char **argv)
         }
     }
 
+    if(rank == 0){
+        printf("test 1 \n");    
+    }
+
     /*
      * Compute U = S^-1 * (S * Utilde^T) (Chapter 9. page 101 step 3)
      */
@@ -186,11 +179,14 @@ int main(int argc, char **argv)
         fst_(bt[i], &n, z, &nn);
     }
     //transpose(b, bt, m);
-    transpose_parallel(bt, b, m, sendcounts, sdispls, recvcounts, rdispls);
+    transpose_parallel(bt, b, m, sendcounts, sdispls, recvcounts, rdispls, mpi_matrix);
     
     #pragma omp parallel for 
     for (size_t i = 0; i < m; i++) {
         fstinv_(b[i], &n, z, &nn);
+    }
+    if(rank == 0){
+        printf("test 2 \n");    
     }
 
     /*
@@ -210,26 +206,15 @@ int main(int argc, char **argv)
         printMatrix(b,m);
     }
 
-    free_mpi_datatype();
-    MPI_Finalize();
+    free_mpi_datatype(mpi_vector, mpi_matrix);
 
     return 0;
-}
-
-void printMatrix(real** matrix, int length){
-    for(size_t i = 0; i < length; i++){
-        for(size_t j = 0; j < length; j++){
-            printf("%f ", matrix[i][j]);
-        }
-        printf("\n");
-    }
 }
 
 /*
  * This function is used for initializing the right-hand side of the equation.
  * Other functions can be defined to swtich between problem definitions.
  */
-
 real rhs(real x, real y) 
 {
     return 2 * (y - y*y + x - x*x);
@@ -240,7 +225,6 @@ real rhs(real x, real y)
  * In parallel the function MPI_Alltoallv is used to map directly the entries
  * stored in the array to the block structure, using displacement arrays.
  */
-
 void transpose(real **bt, real **b, size_t m)
 {
     for (size_t i = 0; i < m; i++) {
@@ -254,13 +238,20 @@ void transpose(real **bt, real **b, size_t m)
  * The allocation of a vectore of size n is done with just allocating an array.
  * The only thing to notice here is the use of calloc to zero the array.
  */
-
 real *mk_1D_array(size_t n, bool zero)
 {
     if (zero) {
         return (real *)calloc(n, sizeof(real));
     }
     return (real *)malloc(n * sizeof(real));
+}
+
+int *mk_1D_array_int(size_t n, bool zero)
+{
+    if (zero) {
+        return (int *)calloc(n, sizeof(int));
+    }
+    return (int *)malloc(n * sizeof(int));
 }
 
 /*
@@ -271,7 +262,6 @@ real *mk_1D_array(size_t n, bool zero)
  *   is contigusous,
  * 3. pointers are set for each row to the address of first element.
  */
-
 real **mk_2D_array(size_t n1, size_t n2, bool zero)
 {
     // 1
@@ -298,37 +288,31 @@ real **mk_2D_array(size_t n1, size_t n2, bool zero)
  * 
  */
 
-MPI_Datatype mpi_vector;
-MPI_Datatype mpi_matrix;
-
-void create_mpi_datatype(size_t m){
-
-   //Creating datatype for vectors for mpi
+void create_mpi_datatype(size_t m, MPI_Datatype mpi_vector, MPI_Datatype mpi_matrix){
+    //Creating datatype for vectors for mpi
     MPI_Type_vector(m, 1, m, MPI_DOUBLE , &mpi_vector);
     MPI_Type_commit(&mpi_vector);
 
     //Using vectors as columns in matrix
     MPI_Type_create_resized(mpi_vector, 0, sizeof(double),&mpi_matrix);
     MPI_Type_commit(&mpi_matrix);
-
 }
 
-void free_mpi_datatype(){
+void free_mpi_datatype(MPI_Datatype mpi_vector, MPI_Datatype mpi_matrix){
     MPI_Type_free(&mpi_vector);
     MPI_Type_free(&mpi_matrix);
 }
 
-void transpose_parallel(real **b, real **bt, size_t m, int *sendcounts, int *sdispls, int *recvcounts, int *rdispls){
+void transpose_parallel(real **b, real **bt, size_t m, int *sendcounts, int *sdispls, int *recvcounts, int *rdispls, MPI_Datatype mpi_matrix){
     MPI_Alltoallv(b[0], sendcounts, sdispls, MPI_DOUBLE, bt[0], recvcounts, rdispls, mpi_matrix, MPI_COMM_WORLD);
 }
 
-
 void length_of_work(int m, int numProcs, int rank, int* sendcounts, int* sdispls, int* recvcounts, int* rdispls){
     
-    sendcounts = mk_1D_array(numProcs, false);
-    sdispls = mk_1D_array(numProcs, false);
-    recvcounts = mk_1D_array(numProcs, false);
-    rdispls = mk_1D_array(numProcs, true);
+    sendcounts = mk_1D_array_int(numProcs, false);
+    sdispls = mk_1D_array_int(numProcs, false);
+    recvcounts = mk_1D_array_int(numProcs, false);
+    rdispls = mk_1D_array_int(numProcs, true);
 
     int workTasks = m/numProcs;
     int workLeft = m%numProcs;
@@ -349,5 +333,14 @@ void length_of_work(int m, int numProcs, int rank, int* sendcounts, int* sdispls
     for (int j = 0; j<numProcs; j++){
         sendcounts[j] = recvcounts[rank]*m;
         sdispls[j] = rdispls[rank]*m; 
+    }
+}
+
+void printMatrix(real** matrix, int length){
+    for(size_t i = 0; i < length; i++){
+        for(size_t j = 0; j < length; j++){
+            printf("%f ", matrix[i][j]);
+        }
+        printf("\n");
     }
 }

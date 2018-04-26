@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/steine/Documents/TMA4280v2018/P2
+CMAKE_SOURCE_DIR = /home/manjaro/Documents/code/TMA4280v2018/P2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/steine/Documents/TMA4280v2018/P2
+CMAKE_BINARY_DIR = /home/manjaro/Documents/code/TMA4280v2018/P2
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/steine/Documents/TMA4280v2018/P2/CMakeFiles /home/steine/Documents/TMA4280v2018/P2/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/steine/Documents/TMA4280v2018/P2/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/manjaro/Documents/code/TMA4280v2018/P2/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,19 +122,6 @@ poisson-f: cmake_check_build_system
 poisson-f/fast:
 	$(MAKE) -f CMakeFiles/poisson-f.dir/build.make CMakeFiles/poisson-f.dir/build
 .PHONY : poisson-f/fast
-
-#=============================================================================
-# Target rules for targets named poisson_test
-
-# Build rule for target.
-poisson_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 poisson_test
-.PHONY : poisson_test
-
-# fast build rule for target.
-poisson_test/fast:
-	$(MAKE) -f CMakeFiles/poisson_test.dir/build.make CMakeFiles/poisson_test.dir/build
-.PHONY : poisson_test/fast
 
 #=============================================================================
 # Target rules for targets named common
@@ -189,13 +176,39 @@ fst.f.s:
 	$(MAKE) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/fst.f.s
 .PHONY : fst.f.s
 
+main.o: main.c.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.c.o:
+	$(MAKE) -f CMakeFiles/poisson.dir/build.make CMakeFiles/poisson.dir/main.c.o
+.PHONY : main.c.o
+
+main.i: main.c.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.c.i:
+	$(MAKE) -f CMakeFiles/poisson.dir/build.make CMakeFiles/poisson.dir/main.c.i
+.PHONY : main.c.i
+
+main.s: main.c.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.c.s:
+	$(MAKE) -f CMakeFiles/poisson.dir/build.make CMakeFiles/poisson.dir/main.c.s
+.PHONY : main.c.s
+
 poisson.o: poisson.c.o
 
 .PHONY : poisson.o
 
 # target to build an object file
 poisson.c.o:
-	$(MAKE) -f CMakeFiles/poisson_test.dir/build.make CMakeFiles/poisson_test.dir/poisson.c.o
 	$(MAKE) -f CMakeFiles/poisson.dir/build.make CMakeFiles/poisson.dir/poisson.c.o
 .PHONY : poisson.c.o
 
@@ -205,7 +218,6 @@ poisson.i: poisson.c.i
 
 # target to preprocess a source file
 poisson.c.i:
-	$(MAKE) -f CMakeFiles/poisson_test.dir/build.make CMakeFiles/poisson_test.dir/poisson.c.i
 	$(MAKE) -f CMakeFiles/poisson.dir/build.make CMakeFiles/poisson.dir/poisson.c.i
 .PHONY : poisson.c.i
 
@@ -215,7 +227,6 @@ poisson.s: poisson.c.s
 
 # target to generate assembly for a file
 poisson.c.s:
-	$(MAKE) -f CMakeFiles/poisson_test.dir/build.make CMakeFiles/poisson_test.dir/poisson.c.s
 	$(MAKE) -f CMakeFiles/poisson.dir/build.make CMakeFiles/poisson.dir/poisson.c.s
 .PHONY : poisson.c.s
 
@@ -252,7 +263,7 @@ poisson_test.o: poisson_test.c.o
 
 # target to build an object file
 poisson_test.c.o:
-	$(MAKE) -f CMakeFiles/poisson_test.dir/build.make CMakeFiles/poisson_test.dir/poisson_test.c.o
+	$(MAKE) -f CMakeFiles/poisson.dir/build.make CMakeFiles/poisson.dir/poisson_test.c.o
 .PHONY : poisson_test.c.o
 
 poisson_test.i: poisson_test.c.i
@@ -261,7 +272,7 @@ poisson_test.i: poisson_test.c.i
 
 # target to preprocess a source file
 poisson_test.c.i:
-	$(MAKE) -f CMakeFiles/poisson_test.dir/build.make CMakeFiles/poisson_test.dir/poisson_test.c.i
+	$(MAKE) -f CMakeFiles/poisson.dir/build.make CMakeFiles/poisson.dir/poisson_test.c.i
 .PHONY : poisson_test.c.i
 
 poisson_test.s: poisson_test.c.s
@@ -270,7 +281,7 @@ poisson_test.s: poisson_test.c.s
 
 # target to generate assembly for a file
 poisson_test.c.s:
-	$(MAKE) -f CMakeFiles/poisson_test.dir/build.make CMakeFiles/poisson_test.dir/poisson_test.c.s
+	$(MAKE) -f CMakeFiles/poisson.dir/build.make CMakeFiles/poisson.dir/poisson_test.c.s
 .PHONY : poisson_test.c.s
 
 # Help Target
@@ -282,12 +293,14 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... poisson-f"
-	@echo "... poisson_test"
 	@echo "... common"
 	@echo "... poisson"
 	@echo "... fst.o"
 	@echo "... fst.i"
 	@echo "... fst.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 	@echo "... poisson.o"
 	@echo "... poisson.i"
 	@echo "... poisson.s"

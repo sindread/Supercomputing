@@ -1,15 +1,4 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-#include <mpi.h>
-#include <omp.h>
-#include "poisson.h"
-
-#define true 1
-#define false 0
-
-typedef double real;
-typedef int bool;
+#include "poisson_test.h"
 
 bool assert_equal(int a, int b){
     if (a != b){
@@ -17,15 +6,13 @@ bool assert_equal(int a, int b){
     }
 }
 
-
 void unit_transpose_parallel(){
     real** arr = mk_2D_array(3,3,false);
     printMatrix(arr, 3);
 }
 
-
-void lengthOfWork_FourWorkersTenWorkTasks_AllResiveTheSame(int m, int numProcs, int rank, int *sendcounts, int *sdispls, int *recvcounts, int *rdispls){
-    
+void lengthOfWork_FourWorkersTenWorkTasks_AllResiveTheSame(int m, int numProcs, int rank){
+    int *sendcounts, *sdispls, *recvcounts, *rdispls;
     int expectedSendcounts[] = {3*10, 3*10, 2*10, 2*10}; 
     int expectedSdispls[] = {0*10, 3*10, 6*10, 8*10};
     int expectedRecvcounts[] = {3, 3, 2, 2};
@@ -49,4 +36,10 @@ void lengthOfWork_FourWorkersTenWorkTasks_AllResiveTheSame(int m, int numProcs, 
             printf("Processor", rank , ": Not expected rdispls in length of work, expeced: ", expectedRdispls[i], " was ", rdispls[i]);
         } 
     }
+}
+
+void run_poisson_unit_tests(int numProcs, int rank, int m){
+    unit_transpose_parallel();
+
+    lengthOfWork_FourWorkersTenWorkTasks_AllResiveTheSame(m, numProcs, rank);
 }
