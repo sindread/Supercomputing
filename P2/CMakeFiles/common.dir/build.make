@@ -60,15 +60,15 @@ include CMakeFiles/common.dir/flags.make
 CMakeFiles/common.dir/fst.f.o: CMakeFiles/common.dir/flags.make
 CMakeFiles/common.dir/fst.f.o: fst.f
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/steine/Documents/TMA4280v2018/P2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building Fortran object CMakeFiles/common.dir/fst.f.o"
-	/usr/bin/mpif90  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/steine/Documents/TMA4280v2018/P2/fst.f -o CMakeFiles/common.dir/fst.f.o
+	/usr/bin/gfortran  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/steine/Documents/TMA4280v2018/P2/fst.f -o CMakeFiles/common.dir/fst.f.o
 
 CMakeFiles/common.dir/fst.f.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing Fortran source to CMakeFiles/common.dir/fst.f.i"
-	/usr/bin/mpif90  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/steine/Documents/TMA4280v2018/P2/fst.f > CMakeFiles/common.dir/fst.f.i
+	/usr/bin/gfortran  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/steine/Documents/TMA4280v2018/P2/fst.f > CMakeFiles/common.dir/fst.f.i
 
 CMakeFiles/common.dir/fst.f.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling Fortran source to assembly CMakeFiles/common.dir/fst.f.s"
-	/usr/bin/mpif90  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/steine/Documents/TMA4280v2018/P2/fst.f -o CMakeFiles/common.dir/fst.f.s
+	/usr/bin/gfortran  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/steine/Documents/TMA4280v2018/P2/fst.f -o CMakeFiles/common.dir/fst.f.s
 
 CMakeFiles/common.dir/fst.f.o.requires:
 

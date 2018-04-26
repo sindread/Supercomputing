@@ -1,4 +1,4 @@
-set(CMAKE_Fortran_COMPILER "/usr/bin/mpif90")
+set(CMAKE_Fortran_COMPILER "/usr/bin/gfortran")
 set(CMAKE_Fortran_COMPILER_ARG1 "")
 set(CMAKE_Fortran_COMPILER_ID "GNU")
 set(CMAKE_Fortran_COMPILER_VERSION "6.3.1")
@@ -58,6 +58,6 @@ endif()
 
 
 
-set(CMAKE_Fortran_IMPLICIT_LINK_LIBRARIES "mpi_usempif08;mpi_usempi_ignore_tkr;mpi_mpifh;mpi;gfortran;m;quadmath;m;pthread;c")
-set(CMAKE_Fortran_IMPLICIT_LINK_DIRECTORIES "/usr/lib/openmpi;/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1;/usr/lib;/lib")
+set(CMAKE_Fortran_IMPLICIT_LINK_LIBRARIES "gfortran;m;quadmath;m;c")
+set(CMAKE_Fortran_IMPLICIT_LINK_DIRECTORIES "/usr/lib/gcc/x86_64-pc-linux-gnu/6.3.1;/usr/lib;/lib")
 set(CMAKE_Fortran_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

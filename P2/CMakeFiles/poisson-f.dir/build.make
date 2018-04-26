@@ -60,15 +60,15 @@ include CMakeFiles/poisson-f.dir/flags.make
 CMakeFiles/poisson-f.dir/poisson.f90.o: CMakeFiles/poisson-f.dir/flags.make
 CMakeFiles/poisson-f.dir/poisson.f90.o: poisson.f90
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/steine/Documents/TMA4280v2018/P2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building Fortran object CMakeFiles/poisson-f.dir/poisson.f90.o"
-	/usr/bin/mpif90  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/steine/Documents/TMA4280v2018/P2/poisson.f90 -o CMakeFiles/poisson-f.dir/poisson.f90.o
+	/usr/bin/gfortran  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/steine/Documents/TMA4280v2018/P2/poisson.f90 -o CMakeFiles/poisson-f.dir/poisson.f90.o
 
 CMakeFiles/poisson-f.dir/poisson.f90.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing Fortran source to CMakeFiles/poisson-f.dir/poisson.f90.i"
-	/usr/bin/mpif90  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/steine/Documents/TMA4280v2018/P2/poisson.f90 > CMakeFiles/poisson-f.dir/poisson.f90.i
+	/usr/bin/gfortran  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/steine/Documents/TMA4280v2018/P2/poisson.f90 > CMakeFiles/poisson-f.dir/poisson.f90.i
 
 CMakeFiles/poisson-f.dir/poisson.f90.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling Fortran source to assembly CMakeFiles/poisson-f.dir/poisson.f90.s"
-	/usr/bin/mpif90  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/steine/Documents/TMA4280v2018/P2/poisson.f90 -o CMakeFiles/poisson-f.dir/poisson.f90.s
+	/usr/bin/gfortran  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/steine/Documents/TMA4280v2018/P2/poisson.f90 -o CMakeFiles/poisson-f.dir/poisson.f90.s
 
 CMakeFiles/poisson-f.dir/poisson.f90.o.requires:
 

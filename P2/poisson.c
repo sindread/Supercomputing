@@ -9,11 +9,14 @@
  * Revised by Eivind Fonn, February 2015
  */
 
+#pragma once
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 #include <mpi.h>
 #include <omp.h>
+#include <poisson.h>
 
 #define PI 3.14159265358979323846
 #define true 1
