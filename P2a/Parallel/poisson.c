@@ -37,7 +37,7 @@ void run_poisson(int numProcs, int rank, int numThreads, int n){
         MPI_Finalize();
     }
 
-    length_of_work(m, numProcs, rank);
+    transpose_parallel_setup(m, numProcs, rank);
     /*
     * Grid points are generated with constant mesh size on both x- and y-axis.
     */
@@ -271,7 +271,7 @@ void transpose_parallel(real **b, real **bt, size_t m){
     MPI_Alltoallv(b[0], sendcounts, sdispls, MPI_DOUBLE, bt[0], recvcounts, rdispls, mpi_matrix, MPI_COMM_WORLD);
 }
 
-void length_of_work(int m, int numProcs, int rank){
+void transpose_parallel_setup(int m, int numProcs, int rank){
     sendcounts = mk_1D_array_int(numProcs, true);
     sdispls = mk_1D_array_int(numProcs, true);
     recvcounts = mk_1D_array_int(numProcs, true);

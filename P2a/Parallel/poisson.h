@@ -33,7 +33,7 @@ void transpose_parallel(real **bt, real **b, size_t m);
 void printMatrix(real** matrix, int size);
 void create_mpi_datatype(size_t m);
 void free_mpi_datatype();
-void length_of_work(int m, int numProcs, int rank);
+void transpose_parallel_setup(int m, int numProcs, int rank);
 void run_poisson(int numProcs, int rank, int numThreads, int n);
 
 #endif
