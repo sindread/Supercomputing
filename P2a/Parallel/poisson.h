@@ -16,6 +16,9 @@ typedef int bool;
 
 int *sendcounts, *sdispls, *recvcounts, *rdispls;
 
+MPI_Datatype mpi_vector;
+MPI_Datatype mpi_matrix;
+
 // Functions implemented in FORTRAN in fst.f and called from C.
 // The trailing underscore comes from a convention for symbol names, called name
 // mangling: if can differ with compilers.
@@ -32,8 +35,8 @@ int* mk_1D_array_int(size_t n, bool zero);
 void transpose_parallel(real **bt, real **b, size_t m);
 void printMatrix(real** matrix, int size);
 void create_mpi_datatype(size_t m);
-void free_mpi_datatype();
-void length_of_work(int m, int numProcs, int rank);
+void free_memory();
+void parallel_setup(int m, int numProcs, int rank);
 void run_poisson(int numProcs, int rank, int numThreads, int n);
 
 #endif

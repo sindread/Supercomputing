@@ -1,8 +1,35 @@
 #include "poisson_test.h"
 
-void unit_transpose_parallel(){
-    real** arr = mk_2D_array(3,3,false);
-    printMatrix(arr, 3);
+int unit_transpose_parallel(int numProcs, int rank){
+    int m = 16;
+
+    real** matrix = mk_2D_array(m, m, true);
+    real** matrix_transposed = mk_2D_array(m, m, true);
+    real** expected_matrix_tranpose = mk_2D_array(m, m, true);
+
+    real number = 1.5;
+
+    for (size_t i = 0; i < m; i++) {
+        for (size_t j = 0; j < m; j++) {
+            matrix[i][j] = number;
+            expected_matrix_tranpose [j][i] = number;
+            number += 1.0;
+        }
+    }
+    create_mpi_datatype(m);
+
+    parallel_setup(m, numProcs, rank);
+    transpose_parallel(matrix, matrix_transposed, m);
+
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < m; j++) {
+            if (matrix_transposed[i][j] - expected_matrix_tranpose[i][j] != 0){
+                return -1;
+            }
+        }   
+    }     
+
+    return 1;
 }
 
 int lengthOfWork_FourWorkersTenWorkTasks_AllResiveTheSame(int m, int numProcs, int rank){
@@ -11,7 +38,7 @@ int lengthOfWork_FourWorkersTenWorkTasks_AllResiveTheSame(int m, int numProcs, i
     int expectedRecvcounts[] = {5, 5};
     int expectedRdispls[]  = {0, 5};
 
-    length_of_work(m, numProcs, rank);
+    parallel_setup(m, numProcs, rank);
 
     //printf ("Unit test for processor: %d \n", rank);
     
@@ -33,15 +60,31 @@ int lengthOfWork_FourWorkersTenWorkTasks_AllResiveTheSame(int m, int numProcs, i
             return -1;
         } 
     }
+
+    
+
     return 1;
 }
 
 void run_poisson_unit_tests(int numProcs, int rank, int m){
-    //unit_transpose_parallel();
+    int failed = 0;
+    int passed = 0;
+
+    if (unit_transpose_parallel(numProcs, rank) > 0){
+        printf("unit_transpose_parallel for process %d: Pass\n", rank);
+        passed++;
+    }else {
+        printf("unit_transpose_parallel for process %d: Failed\n", rank);
+        failed++;
+    }
 
     if (lengthOfWork_FourWorkersTenWorkTasks_AllResiveTheSame(m, numProcs, rank) > 0){
         printf("lengthOfWork_FourWorkersTenWorkTasks_AllResiveTheSame for process %d: Pass\n", rank);
+        passed++;
     } else {
         printf("lengthOfWork_FourWorkersTenWorkTasks_AllResiveTheSame for process %d: Failed\n", rank);
+        failed++;
     }
+
+    printf("Tests passes %d of %d for process %d\n", passed, passed + failed, rank);
 }
