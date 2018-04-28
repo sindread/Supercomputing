@@ -78,7 +78,7 @@ void validate(int rank, int numProcs){
     }
     
     for (int k = 1; k < 12 +1; k++){
-        for (int t = 0; t < 6+1; t++){
+        for (int t = 0; t < 5+1; t++){
             double startTime = MPI_Wtime();
             int nt = pow(2, t);
             int n = pow (2, k);
