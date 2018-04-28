@@ -174,7 +174,7 @@ int main(int argc, char **argv)
  */
 
 real rhs(real x, real y) {
-    return 2 * ((y-x) + 5*y + x - x*x);
+    return 2 * (y - y*y + x - x*x);
 }
 
 /*
