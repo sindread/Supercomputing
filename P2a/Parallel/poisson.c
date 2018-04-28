@@ -11,9 +11,6 @@
 
 #include "poisson.h"
 
-MPI_Datatype mpi_vector;
-MPI_Datatype mpi_matrix;
-
 void run_poisson(int numProcs, int rank, int numThreads, int n){
     /*
      *  The equation is solved on a 2D structured grid and homogeneous Dirichlet
@@ -37,7 +34,7 @@ void run_poisson(int numProcs, int rank, int numThreads, int n){
         MPI_Finalize();
     }
 
-    transpose_parallel_setup(m, numProcs, rank);
+    parallel_setup(m, numProcs, rank);
     /*
     * Grid points are generated with constant mesh size on both x- and y-axis.
     */
@@ -172,7 +169,7 @@ void run_poisson(int numProcs, int rank, int numThreads, int n){
         //printMatrix(answer,m);
     }
 
-    free_mpi_datatype();
+    free_memory();
 }
 
 /*
@@ -262,16 +259,21 @@ void create_mpi_datatype(size_t m){
     MPI_Type_commit(&mpi_matrix);
 }
 
-void free_mpi_datatype(){
+void free_memory(){
     MPI_Type_free(&mpi_vector);
     MPI_Type_free(&mpi_matrix);
+
+    free(sendcounts);
+    free(sdispls);
+    free(recvcounts);
+    free(rdispls);
 }
 
 void transpose_parallel(real **b, real **bt, size_t m){
     MPI_Alltoallv(b[0], sendcounts, sdispls, MPI_DOUBLE, bt[0], recvcounts, rdispls, mpi_matrix, MPI_COMM_WORLD);
 }
 
-void transpose_parallel_setup(int m, int numProcs, int rank){
+void parallel_setup(int m, int numProcs, int rank){
     sendcounts = mk_1D_array_int(numProcs, true);
     sdispls = mk_1D_array_int(numProcs, true);
     recvcounts = mk_1D_array_int(numProcs, true);

@@ -1,23 +1,24 @@
 #include "poisson_test.h"
 
 int unit_transpose_parallel(int numProcs, int rank){
-    int m = 3;
+    int m = 16;
 
     real** matrix = mk_2D_array(m, m, true);
     real** matrix_transposed = mk_2D_array(m, m, true);
     real** expected_matrix_tranpose = mk_2D_array(m, m, true);
 
-    int number = 1;
+    real number = 1.5;
 
     for (size_t i = 0; i < m; i++) {
         for (size_t j = 0; j < m; j++) {
             matrix[i][j] = number;
             expected_matrix_tranpose [j][i] = number;
-            number++;
+            number += 1.0;
         }
     }
+    create_mpi_datatype(m);
 
-    transpose_parallel_setup(m, numProcs, rank);
+    parallel_setup(m, numProcs, rank);
     transpose_parallel(matrix, matrix_transposed, m);
 
     for (int i = 0; i < m; i++) {
@@ -37,7 +38,7 @@ int lengthOfWork_FourWorkersTenWorkTasks_AllResiveTheSame(int m, int numProcs, i
     int expectedRecvcounts[] = {5, 5};
     int expectedRdispls[]  = {0, 5};
 
-    transpose_parallel_setup(m, numProcs, rank);
+    parallel_setup(m, numProcs, rank);
 
     //printf ("Unit test for processor: %d \n", rank);
     
@@ -59,6 +60,9 @@ int lengthOfWork_FourWorkersTenWorkTasks_AllResiveTheSame(int m, int numProcs, i
             return -1;
         } 
     }
+
+    
+
     return 1;
 }
 
@@ -82,5 +86,5 @@ void run_poisson_unit_tests(int numProcs, int rank, int m){
         failed++;
     }
 
-    printf("Tests passes %d of %d for process %d", passed, passed + failed, rank);
+    printf("Tests passes %d of %d for process %d\n", passed, passed + failed, rank);
 }
