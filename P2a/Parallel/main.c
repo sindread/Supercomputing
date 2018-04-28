@@ -76,9 +76,9 @@ void validate(int rank, int numProcs){
     if (rank == 0) {
         printf("Running validation-test for %d processes: \n", numProcs);
     }
-
-    for (int t = 0; t < 6+1; t++){
-        for (int k = 1; k < 13 +1; k++){
+    
+    for (int k = 1; k < 12 +1; k++){
+        for (int t = 0; t < 6+1; t++){
             double startTime = MPI_Wtime();
             int nt = pow(2, t);
             int n = pow (2, k);
