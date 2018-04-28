@@ -11,6 +11,7 @@
 *.ilk
 *.map
 *.exp
+*.cmake
 
 # Precompiled Headers
 *.gch
@@ -54,7 +55,14 @@ dkms.conf
 
 #Folders
 .vs/
+.vscode/
 Debug/
+CMakeFiles/
 x64/
 x86/
 packages/
+build/
+
+#Files:
+CMakeCache.*
+Makefile
