@@ -26,6 +26,8 @@ real *mk_1D_array(size_t n, bool zero);
 real **mk_2D_array(size_t n1, size_t n2, bool zero);
 void transpose(real **bt, real **b, size_t m);
 real rhs(real x, real y);
+real rhs_2(real x, real y); 
+real rhs_3(real x, real y); 
 void printMatrix(real** matrix, int length);
 
 // Functions implemented in FORTRAN in fst.f and called from C.
@@ -175,6 +177,18 @@ int main(int argc, char **argv)
 
 real rhs(real x, real y) {
     return 2 * (y - y*y + x - x*x);
+}
+
+
+real rhs_2(real x, real y) {
+    if (x < 0 || y < 0 ) {
+        return -1;
+    }
+    return 1;
+}
+
+real rhs_3(real x, real y) {
+    return exp(x)*sin(2*PI*x)*sin(2*PI*y);
 }
 
 /*

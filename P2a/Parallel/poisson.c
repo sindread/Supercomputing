@@ -146,8 +146,8 @@ void run_poisson(int numProcs, int rank, int numThreads, int n){
         fstinv_(b[i], &n, (z+nn*omp_get_thread_num()), &nn);
     }
 
-    real** answer = mk_2D_array(m,m, true);
-    transpose_parallel(b, answer, m);
+    // real** answer = mk_2D_array(m,m, true);
+    // transpose_parallel(b, answer, m);
 
     /*
     * Compute maximal value of solution for convergence analysis in L_\infty
@@ -157,7 +157,7 @@ void run_poisson(int numProcs, int rank, int numThreads, int n){
     #pragma omp parallel for num_threads(numThreads) collapse(2)
     for (size_t i = start; i < end; i++) {
         for (size_t j = 0; j < m; j++) {
-            u_max = u_max > answer[i][j] ? u_max : answer[i][j];
+            u_max = u_max > b[i][j] ? u_max : b[i][j];
         }
     }
     double global_u_max = u_max;
@@ -165,8 +165,8 @@ void run_poisson(int numProcs, int rank, int numThreads, int n){
         MPI_Reduce(&u_max, &global_u_max, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
     }
     if(rank == 0){
-        //printf("u_max = %e\n", global_u_max);    
-        //printMatrix(answer,m);
+        printf("u_max = %e\n", global_u_max);    
+        // printMatrix(answer,m);
     }
 
     free_memory();
@@ -178,8 +178,19 @@ void run_poisson(int numProcs, int rank, int numThreads, int n){
  */
 real rhs(real x, real y) 
 {
+    /****** function 1: *******/
     return 2 * (y - y*y + x - x*x);
+
+    /****** function 2: *******/
+    // if (x < 0 || y < 0 ) {
+    //     return -1;
+    // }
+    // return 1;
+
+    /****** function 3: *******/
+    // return exp(x)*sin(2*PI*x)*sin(2*PI*y);
 }
+
 
 /*
  * Write the transpose of b a matrix of R^(m*m) in bt.
